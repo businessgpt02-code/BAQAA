@@ -3,17 +3,23 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './Destinations.css';
 
 const destinations = [
-  { 
-    name: 'RAJASTHAN', 
-    image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop' 
+  {
+    name: 'RAJASTHAN',
+    location: 'INDIA',
+    image: '/destination/destination1.png',
+    markerPos: { top: '52%', left: '72%' }
   },
-  { 
-    name: 'KERALA', 
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop' 
+  {
+    name: 'ANTALYA',
+    location: 'TURKEY',
+    image: '/destination/destination2.png',
+    markerPos: { top: '38%', left: '48%' }
   },
-  { 
-    name: 'ANDAMANS', 
-    image: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=800&auto=format&fit=crop' 
+  {
+    name: 'FUJAIRAH',
+    location: 'UAE',
+    image: '/destination/destination3.png',
+    markerPos: { top: '48%', left: '60%' }
   }
 ];
 
@@ -24,57 +30,40 @@ const AnimatedTravelPath = () => {
     offset: ["start end", "end start"]
   });
 
-  // Map scroll to drawing progress
-  const pathLength = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
-  
-  // Wide elegant curved path
-  const d = "M20 60 Q 250 10, 500 60 T 980 60";
+  const pathLength = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
+  const d = "M100 60 C 300 20, 700 100, 900 60";
 
   return (
     <div ref={containerRef} className="travel-path-container">
+      <div className="travel-path-label-left">ORIGIN</div>
       <svg width="1000" height="120" viewBox="0 0 1000 120" fill="none" className="travel-path-svg">
-        {/* Animated Dashed Path */}
         <motion.path
           d={d}
-          stroke="#8d8a86"
-          strokeWidth="1.2"
-          strokeDasharray="10 14"
-          strokeLinecap="round"
+          stroke="url(#pathGradient)"
+          strokeWidth="1.5"
+          strokeDasharray="12 18"
           style={{ pathLength }}
         />
+        <defs>
+          <linearGradient id="pathGradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#C0C0C0" stopOpacity="0" />
+            <stop offset="50%" stopColor="#8d8a86" stopOpacity="1" />
+            <stop offset="100%" stopColor="#C0C0C0" stopOpacity="0" />
+          </linearGradient>
+        </defs>
 
-        {/* Location Pin Left (Static) */}
         <motion.g
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <path 
-            d="M20 60 C20 54, 26 48, 20 42 C14 48, 20 54, 20 60 Z" 
-            fill="#8d8a86" 
-          />
-          <circle cx="20" cy="50" r="2.5" fill="#8d8a86" />
-        </motion.g>
-
-        {/* Moving Paper Airplane */}
-        <motion.g
-          style={{ 
+          style={{
             offsetPath: `path("${d}")`,
             offsetDistance: useTransform(pathLength, [0, 1], ["0%", "100%"]),
-            offsetRotate: "auto 15deg", // Natural tilt
             opacity: useTransform(pathLength, [0, 0.05], [0, 1])
           }}
         >
-          {/* Outlined minimalist paper plane */}
-          <path 
-            d="M-10 -5 L10 0 L-10 5 L-7 0 L-10 -5 Z M-7 0 L10 0" 
-            fill="none" 
-            stroke="#8d8a86" 
-            strokeWidth="1" 
-            strokeLinejoin="round" 
-          />
+          <circle r="4" fill="#8d8a86" />
+          <circle r="8" stroke="#8d8a86" strokeWidth="1" opacity="0.3" />
         </motion.g>
       </svg>
+      <div className="travel-path-label-right">DESTINATION</div>
     </div>
   );
 };
@@ -83,54 +72,77 @@ const Destinations = () => {
   return (
     <section className="destinations-section" id="destinations">
       <div className="destinations-header text-center">
-        <div className="vertical-divider-dest"></div>
-        <motion.h2 
+        <div className="vertical-line-header"></div>
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="dest-pre-title"
+        >
+          GLOBAL CELEBRATIONS
+        </motion.span>
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
           className="dest-title"
         >
-          TOP WEDDING DESTINATIONS OF BAQAA
+          TOP WEDDING DESTINATIONS
         </motion.h2>
-        
+
         <AnimatedTravelPath />
       </div>
 
       <div className="destinations-grid-refined">
         {destinations.map((dest, index) => (
-          <motion.div 
+          <motion.div
             key={index}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
+            transition={{ duration: 0.8, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="dest-card-refined"
           >
             <div className="dest-img-box">
               <img src={dest.image} alt={dest.name} />
+              <div className="dest-img-overlay"></div>
             </div>
-            
-            <div className="dest-map-box">
-              <img src="/images/map_outline.png" alt="Map Outline" className="map-outline-img" />
-              {/* Pink Marker */}
-              <div className="pink-marker"></div>
+
+            <div className="dest-content-area">
+              <div className="dest-map-viz">
+                <img src="/images/map_outline.png" alt="Map" className="map-base" />
+                <div className="marker-pulsate" style={{ top: dest.markerPos.top, left: dest.markerPos.left }}>
+                  <div className="marker-dot"></div>
+                  <div className="marker-ripple"></div>
+                </div>
+              </div>
+
+              <div className="dest-text-box">
+                <span className="dest-location-tag">{dest.location}</span>
+                <h3 className="dest-name-label">{dest.name}</h3>
+                <div className="dest-accent-line"></div>
+              </div>
+
+              <button className="dest-explore-btn">
+                VIEW EXPERIENCE
+                <span className="btn-arrow">→</span>
+              </button>
             </div>
-            
-            <h3 className="dest-name-label">{dest.name}</h3>
-            
-            <button className="dest-explore-btn">EXPLORE</button>
           </motion.div>
         ))}
       </div>
 
       <div className="destinations-footer-refined">
-        <motion.button 
+        <motion.button
           className="btn-more-dest"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          MORE DESTINATIONS
+          ALL DESTINATIONS
         </motion.button>
       </div>
     </section>

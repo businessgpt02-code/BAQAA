@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section className="cta-section">
       <div className="cta-bg-container">
-        <img src="/images/cta_bg.png" alt="Collaborate with BAQAA" className="cta-bg-img" />
+        <img src="/CTA/CTA.png" alt="Collaborate with BAQAA" className="cta-bg-img" />
         <div className="cta-overlay-refined"></div>
       </div>
 
@@ -18,7 +18,7 @@ const CTA = () => {
           transition={{ duration: 1 }}
           className="cta-heading-huge"
         >
-          PARTNER WITH BAQAA
+          Where Luxury Weddings Become Timeless Memories
         </motion.h2>
 
         <motion.div 
@@ -29,10 +29,7 @@ const CTA = () => {
           className="cta-subtitle-lines"
         >
           <p className="cta-italic-line">
-            We collaborate with luxury wedding planners, destination wedding vendors, editorial brands, filmmakers, production houses, and creative partners to craft unforgettable celebrations and visual experiences.
-          </p>
-          <p className="cta-italic-line">
-            Connect with BAQAA to create timeless destination weddings, luxury events, cinematic editorials, and extraordinary experiences for your next project.
+            From intimate ceremonies to grand destination weddings, BAQAA crafts timeless celebrations filled with elegance, emotion, and unforgettable artistry.
           </p>
         </motion.div>
 

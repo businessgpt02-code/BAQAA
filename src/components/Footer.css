@@ -91,7 +91,7 @@
 .social-row {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
@@ -108,7 +108,7 @@
 }
 
 .social-divider {
-  width: 25px;
+  width: 15px;
   height: 1px;
   background-color: #DEDEDE;
 }
@@ -123,6 +123,12 @@
   font-family: var(--font-serif);
   font-size: 0.9rem;
   color: #6B6B6B;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+  color: #1A1A1A;
 }
 
 .footer-legal {

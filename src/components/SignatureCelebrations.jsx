@@ -5,28 +5,28 @@ import './SignatureCelebrations.css';
 const celebrations = [
   {
     id: '01',
-    title: 'GOLDEN HORIZONS',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop'
+    title: 'THE ROYAL COLLECTIVE SANGEET',
+    image: '/works/work1.png'
   },
   {
     id: '02',
-    title: 'WHISPERS OF SAND',
-    image: 'https://images.unsplash.com/photo-1545232979-8bf43eead020?q=80&w=1200&auto=format&fit=crop'
+    title: 'LACED WITH LOVE',
+    image: '/works/work2.png'
   },
   {
     id: '03',
-    title: 'THE ROYAL SOIRÉE',
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop'
+    title: 'LOCAL ARAB HENNA SIGNATURE EVENT',
+    image: '/works/work3.png'
   },
   {
     id: '04',
-    title: 'MOONLIT SERENADE',
-    image: 'https://images.unsplash.com/photo-1465495910483-0d57229a49b3?q=80&w=1200&auto=format&fit=crop'
+    title: 'BUTAHINA DI WEDDING LOCAL ARAB WEDDING SANGEET',
+    image: '/works/work4.png'
   },
   {
     id: '05',
-    title: 'BLUSH IN BLOOM',
-    image: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1200&auto=format&fit=crop'
+    title: 'THE ROYAL COLLECTIVE SANGEET',
+    image: '/works/work5.png'
   }
 ];
 

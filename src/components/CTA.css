@@ -46,12 +46,12 @@
 
 .cta-heading-huge {
   font-family: var(--font-serif);
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3em;
   margin-bottom: 40px;
-  line-height: 1.1;
+  line-height: 1.2;
   color: #ffffff;
   text-shadow: 0 2px 15px rgba(0,0,0,0.2);
 }
@@ -95,7 +95,7 @@
 
 @media (max-width: 1024px) {
   .cta-heading-huge {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .cta-italic-line {
     font-size: 1rem;
@@ -107,7 +107,7 @@
 
 @media (max-width: 768px) {
   .cta-heading-huge {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     letter-spacing: 0.2em;
   }
   .cta-italic-line {

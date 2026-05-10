@@ -17,9 +17,9 @@
 
 .vertical-divider-media {
   width: 1px;
-  height: 90px;
-  background-color: #C0C0C0;
-  margin-bottom: 30px;
+  height: 100px;
+  background: linear-gradient(to bottom, #C0C0C0, transparent);
+  margin-bottom: 20px;
 }
 
 .media-title {

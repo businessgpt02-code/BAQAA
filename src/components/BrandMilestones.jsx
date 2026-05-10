@@ -1,39 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
 import './BrandMilestones.css';
 
 const StatItem = ({ label, number, index }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
-  
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   useEffect(() => {
-    if (number === '∞') return;
-    const controls = animate(count, parseInt(number), { 
-      duration: 2.5, 
-      delay: index * 0.2,
-      ease: "easeOut"
-    });
-    return controls.stop;
-  }, [number, index]);
+    if (isInView) {
+      const controls = animate(count, parseInt(number), {
+        duration: 3.5,
+        delay: index * 0.5,
+        ease: [0.16, 1, 0.3, 1]
+      });
+      return controls.stop;
+    }
+  }, [isInView, number, index, count]);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
-      className="stat-item"
+      transition={{ duration: 1.5, delay: index * 0.3, ease: [0.22, 1, 0.36, 1] }}
+      className="legacy-stat-block"
     >
-      <div className="stat-content">
-        <span className="stat-label">
+      <div className="legacy-number-wrapper">
+        <motion.span className="legacy-number">
+          <motion.span>{rounded}</motion.span>
+          <span className="plus-sign">+</span>
+        </motion.span>
+      </div>
+      <div className="legacy-label-wrapper">
+        <div className="label-accent-line"></div>
+        <span className="legacy-label">
           {label.split('\n').map((line, i) => (
             <React.Fragment key={i}>
-              {line}<br />
+              {line}{i < label.split('\n').length - 1 && <br />}
             </React.Fragment>
           ))}
-        </span>
-        <span className="stat-number">
-          {number === '∞' ? '∞' : <motion.span>{rounded}</motion.span>}
         </span>
       </div>
     </motion.div>
@@ -41,25 +49,51 @@ const StatItem = ({ label, number, index }) => {
 };
 
 const BrandMilestones = () => {
-  const stats = [
-    { label: "LUXURY\nWEDDINGS", number: "75" },
-    { label: "HAPPY\nCOUPLES", number: "43" },
-    { label: "DREAMY\nEVENTS", number: "190" },
-    { label: "AWARDS\nAND\nACCOLADES", number: "5" },
-    { label: "TIMELESS\nHAPPY\nMEMORIES", number: "∞" }
-  ];
-
   return (
-    <section className="milestones-section">
-      <div className="milestones-container">
-        {stats.map((stat, index) => (
-          <StatItem 
-            key={index} 
-            index={index}
-            label={stat.label} 
-            number={stat.number} 
-          />
-        ))}
+    <section className="brand-milestones-v2">
+      <div className="milestones-bg-accents">
+        <div className="accent-circle top-left"></div>
+        <div className="accent-circle bottom-right"></div>
+      </div>
+
+      <div className="milestones-frame">
+        <div className="frame-corner tl"></div>
+        <div className="frame-corner tr"></div>
+        <div className="frame-corner bl"></div>
+        <div className="frame-corner br"></div>
+
+        <div className="milestones-content-wrapper">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="milestones-top-info"
+          >
+            <span className="milestone-pre-title">OUR JOURNEY</span>
+            <h2 className="milestone-main-title">A Legacy of Excellence</h2>
+            <div className="milestone-divider"></div>
+          </motion.div>
+
+          <div className="stats-showcase">
+            <StatItem
+              index={0}
+              label="YEARS IN THE GLOBAL EVENTS INDUSTRY"
+              number="38"
+            />
+
+            <div className="stats-vertical-separator">
+              <div className="separator-line"></div>
+              <div className="separator-diamond"></div>
+              <div className="separator-line"></div>
+            </div>
+
+            <StatItem
+              index={1}
+              label="YEARS LEADING LUXURY DESTINATION WEDDINGS"
+              number="15"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,316 @@
+.baqaa-universe-section {
+  background-color: #ffffff; /* Pure white to match Love Stories */
+  padding: 20px 5% 0 5%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Background & Accents */
+.universe-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.universe-floral-watermark {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-image: url('/images/eucalyptus.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  filter: sepia(1) hue-rotate(20deg) saturate(2); /* Gold vintage tint */
+}
+
+.universe-floral-watermark.top-left {
+  top: -150px;
+  left: -150px;
+  transform: rotate(45deg);
+}
+
+.universe-floral-watermark.bottom-right {
+  bottom: -150px;
+  right: -150px;
+  transform: rotate(-135deg);
+}
+
+/* Minimal sparkles */
+.universe-sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #D4AF37; /* Gold */
+  border-radius: 50%;
+  box-shadow: 0 0 12px 2px rgba(212, 175, 55, 0.6);
+  animation: twinkle 4s infinite alternate ease-in-out;
+  opacity: 0;
+}
+
+.universe-sparkle.s1 { top: 25%; left: 18%; animation-delay: 0s; }
+.universe-sparkle.s2 { top: 65%; right: 12%; animation-delay: 1.5s; }
+.universe-sparkle.s3 { bottom: 15%; left: 35%; animation-delay: 3s; }
+
+@keyframes twinkle {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.7; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* Header */
+.universe-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.universe-vertical-line {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #D4AF37, transparent);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.universe-main-title {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #2c2a29;
+  font-weight: 300;
+  margin-bottom: 35px;
+}
+
+.universe-header-divider {
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  opacity: 0.5;
+}
+
+/* Rows Container */
+.universe-rows-container {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.universe-row-separator {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.3), transparent);
+  margin: 0 auto;
+}
+
+/* Individual Row */
+.universe-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.universe-row.row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Logo Column */
+.universe-logo-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.universe-logo-wrapper {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.logo-gold-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.universe-logo-img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.06));
+}
+
+/* Text Column */
+.universe-text-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.universe-text-content {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.universe-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.universe-decorative-line {
+  width: 50px;
+  height: 1px;
+  background-color: #D4AF37;
+  opacity: 0.6;
+}
+
+.universe-small-label {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  color: #8c7e63;
+  font-weight: 300;
+}
+
+.universe-row-title {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  color: #1a1a1a;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 35px;
+  letter-spacing: 0.05em;
+}
+
+.universe-row-desc {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: #555555;
+  margin-bottom: 50px;
+}
+
+/* CTA Button */
+.universe-cta-btn {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 16px 45px;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: #2c2a29;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.universe-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+  transition: all 0.6s ease;
+}
+
+.universe-cta-btn:hover {
+  border-color: #D4AF37;
+  color: #000;
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px);
+}
+
+.universe-cta-btn:hover::before {
+  left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .universe-row {
+    flex-direction: column !important;
+    gap: 80px;
+    text-align: center;
+  }
+  .universe-text-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .universe-cta-btn {
+    align-self: center;
+  }
+  .universe-main-title {
+    font-size: 2.5rem;
+  }
+  .universe-row-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .baqaa-universe-section {
+    padding: 100px 20px;
+  }
+  .universe-header {
+    margin-bottom: 100px;
+  }
+  .universe-row-separator {
+    height: 80px;
+  }
+  .universe-rows-container {
+    gap: 100px;
+  }
+  .universe-logo-wrapper {
+    max-width: 320px;
+  }
+  .universe-main-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.25em;
+    line-height: 1.4;
+  }
+  .universe-row-title {
+    font-size: 2rem;
+  }
+  .universe-row-desc {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  .universe-label-wrapper {
+    justify-content: center;
+  }
+}

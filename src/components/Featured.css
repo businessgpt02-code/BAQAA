@@ -1,6 +1,8 @@
 .featured-section {
   background-color: #FDFCF8; /* Soft ivory */
-  padding: 20px 0 40px 0; /* Reduced top to 20px and bottom to 40px */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+  padding: 40px 0 80px 0;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -22,8 +24,8 @@
 
 .vertical-divider {
   width: 1px;
-  background-color: #C0C0C0;
-  height: 60px;
+  background: linear-gradient(to bottom, transparent, #C0C0C0, transparent);
+  height: 80px;
 }
 
 .top-divider {
@@ -41,11 +43,12 @@
 .featured-on-text {
   font-family: var(--font-sans);
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.8rem;
-  color: #8C8C8C;
-  margin-bottom: 30px;
+  letter-spacing: 0.5em;
+  font-size: 0.75rem;
+  color: #666666;
+  margin-bottom: 50px;
   display: block;
+  font-weight: 300;
 }
 
 .logos-row {
@@ -60,8 +63,11 @@
 .logo-brand {
   font-family: var(--font-serif);
   color: #1A1A1A;
-  font-weight: 700;
+  font-weight: 400;
   white-space: nowrap;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .brand-story-wrapper {
@@ -71,20 +77,24 @@
 .brand-heading {
   font-family: var(--font-serif);
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  font-size: 2.2rem;
+  letter-spacing: 0.35em;
+  font-size: 2.8rem;
   font-weight: 300;
-  color: #555555;
-  margin-bottom: 30px;
+  color: #1A1A1A;
+  margin-bottom: 40px;
+  line-height: 1.2;
 }
 
 .brand-description {
   font-family: var(--font-serif);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 1rem;
-  line-height: 2.4;
-  color: #6B6B6B;
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+  line-height: 2.2;
+  color: #555555;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+  font-style: italic;
 }
 
 /* Specific text sizes for logos */

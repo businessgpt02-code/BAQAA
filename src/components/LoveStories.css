@@ -33,7 +33,7 @@
 .vertical-line-header {
   width: 1px;
   height: 80px;
-  background-color: #DEDEDE;
+  background: linear-gradient(to bottom, transparent, #C0C0C0, transparent);
   margin-bottom: 20px;
 }
 

@@ -4,27 +4,27 @@ import './LoveStories.css';
 
 const stories = [
   {
-    names: "Kajal x Gautam",
-    location: "MUMBAI",
-    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop",
+    names: "Ata x Aman",
+    location: "RAJASTHAN",
+    image: "/love stories/1.png",
     rotation: -4
   },
   {
-    names: "Prethee x Ram",
-    location: "PONDICHERRY",
-    image: "/images/prethee_ram.png",
+    names: "Priya x Rohan",
+    location: "Turkey",
+    image: "/love stories/2.png",
     rotation: 3
   },
   {
-    names: "Malavika x Aathithya",
-    location: "KERALA",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
+    names: "Minhul x Michael",
+    location: "Fujairah",
+    image: "/love stories/3.png",
     rotation: -2
   },
   {
-    names: "Manveenaa x Artur",
-    location: "ANDAMANS",
-    image: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=800&auto=format&fit=crop",
+    names: "Anissa x Anis",
+    location: "Dubai",
+    image: "/love stories/4.png",
     rotation: 4
   }
 ];
@@ -38,7 +38,7 @@ const AnimatedLoop = () => {
 
   // Animate the path drawing as we scroll through the section
   const pathLength = useTransform(scrollYProgress, [0.35, 0.55], [0, 1]);
-  
+
   // Infinity loop path definition
   const d = "M20 40C20 10 70 10 120 40C170 70 220 70 220 40C220 10 170 10 120 40C70 70 20 70 20 40Z";
 
@@ -52,7 +52,7 @@ const AnimatedLoop = () => {
           strokeDasharray="10 14"
           style={{ pathLength }}
         />
-        
+
         {/* Centered Heart at intersection */}
         <motion.path
           d="M120 44 C118 42, 115 42, 115 39 C115 36, 118 35, 120 37 C122 35, 125 36, 125 39 C125 42, 122 42, 120 44 Z"
@@ -65,16 +65,16 @@ const AnimatedLoop = () => {
 
         {/* Moving Icon: Heart-Diamond Hybrid */}
         <motion.g
-          style={{ 
+          style={{
             offsetPath: `path("${d}")`,
             offsetDistance: useTransform(pathLength, [0, 1], ["0%", "100%"]),
             opacity: useTransform(pathLength, [0, 0.05], [0, 1])
           }}
         >
           {/* Heart Icon */}
-          <path 
-            d="M0 4 C-2 2, -5 2, -5 -1 C-5 -4, -2 -5, 0 -3 C2 -5, 5 -4, 5 -1 C5 2, 2 2, 0 4 Z" 
-            fill="#8C8C8C" 
+          <path
+            d="M0 4 C-2 2, -5 2, -5 -1 C-5 -4, -2 -5, 0 -3 C2 -5, 5 -4, 5 -1 C5 2, 2 2, 0 4 Z"
+            fill="#8C8C8C"
           />
         </motion.g>
       </svg>
@@ -86,9 +86,10 @@ const LoveStories = () => {
   return (
     <section className="love-stories-section" id="weddings">
       <div className="texture-overlay"></div>
-      
+
       <div className="heading-container text-center">
-        <motion.h2 
+        <div className="vertical-line-header"></div>
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -105,9 +106,9 @@ const LoveStories = () => {
         >
           Celebrating timeless unions, beautiful traditions, and unforgettable moments.
         </motion.p>
-        
+
         <div className="vertical-line-header"></div>
-        
+
         <AnimatedLoop />
       </div>
 
@@ -142,7 +143,7 @@ const LoveStories = () => {
       </div>
 
       <div className="view-more-container">
-        <motion.button 
+        <motion.button
           className="btn-view-more"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

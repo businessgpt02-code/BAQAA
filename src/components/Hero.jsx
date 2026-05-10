@@ -4,9 +4,9 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 import './Hero.css';
 
 const images = [
-  'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2000&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2000&auto=format&fit=crop'
+  '/hero%20section/herosection1.png',
+  '/hero%20section/herosection2.png',
+  '/hero%20section/herosection3.png'
 ];
 
 const Hero = () => {
@@ -34,7 +34,7 @@ const Hero = () => {
             exit={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
             transition={{ duration: 1.5, ease: 'easeInOut' }}
           >
-            <div 
+            <div
               className="hero-bg"
               style={{ backgroundImage: `url(${images[currentSlide]})` }}
             />
@@ -44,33 +44,33 @@ const Hero = () => {
       </div>
 
       <div className="hero-content">
-        <motion.div 
+        <motion.div
           className="hero-content-inner"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <motion.h1 
+          <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            Crafting Timeless Luxury <br /> Weddings & Destination Celebrations
+            Crafting Timeless Luxury <br /> Weddings, Events & Destination Celebrations
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="hero-description"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            BAQAA is a luxury wedding planning and destination wedding design company in Dubai, 
-            creating bespoke celebrations filled with elegance, emotion, couture styling, 
+            BAQAA is a luxury wedding planning, events and destination wedding design company in Dubai,
+            creating bespoke celebrations filled with elegance, emotion, couture styling,
             and unforgettable experiences across the UAE and worldwide.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="hero-btns"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

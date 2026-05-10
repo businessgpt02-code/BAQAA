@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Featured from './components/Featured';
+import BaqaaUniverse from './components/BaqaaUniverse';
 import LoveStories from './components/LoveStories';
 import Founder from './components/Founder';
 import CinematicMemories from './components/CinematicMemories';
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <BaqaaUniverse />
         <Featured />
         <LoveStories />
         <Founder />

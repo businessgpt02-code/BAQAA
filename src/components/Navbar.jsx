@@ -32,20 +32,20 @@ const Navbar = () => {
         </div>
         
         <ul className="nav-links">
-          {['Home', 'About', 'Weddings', 'Destinations', 'Journal', 'Contact'].map((item) => (
+          {['Home', 'About', 'Weddings', 'Destinations', 'Journal', 'BAQAA BAZAR', 'Contact'].map((item) => (
             <li key={item}>
-              <a href={`#${item.toLowerCase()}`} className="nav-link text-editorial">
+              <a 
+                href={item === 'BAQAA BAZAR' ? '#' : `#${item.toLowerCase()}`} 
+                className="nav-link text-editorial"
+                onClick={item === 'BAQAA BAZAR' ? (e) => e.preventDefault() : undefined}
+                style={item === 'BAQAA BAZAR' ? { cursor: 'default' } : {}}
+              >
                 {item}
                 <span className="underline" />
               </a>
             </li>
           ))}
         </ul>
-
-        <div className="nav-hamburger">
-          <div className="burger-line"></div>
-          <div className="burger-line"></div>
-        </div>
       </div>
     </nav>
   );
