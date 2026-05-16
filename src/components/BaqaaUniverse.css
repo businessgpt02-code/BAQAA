@@ -144,6 +144,10 @@
   width: 100%;
 }
 
+.row-2 .universe-logo-wrapper {
+  max-width: 400px; /* Reduced for BAQAA3.png balance */
+}
+
 .logo-gold-glow {
   position: absolute;
   top: 50%;

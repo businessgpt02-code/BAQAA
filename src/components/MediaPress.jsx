@@ -1,8 +1,63 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './MediaPress.css';
 
+const mediaData = [
+  {
+    image: '/media/1.jpg',
+    quote: 'A vibrant social nightlife feature capturing stylish attendees at Spice Club. The magazine highlights glamorous fashion, celebrity-inspired style, and lively party culture. Salma Khan and Rachna Chadha are showcased for their elegant outfits and accessories, while the sidebar promotes entertainment, dining experiences, and a trendy birthday celebration atmosphere.',
+    publication: 'SPICE CLUB FEATURE',
+    link: 'Social Nightlife & Glamour Editorial'
+  },
+  {
+    image: '/media/2.jpg',
+    quote: 'A lively social gathering at Spice Club Dubai featuring comedians, stylish guests, and a cheerful multicultural crowd. The event, “Comedy On A Platter,” combined laughter, drinks, and conversations in a warm nightlife setting. The magazine spread highlights fashionable attendees, fun group moments, and an energetic entertainment atmosphere at Le Meridien Fairway.',
+    publication: 'COMEDY ON A PLATTER',
+    link: 'Le Meridien Fairway Entertainment'
+  },
+  {
+    image: '/media/3.jpg',
+    quote: 'A lifestyle magazine feature spotlighting wedding planner Rachna Chadha and her luxury event company, BAQAA Glamour Weddings & Events. The article discusses innovative wedding themes, creative décor concepts, and the growing UAE wedding industry. Elegant event setups, candlelit dining arrangements, and personalized experiences reflect sophistication, exclusivity, and modern celebratory design trends.',
+    publication: 'BAQAA GLAMOUR WEDDINGS',
+    link: 'Lifestyle & Luxury Event Design'
+  },
+  {
+    image: '/media/4.jpg',
+    quote: 'A newspaper feature promoting BAQAA Glamour Weddings’ bridal showcase in the UAE. The article highlights luxurious wedding planning, elegant floral décor, romantic table settings, and personalized event themes. Founders Rachna Chadha and Vandana Mohan discuss modern wedding trends, grand celebrations, and creating unforgettable bridal experiences with creativity, sophistication, and premium event management.',
+    publication: 'BRIDAL SHOWCASE FEATURE',
+    link: 'UAE Wedding Trends & Management'
+  },
+  {
+    image: '/media/5.jpg',
+    quote: 'A business news feature announcing BAQAA Glamour Weddings & Events’ luxury bridal fairs in Abu Dhabi and Dubai. The article highlights premium venues, large-scale wedding planning services, and the collaboration between founders Rachna Chadha and Vandana Mohan. It emphasizes elegant event experiences, sophisticated celebrations, and the company’s vision for elite wedding exhibitions.',
+    publication: 'BUSINESS NEWS FEATURE',
+    link: 'Luxury Bridal Fairs & Elite Exhibitions'
+  },
+  {
+    image: '/media/6.jpg',
+    quote: 'A feature article promoting the BAQAA Wedding Fair, showcasing luxurious wedding experiences and bespoke event planning in Abu Dhabi and Dubai. The page highlights glamorous décor, artistic event styling, elegant dining setups, and creative entertainment concepts. BAQAA Glamour Weddings & Events is presented as a premium destination for unforgettable, sophisticated wedding celebrations.',
+    publication: 'BAQAA WEDDING FAIR',
+    link: 'Abu Dhabi & Dubai Luxury Events'
+  },
+  {
+    image: '/media/7.jpg',
+    quote: 'A lifestyle magazine feature showcasing extravagant fairy-tale wedding décor and luxury event styling. The grand floral backdrop, elegant stage setup, chandeliers, and romantic lighting highlight the artistry behind premium wedding planning. The article emphasizes how modern wedding planners transform celebrations into unforgettable experiences through creativity, décor, hospitality, and sophisticated event management.',
+    publication: 'FAIRY-TALE WEDDINGS',
+    link: 'Lifestyle & Luxury Event Styling'
+  }
+];
+
 const MediaPress = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % mediaData.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + mediaData.length) % mediaData.length);
+  };
+
   return (
     <section className="media-snippets-section">
       <div className="media-header text-center">
@@ -19,51 +74,46 @@ const MediaPress = () => {
 
       <div className="media-slider-wrapper">
         {/* Left Arrow */}
-        <div className="slider-arrow left-arrow">
+        <div className="slider-arrow left-arrow" onClick={prevSlide}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8C8C8C" strokeWidth="1.5">
             <path d="M19 12H5M5 12L12 19M5 12L12 5" />
           </svg>
         </div>
 
         <div className="media-content-panel">
-          {/* Magazine Cover */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="magazine-cover-box"
-          >
-            <img src="/images/aza_cover.png" alt="Aza Magazine Cover" className="magazine-img" />
-          </motion.div>
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={currentIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5 }}
+              className="media-content-inner"
+            >
+              {/* Magazine Cover */}
+              <div className={`magazine-cover-box ${(currentIndex === 4 || currentIndex === 5 || currentIndex === 6) ? 'landscape-mode' : ''}`}>
+                <img src={mediaData[currentIndex].image} alt="Media Snippet" className="magazine-img" />
+              </div>
 
-          {/* Quote Panel */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="quote-panel-refined"
-          >
-            <div className="quote-mark open">“</div>
-            <p className="press-quote-text">
-              Ambika Gupta of The A-Cube Project – the genius behind the grand, 
-              pandemic wedding of actor Kajal Aggarwal & entrepreneur Gautam Kitchlu, 
-              helps us understand what goes into the making of the ultimate dream wedding. 
-              Her checklist is a game changer for those planning their marriage 
-              ceremonies, regardless of the pandemic.
-            </p>
-            <div className="quote-mark close">”</div>
-            
-            <div className="publication-info">
-              <h4 className="pub-name">- AZA</h4>
-              <p className="pub-link">magazine.azafashions.com/books/axpb/?utm_source=azamagazin...</p>
-            </div>
-          </motion.div>
+              {/* Quote Panel */}
+              <div className="quote-panel-refined">
+                <div className="quote-mark open">“</div>
+                <p className="press-quote-text">
+                  {mediaData[currentIndex].quote}
+                </p>
+                <div className="quote-mark close">”</div>
+                
+                <div className="publication-info">
+                  <h4 className="pub-name">- {mediaData[currentIndex].publication}</h4>
+                  <p className="pub-link">{mediaData[currentIndex].link}</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Right Arrow */}
-        <div className="slider-arrow right-arrow">
+        <div className="slider-arrow right-arrow" onClick={nextSlide}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8C8C8C" strokeWidth="1.5">
             <path d="M5 12H19M19 12L12 5M19 12L12 19" />
           </svg>
@@ -72,10 +122,13 @@ const MediaPress = () => {
 
       {/* Pagination Dots */}
       <div className="media-pagination">
-        <span className="p-dot"></span>
-        <span className="p-dot active"></span>
-        <span className="p-dot"></span>
-        <span className="p-dot"></span>
+        {mediaData.map((_, index) => (
+          <span 
+            key={index} 
+            className={`p-dot ${currentIndex === index ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          ></span>
+        ))}
       </div>
     </section>
   );

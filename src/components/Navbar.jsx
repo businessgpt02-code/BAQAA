@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled glass-panel' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="#">
+          <Link to="/">
             <img 
               src="/logo/BAQAA.png" 
               alt="BAQAA" 
@@ -28,23 +29,42 @@ const Navbar = () => {
               alt="BAQAA" 
               className={`logo-img logo-scrolled ${scrolled ? 'visible' : ''}`} 
             />
-          </a>
+          </Link>
         </div>
         
         <ul className="nav-links">
-          {['Home', 'About', 'Weddings', 'Destinations', 'Journal', 'BAQAA BAZAR', 'Contact'].map((item) => (
-            <li key={item}>
-              <a 
-                href={item === 'BAQAA BAZAR' ? '#' : `#${item.toLowerCase()}`} 
-                className="nav-link text-editorial"
-                onClick={item === 'BAQAA BAZAR' ? (e) => e.preventDefault() : undefined}
-                style={item === 'BAQAA BAZAR' ? { cursor: 'default' } : {}}
-              >
-                {item}
-                <span className="underline" />
-              </a>
-            </li>
-          ))}
+          {['Home', 'About', 'Weddings', 'Destinations', 'Journal', 'BAQAA BAZAR', 'Contact'].map((item) => {
+            const isHome = location.pathname === '/';
+            let href = isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`;
+            
+            if (item === 'BAQAA BAZAR') href = '#';
+            if (item === 'Home') href = '/';
+            if (item === 'About') href = '/about';
+
+            return (
+              <li key={item}>
+                {item === 'Home' || item === 'About' ? (
+                  <Link 
+                    to={href}
+                    className="nav-link text-editorial"
+                  >
+                    {item}
+                    <span className="underline" />
+                  </Link>
+                ) : (
+                  <a 
+                    href={href}
+                    className="nav-link text-editorial"
+                    onClick={item === 'BAQAA BAZAR' ? (e) => e.preventDefault() : undefined}
+                    style={item === 'BAQAA BAZAR' ? { cursor: 'default' } : {}}
+                  >
+                    {item}
+                    <span className="underline" />
+                  </a>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>

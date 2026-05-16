@@ -9,7 +9,7 @@ const UniverseRow = ({ logo, label, title, description, ctaText, reverse, index 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      className={`universe-row ${reverse ? 'row-reverse' : ''}`}
+      className={`universe-row ${reverse ? 'row-reverse' : ''} row-${index}`}
     >
       <div className="universe-logo-col">
         <div className="universe-logo-wrapper">

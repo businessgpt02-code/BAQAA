@@ -64,6 +64,16 @@
 .milestones-top-info {
   text-align: center;
   margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-divider-milestones {
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(to bottom, #C0C0C0, transparent);
+  margin-bottom: 30px;
 }
 
 .milestone-pre-title {
@@ -109,7 +119,7 @@
 }
 
 .legacy-number-wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .legacy-number {
@@ -136,11 +146,16 @@
   align-items: center;
 }
 
-.label-accent-line {
-  width: 20px;
-  height: 1px;
-  background-color: #C0C0C0;
-  margin-bottom: 20px;
+.year-ornament {
+  width: 80px;
+  height: 12px;
+  margin: 5px auto;
+}
+
+.year-ornament svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .legacy-label {

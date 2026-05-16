@@ -2,11 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './CTA.css';
 
-const CTA = () => {
+const CTA = ({ 
+  bgImage = "/CTA/CTA.png", 
+  title = "Where Luxury Weddings Become Timeless Memories",
+  description = "From intimate ceremonies to grand destination weddings, BAQAA crafts timeless celebrations filled with elegance, emotion, and unforgettable artistry."
+}) => {
   return (
     <section className="cta-section">
       <div className="cta-bg-container">
-        <img src="/CTA/CTA.png" alt="Collaborate with BAQAA" className="cta-bg-img" />
+        <img src={bgImage} alt="Collaborate with BAQAA" className="cta-bg-img" />
         <div className="cta-overlay-refined"></div>
       </div>
 
@@ -18,7 +22,7 @@ const CTA = () => {
           transition={{ duration: 1 }}
           className="cta-heading-huge"
         >
-          Where Luxury Weddings Become Timeless Memories
+          {title}
         </motion.h2>
 
         <motion.div 
@@ -29,7 +33,7 @@ const CTA = () => {
           className="cta-subtitle-lines"
         >
           <p className="cta-italic-line">
-            From intimate ceremonies to grand destination weddings, BAQAA crafts timeless celebrations filled with elegance, emotion, and unforgettable artistry.
+            {description}
           </p>
         </motion.div>
 

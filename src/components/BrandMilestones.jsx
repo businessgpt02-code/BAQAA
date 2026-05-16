@@ -35,7 +35,13 @@ const StatItem = ({ label, number, index }) => {
         </motion.span>
       </div>
       <div className="legacy-label-wrapper">
-        <div className="label-accent-line"></div>
+        <div className="year-ornament">
+          <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+            <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+            <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="var(--champagne-gold)" />
+            <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+          </svg>
+        </div>
         <span className="legacy-label">
           {label.split('\n').map((line, i) => (
             <React.Fragment key={i}>
@@ -69,9 +75,9 @@ const BrandMilestones = () => {
             viewport={{ once: true }}
             className="milestones-top-info"
           >
+            <div className="vertical-divider-milestones"></div>
             <span className="milestone-pre-title">OUR JOURNEY</span>
             <h2 className="milestone-main-title">A Legacy of Excellence</h2>
-            <div className="milestone-divider"></div>
           </motion.div>
 
           <div className="stats-showcase">

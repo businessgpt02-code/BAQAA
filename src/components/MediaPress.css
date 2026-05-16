@@ -57,11 +57,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
   background-color: #FAF9F6;
   padding: 60px 80px;
   border: 1px solid rgba(0,0,0,0.02);
   max-width: 1100px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.media-content-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
   width: 100%;
 }
 
@@ -75,6 +83,18 @@
   aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
+}
+
+/* 5th Snippet Landscape Override */
+.magazine-cover-box.landscape-mode {
+  flex: 0 0 450px;
+}
+
+.landscape-mode .magazine-img {
+  aspect-ratio: 1.5 / 1;
+  object-fit: contain;
+  background-color: #fff;
+  max-height: 300px;
 }
 
 .quote-panel-refined {
@@ -151,12 +171,19 @@
 
 @media (max-width: 1024px) {
   .media-content-panel {
-    flex-direction: column;
     padding: 40px;
+  }
+  .media-content-inner {
+    flex-direction: column;
     gap: 40px;
   }
   .magazine-cover-box {
     flex: 0 0 280px;
+  }
+  
+  .magazine-cover-box.landscape-mode {
+    flex: 0 0 100%;
+    max-width: 450px;
   }
 }
 

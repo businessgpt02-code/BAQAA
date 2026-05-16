@@ -1,5 +1,6 @@
 .founder-section {
-  background-color: #FDFCF8; /* Soft ivory */
+  background-color: #FDFCF8;
+  /* Soft ivory */
   padding: 100px 5%;
   display: flex;
   justify-content: center;
@@ -21,8 +22,10 @@
 .founder-image-box {
   flex: 1.2;
   z-index: 10;
-  transform: translateY(-20px); /* Sits higher than the card */
-  margin-right: -100px; /* Overlap effect */
+  transform: translateY(-20px);
+  /* Sits higher than the card */
+  margin-right: -100px;
+  /* Overlap effect */
 }
 
 .founder-image-frame {
@@ -34,9 +37,11 @@
 
 .founder-portrait {
   width: 100%;
-  aspect-ratio: auto; /* Let the natural aspect ratio dictate height */
+  aspect-ratio: auto;
+  /* Let the natural aspect ratio dictate height */
   max-height: 600px;
-  object-fit: contain; /* Shows full image without cropping */
+  object-fit: contain;
+  /* Shows full image without cropping */
   display: block;
 }
 
@@ -50,14 +55,17 @@
 
 .founder-info-card {
   background-color: #fff;
-  border: 1px solid #E5D5BC; /* Thin luxury beige-gold border */
-  padding: 0 60px 40px 140px; /* Adjusted padding for more content */
+  border: 1px solid #E5D5BC;
+  /* Thin luxury beige-gold border */
+  padding: 0 60px 40px 140px;
+  /* Adjusted padding for more content */
   width: 100%;
   position: relative;
   z-index: 5;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align left for editorial feel */
+  align-items: flex-start;
+  /* Align left for editorial feel */
   text-align: left;
 }
 
@@ -66,17 +74,43 @@
   height: 60px;
   background-color: #DEDEDE;
   margin-bottom: 20px;
-  align-self: center; /* Center the line as requested */
+  align-self: center;
+  /* Center the line as requested */
 }
 
-.founder-name {
+.founder-name-editorial {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 15px;
+  row-gap: 5px;
   font-family: var(--font-serif);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 2rem;
   color: #1A1A1A;
-  font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.meet-label, .name-first, .name-last {
+  font-size: 1.8rem;
+  letter-spacing: 0.2em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+.meet-label {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.name-first {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.name-last {
+  grid-column: 1 / span 2;
+  grid-row: 2;
 }
 
 .founder-tagline {
@@ -147,7 +181,7 @@
   .founder-wrapper {
     flex-direction: column;
   }
-  
+
   .founder-image-box {
     margin-right: 0;
     transform: translateY(0);
@@ -155,7 +189,7 @@
     width: 100%;
     max-width: 600px;
   }
-  
+
   .founder-card-box {
     width: 100%;
     max-width: 600px;
@@ -163,5 +197,13 @@
 
   .founder-info-card {
     padding: 40px 20px;
+  }
+
+  .name-first {
+    font-size: 2rem;
+  }
+
+  .name-last {
+    font-size: 2.5rem;
   }
 }

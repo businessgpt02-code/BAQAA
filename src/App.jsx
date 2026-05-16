@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Featured from './components/Featured';
@@ -13,27 +14,37 @@ import Journal from './components/Journal';
 import MediaPress from './components/MediaPress';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import About from './pages/About';
+
+const Home = () => (
+  <main>
+    <Hero />
+    <BaqaaUniverse />
+    <Featured />
+    <LoveStories />
+    <Founder />
+    <CinematicMemories />
+    <BrandMilestones />
+    <SignatureCelebrations />
+    <Destinations />
+    <Journal />
+    <CTA />
+    <MediaPress />
+  </main>
+);
 
 function App() {
   return (
-    <div className="app-container">
-      <Navbar />
-      <main>
-        <Hero />
-        <BaqaaUniverse />
-        <Featured />
-        <LoveStories />
-        <Founder />
-        <CinematicMemories />
-        <BrandMilestones />
-        <SignatureCelebrations />
-        <Destinations />
-        <Journal />
-        <CTA />
-        <MediaPress />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="app-container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

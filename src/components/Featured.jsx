@@ -4,11 +4,11 @@ import './Featured.css';
 
 const Featured = () => {
   const logos = [
-    { name: 'AD', size: 'logo-large' },
+    { name: 'ELLE', size: 'logo-large' },
     { name: 'VOGUE', size: 'logo-large' },
-    { name: 'Van Gogh Museum', size: 'logo-medium' },
-    { name: 'The New York Times', size: 'logo-medium' },
-    { name: 'Forbes', size: 'logo-large' }
+    { name: 'ARABIA WEDDINGS', size: 'logo-medium' },
+    { name: 'Media Publications of UAE', size: 'logo-medium' },
+    { name: 'LINKEDIN', size: 'logo-large' }
   ];
 
   return (
@@ -16,7 +16,7 @@ const Featured = () => {
       <div className="floral-accent"></div>
 
       <div className="featured-container">
-        
+
         <div className="vertical-divider top-divider"></div>
 
         <motion.div
@@ -29,7 +29,7 @@ const Featured = () => {
           <span className="featured-on-text">FEATURED ON</span>
           <div className="logos-row">
             {logos.map((logo, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className={`logo-brand ${logo.size}`}
                 transition={{ duration: 0.3 }}
@@ -50,8 +50,8 @@ const Featured = () => {
           className="brand-story-wrapper"
         >
           <h2 className="brand-heading">THE MEANING OF BAQAA</h2>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
