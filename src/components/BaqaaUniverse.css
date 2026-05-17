@@ -145,7 +145,11 @@
 }
 
 .row-2 .universe-logo-wrapper {
-  max-width: 400px; /* Reduced for BAQAA3.png balance */
+  max-width: 310px; /* Slightly increased BAQAA3.png size */
+}
+
+.row-2 .universe-text-col {
+  transform: translateY(-50px);
 }
 
 .logo-gold-glow {

@@ -4,11 +4,11 @@ import './Featured.css';
 
 const Featured = () => {
   const logos = [
-    { name: 'ELLE', size: 'logo-large' },
-    { name: 'VOGUE', size: 'logo-large' },
+    { name: 'ELLE', size: 'logo-medium' },
+    { name: 'VOGUE', size: 'logo-medium' },
     { name: 'ARABIA WEDDINGS', size: 'logo-medium' },
     { name: 'Media Publications of UAE', size: 'logo-medium' },
-    { name: 'LINKEDIN', size: 'logo-large' }
+    { name: 'LINKEDIN', size: 'logo-medium' }
   ];
 
   return (
