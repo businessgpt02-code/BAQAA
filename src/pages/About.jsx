@@ -65,9 +65,7 @@ const About = () => {
 
       {/* SECTION 2 — ABOUT BAQAA (REDESIGN) */}
       <section id="story" className="section about-baqaa-redesign">
-        <div className="floral-decoration side-right">
-          <img src="/florals/floral1.png" alt="" />
-        </div>
+
         <div className="editorial-container">
           <motion.div className="editorial-left" {...fadeIn}>
             <div className="arched-frame">
@@ -137,10 +135,7 @@ const About = () => {
                 <div className="pin-line-diag"></div>
               </div>
               
-              {/* 3. Floral Vertical Accent (Left Only) */}
-              <div className="floral-vertical-collage">
-                <img src="/images/floral_vertical_left.png" alt="" />
-              </div>
+
 
               {/* 4. Arch Portrait */}
               <div className="portrait-arch-wrapper">
@@ -204,16 +199,12 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-        <div className="floral-edge-right-bottom">
-          <img src="/florals/floral2.png" alt="" />
-        </div>
+
       </section>
 
       {/* SECTION 4 — MILESTONES / LEGACY TIMELINE (IDENTICAL REPLICATION) */}
       <section className="section about-milestones-legacy">
-        <div className="milestone-floral-left">
-          <img src="/florals/floral3.png" alt="" />
-        </div>
+
         
         <motion.div className="section-header-editorial text-center" {...fadeIn}>
           <div className="vertical-divider-work"></div>
@@ -319,24 +310,6 @@ const About = () => {
             </motion.div>
 
             <motion.div className="milestone-item-exact pos-2" {...fadeIn} transition={{ delay: 0.2 }}>
-              <div className="stationery-card card-arch">
-                <div className="stationery-inner">
-
-                  <h3 className="year-burgundy">1996</h3>
-                  <div className="year-ornament">
-                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
-                      <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
-                      <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="var(--champagne-gold)" />
-                      <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
-                    </svg>
-                  </div>
-                  <p className="legacy-desc">Leadership of award <br/> winning Dubai Shopping <br/> Festival events</p>
-
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div className="milestone-item-exact pos-3" {...fadeIn} transition={{ delay: 0.4 }}>
               <div className="stationery-card card-ornate-big">
                 <div className="stationery-inner">
 
@@ -356,13 +329,11 @@ const About = () => {
               </div>
             </motion.div>
 
-            <motion.div className="milestone-item-exact pos-4" {...fadeIn} transition={{ delay: 0.6 }}>
-              <div className="stationery-card card-circle badge-mode">
+            <motion.div className="milestone-item-exact pos-3" {...fadeIn} transition={{ delay: 0.4 }}>
+              <div className="stationery-card card-arch">
                 <div className="stationery-inner">
 
-                  <div className="badge-icon-wrap">
-                    <img src="/handshake/handshake.png" alt="Handshake" className="handshake-icon-img" />
-                  </div>
+                  <h3 className="year-burgundy">1996</h3>
                   <div className="year-ornament">
                     <svg viewBox="0 0 100 10" preserveAspectRatio="none">
                       <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
@@ -370,14 +341,13 @@ const About = () => {
                       <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
                     </svg>
                   </div>
-                  <p className="legacy-desc font-bold gold-text">Strategic <br/> Hotel Partnerships</p>
-                  <div className="card-bottom-deco">✦</div>
+                  <p className="legacy-desc">Leadership of award <br/> winning Dubai Shopping <br/> Festival events</p>
+
                 </div>
               </div>
             </motion.div>
 
-            {/* BOTTOM ROW */}
-            <motion.div className="milestone-item-exact pos-5" {...fadeIn} transition={{ delay: 0.8 }}>
+            <motion.div className="milestone-item-exact pos-4" {...fadeIn} transition={{ delay: 0.6 }}>
               <div className="stationery-card card-ribbon">
                 <div className="stationery-inner">
 
@@ -395,7 +365,45 @@ const About = () => {
               </div>
             </motion.div>
 
+            {/* BOTTOM ROW */}
+            <motion.div className="milestone-item-exact pos-5" {...fadeIn} transition={{ delay: 0.8 }}>
+              <div className="stationery-card card-circle badge-mode">
+                <div className="stationery-inner">
+
+                  <h3 className="year-burgundy">2010-2016</h3>
+                  <div className="year-ornament">
+                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+                      <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="var(--champagne-gold)" />
+                      <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+                    </svg>
+                  </div>
+                  <p className="legacy-desc font-bold gold-text">Strategic <br/> Hotel Partnerships</p>
+                  <div className="card-bottom-deco">✦</div>
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div className="milestone-item-exact pos-6" {...fadeIn} transition={{ delay: 1.0 }}>
+              <div className="stationery-card card-circle lotus-mode">
+                <div className="stationery-inner">
+                  <h3 className="year-burgundy">2010-2016</h3>
+                  <div className="year-ornament">
+                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+                      <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="var(--champagne-gold)" />
+                      <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+                    </svg>
+                  </div>
+                  <p className="legacy-desc">Transforming destination <br/> weddings from an idea <br/> into an industry</p>
+                  <div className="card-bottom-deco">
+                    <div className="mini-divider-dots"><span>•</span><span>•</span><span>•</span></div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div className="milestone-item-exact pos-7" {...fadeIn} transition={{ delay: 1.2 }}>
               <div className="stationery-card card-circle">
                 <div className="stationery-inner">
                   <h3 className="year-burgundy">2012</h3>
@@ -411,7 +419,7 @@ const About = () => {
               </div>
             </motion.div>
 
-            <motion.div className="milestone-item-exact pos-7" {...fadeIn} transition={{ delay: 1.2 }}>
+            <motion.div className="milestone-item-exact pos-8" {...fadeIn} transition={{ delay: 1.4 }}>
               <div className="stationery-card card-arch">
                 <div className="stationery-inner">
 
@@ -425,27 +433,6 @@ const About = () => {
                   </div>
                   <p className="legacy-desc">Expansion into <br/> Middle East, Europe <br/> and South East Asia</p>
 
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div className="milestone-item-exact pos-8" {...fadeIn} transition={{ delay: 1.4 }}>
-              <div className="stationery-card card-circle lotus-mode">
-                <div className="stationery-inner">
-                  <div className="lotus-icon-wrap">
-                    <img src="/handshake/lotus.png" alt="Lotus" className="lotus-icon-img" />
-                  </div>
-                  <div className="year-ornament">
-                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
-                      <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
-                      <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="var(--champagne-gold)" />
-                      <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
-                    </svg>
-                  </div>
-                  <p className="legacy-desc">Transforming destination <br/> weddings from an idea <br/> into an industry</p>
-                  <div className="card-bottom-deco">
-                    <div className="mini-divider-dots"><span>•</span><span>•</span><span>•</span></div>
-                  </div>
                 </div>
               </div>
             </motion.div>
@@ -538,144 +525,43 @@ const About = () => {
               </div>
             </motion.div>
 
-            {/* RIGHT: LARGE CIRCULAR INFOGRAPHIC (SVG REBUILD FOR PRECISION) */}
+            {/* RIGHT: ELEGANT STAGGERED STRENGTHS GRID */}
             <motion.div 
-              className="infographic-wheel-container"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="strengths-elegant-grid"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
+              transition={{ duration: 1 }}
             >
-              <div className="luxury-wheel-wrapper">
-                <svg className="wheel-svg-exact" viewBox="0 0 600 600" fill="none">
-                  <defs>
-                    <path id="wheelTopPath" d="M 120, 300 A 180,180 0 0,1 480,300" />
-                    <path id="wheelBottomPath" d="M 120, 300 A 180,180 0 0,0 480,300" />
-                    
-                    {/* Segment Template: 60 degree annular sector centered at top (-90deg) */}
-                    <path id="segTemplate" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                    
-                    {/* Inner annular sector path for segments */}
-                    {/* We'll just define the segments manually for better control */}
-                  </defs>
-
-                  {/* Dotted outer circle */}
-                  <circle cx="300" cy="300" r="285" stroke="var(--champagne-gold)" strokeWidth="0.5" strokeDasharray="3 6" opacity="0.4" />
-                  
-                  {/* Cardinal Diamonds */}
-                  <g fill="var(--champagne-gold)">
-                    <rect x="297" y="12" width="6" height="6" transform="rotate(45 300 15)" />
-                    <rect x="297" y="582" width="6" height="6" transform="rotate(45 300 585)" />
-                    <rect x="12" y="297" width="6" height="6" transform="rotate(45 15 300)" />
-                    <rect x="582" y="297" width="6" height="6" transform="rotate(45 585 300)" />
-                  </g>
-
-                  {/* WHEEL SEGMENTS (Using g rotations) */}
-                  <g className="segments-radial-group">
-                    {/* 1. CONCEPT DESIGN (Burgundy, Top) */}
-                    <g className="wheel-seg-group" transform="rotate(0 300 300)">
-                      <path className="wheel-seg burgundy-seg" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                      <g transform="translate(300, 135)">
-                         <path d="M-10,-15 L10,-15 L10,5 L0,15 L-10,5 Z" fill="none" stroke="var(--champagne-gold)" strokeWidth="1" />
-                         <text y="35" textAnchor="middle" className="wheel-text-inner text-white">CONCEPT DESIGN</text>
-                      </g>
-                    </g>
-
-                    {/* 2. DÉCOR DESIGN (Ivory, Top-Right) */}
-                    <g className="wheel-seg-group" transform="rotate(60 300 300)">
-                      <path className="wheel-seg ivory-seg" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                      <g transform="translate(300, 135) rotate(-60)">
-                         <g transform="translate(10, 0)" fill="none" stroke="var(--champagne-gold)" strokeWidth="1">
-                            <rect x="-7" y="-7" width="14" height="14" transform="rotate(45)" />
-                            <path d="M0,-14 L0,-18 M0,14 L0,18 M-14,0 L-18,0 M14,0 L18,0" />
-                         </g>
-                         <text x="10" y="35" textAnchor="middle" className="wheel-text-inner text-dark">DÉCOR DESIGN</text>
-                      </g>
-                    </g>
-
-                    {/* 3. HOSPITALITY (Burgundy, Bottom-Right) */}
-                    <g className="wheel-seg-group" transform="rotate(120 300 300)">
-                      <path className="wheel-seg burgundy-seg" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                      <g transform="translate(300, 135) rotate(-120)">
-                         <g fill="none" stroke="var(--champagne-gold)" strokeWidth="1.5">
-                            <path d="M-12,10 L12,10" />
-                            <path d="M-10,10 A10,10 0 0,1 10,10" />
-                            <circle r="1.5" cx="0" cy="-1.5" />
-                         </g>
-                         <text y="35" textAnchor="middle" className="wheel-text-inner text-white">HOSPITALITY</text>
-                      </g>
-                    </g>
-
-                    {/* 4. F&B CURATION (Ivory, Bottom) */}
-                    <g className="wheel-seg-group" transform="rotate(180 300 300)">
-                      <path className="wheel-seg ivory-seg" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                      <g transform="translate(300, 135) rotate(-180)">
-                         <g fill="none" stroke="var(--champagne-gold)" strokeWidth="1.5">
-                            <circle r="10" cx="0" cy="0" />
-                            <path d="M-14,-8 L-14,8 M14,-8 L14,8" />
-                            <path d="M0,-5 L0,5 M-5,0 L5,0" opacity="0.3" />
-                         </g>
-                         <text y="35" textAnchor="middle" className="wheel-text-inner text-dark">F&B CURATION</text>
-                      </g>
-                    </g>
-
-                    {/* 5. ENTERTAINMENT (Burgundy, Bottom-Left) */}
-                    <g className="wheel-seg-group" transform="rotate(240 300 300)">
-                      <path className="wheel-seg burgundy-seg" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                      <g transform="translate(300, 135) rotate(-240)">
-                         <g fill="none" stroke="var(--champagne-gold)" strokeWidth="1.5">
-                            <path d="M-4,8 L-4,-8 L8,-12 L8,4" />
-                            <path d="M-4,-2 L8,-6" />
-                            <circle r="3.5" cx="-7.5" cy="8" />
-                            <circle r="3.5" cx="4.5" cy="4" />
-                         </g>
-                         <text y="35" textAnchor="middle" className="wheel-text-inner text-white">ENTERTAINMENT</text>
-                      </g>
-                    </g>
-
-                    {/* 6. ORCHESTRATION (Ivory, Top-Left) */}
-                    <g className="wheel-seg-group" transform="rotate(300 300 300)">
-                      <path className="wheel-seg ivory-seg" d="M250,213.4 L165,66.2 A270,270 0 0,1 435,66.2 L350,213.4 A100,100 0 0,0 250,213.4 Z" />
-                      <g transform="translate(300, 135) rotate(-300) translate(-10, 0)">
-                         <g fill="none" stroke="var(--champagne-gold)" strokeWidth="1.5">
-                            <circle r="3" cx="0" cy="0" fill="var(--champagne-gold)" />
-                            <path d="M0,-12 L0,12 M-12,0 L12,0 M-8,-8 L8,8 M8,-8 L-8,8" opacity="0.6" />
-                         </g>
-                         <text y="35" textAnchor="middle" className="wheel-text-inner text-dark">ORCHESTRATION</text>
-                      </g>
-                    </g>
-                  </g>
-
-                  {/* Outer Circular Path Text */}
-                  <text className="wheel-curved-text gold-text" style={{ fontSize: '14px', letterSpacing: '0.4em' }}>
-                    <textPath href="#wheelTopPath" startOffset="50%" textAnchor="middle">
-                      COMPLETE TURNKEY SOLUTIONS
-                    </textPath>
-                  </text>
-                  <text className="wheel-curved-text gold-text" style={{ fontSize: '14px', letterSpacing: '0.4em' }}>
-                    <textPath href="#wheelBottomPath" startOffset="50%" textAnchor="middle">
-                      FROM VISION TO PERFECTION
-                    </textPath>
-                  </text>
-
-                  {/* CENTER LOGO AREA (Inside SVG for perfect alignment) */}
-                  <g className="wheel-center-group">
-                    <circle cx="300" cy="300" r="95" fill="#fff" stroke="var(--champagne-gold)" strokeWidth="0.5" />
-                    <circle cx="300" cy="300" r="88" fill="none" stroke="var(--champagne-gold)" strokeWidth="1" strokeDasharray="1 3" />
-                    <image 
-                      href="/logo/BAQAA2.png" 
-                      x="215" 
-                      y="235" 
-                      width="170" 
-                      height="130" 
-                      style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
-                    />
-                    {/* Decorative wreath bits */}
-                    <path d="M300,225 L305,235 L295,235 Z" fill="var(--champagne-gold)" />
-                    <path d="M300,375 L305,365 L295,365 Z" fill="var(--champagne-gold)" />
-                  </g>
-                </svg>
-              </div>
+              {[
+                { num: "01", title: "CONCEPT DESIGN", desc: "Visionary ideas crafted to perfection, setting the stage for unforgettable memories." },
+                { num: "02", title: "DÉCOR DESIGN", desc: "Exquisite aesthetics with attention to the finest details, transforming spaces." },
+                { num: "03", title: "HOSPITALITY", desc: "Seamless and luxurious guest experiences tailored to royal standards." },
+                { num: "04", title: "F&B CURATION", desc: "Culinary masterpieces that elevate the senses and indulge the palate." },
+                { num: "05", title: "ENTERTAINMENT", desc: "Captivating performances and experiences that bring celebrations to life." },
+                { num: "06", title: "ORCHESTRATION", desc: "Flawless execution of every element, ensuring a majestic flow of events." }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index} 
+                  className={`strength-card-lux ${index % 2 !== 0 ? 'offset-card' : ''}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 * index, duration: 0.8 }}
+                >
+                  <div className="strength-card-inner">
+                    <div className="strength-card-header">
+                      <span className="strength-num">{item.num}</span>
+                      <div className="strength-card-line"></div>
+                    </div>
+                    <h3 className="strength-title">{item.title}</h3>
+                    <p className="strength-desc">{item.desc}</p>
+                  </div>
+                  {/* Subtle corner accents */}
+                  <div className="corner-tl"></div>
+                  <div className="corner-br"></div>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>

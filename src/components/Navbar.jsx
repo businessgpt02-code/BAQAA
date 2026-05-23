@@ -33,9 +33,10 @@ const Navbar = () => {
         </div>
         
         <ul className="nav-links">
-          {['Home', 'About', 'Weddings', 'Destinations', 'Journal', 'BAQAA BAZAR', 'Contact'].map((item) => {
+          {['Home', 'About', 'Weddings', 'Events', 'Portfolio', 'Blogs', 'BAQAA BAZAR', 'Contact'].map((item) => {
             const isHome = location.pathname === '/';
-            let href = isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`;
+            let sectionId = item === 'Blogs' ? 'journal' : item.toLowerCase();
+            let href = isHome ? `#${sectionId}` : `/#${sectionId}`;
             
             if (item === 'BAQAA BAZAR') href = '#';
             if (item === 'Home') href = '/';

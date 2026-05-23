@@ -6,7 +6,14 @@ import './Hero.css';
 const images = [
   '/hero%20section/herosection1.png',
   '/hero%20section/herosection2.png',
-  '/hero%20section/herosection3.png'
+  '/hero%20section/herosection3.jpeg',
+  '/hero%20section/herosection4.jpeg',
+  '/hero%20section/herosection5.jpeg',
+  '/hero%20section/herosection6.jpeg',
+  '/hero%20section/herosection7.jpeg',
+  '/hero%20section/herosection8.jpeg',
+  '/hero%20section/herosection9.jpeg',
+  '/hero%20section/herosection10.jpeg'
 ];
 
 const Hero = () => {

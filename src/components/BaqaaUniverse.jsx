@@ -101,9 +101,9 @@ const BaqaaUniverse = () => {
         <UniverseRow
           logo="/universe/BAQAA3.png"
           label="Luxury Curated Experiences"
-          title="BAQAA Bāzār & Ṭabal"
+          title="BAQAA Bāzār & Ṭabel"
           description="BAQAA Bazar curates luxurious floral artistry, bespoke tablescapes, and intimate celebrations, transforming everyday gatherings into soulful, elegant experiences crafted with warmth, creativity, timeless beauty, and emotion."
-          ctaText="Enter The Bazaar"
+          ctaText="Enter The Bazar"
           reverse={false}
           index={2}
         />

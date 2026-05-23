@@ -49,7 +49,7 @@ const Founder = () => {
                   heritage, and personal stories into timeless celebrations. Blending
                   artistry with precision, she crafts immersive experiences filled with
                   elegance, meaning, and unforgettable detail. Every BAQAA wedding
-                  reflects her signature touch — deeply personal, beautifully executed,
+                  reflects her signature touch, deeply personal, beautifully executed,
                   and designed to become a lifelong memory.
                 </p>
               </div>

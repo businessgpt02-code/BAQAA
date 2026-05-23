@@ -25,8 +25,8 @@ const celebrations = [
   },
   {
     id: '05',
-    title: 'THE ROYAL COLLECTIVE SANGEET',
-    image: '/works/work5.png'
+    title: 'KALYANAM BY THE INDIAN OCEAN',
+    image: '/works/kalyanam.jpeg'
   }
 ];
 
@@ -38,7 +38,7 @@ const SignatureCelebrations = () => {
     <section className="signature-section" id="work">
       <div className="top-header-area text-center">
         <div className="vertical-divider-work"></div>
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -60,7 +60,7 @@ const SignatureCelebrations = () => {
       <div className="signature-main-layout">
         <div className="project-navigation">
           {celebrations.map((item, index) => (
-            <div 
+            <div
               key={item.id}
               className={`project-nav-item ${activeIndex === index ? 'active' : ''}`}
               onMouseEnter={() => {
@@ -94,7 +94,7 @@ const SignatureCelebrations = () => {
       </div>
 
       <div className="footer-button-area text-center">
-        <motion.button 
+        <motion.button
           className="btn-more-albums"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

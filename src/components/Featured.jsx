@@ -13,7 +13,6 @@ const Featured = () => {
 
   return (
     <section className="featured-section" id="about">
-      <div className="floral-accent"></div>
 
       <div className="featured-container">
 

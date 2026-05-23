@@ -2,22 +2,22 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Journal.css';
 
-const blogPosts = [
+const testimonials = [
   {
-    title: 'STARRY BLOOM AFFAIR',
-    description: 'A timeless canvas of sunflowers and moonlit skies.',
+    title: 'A BREATHTAKING EXPERIENCE',
+    description: 'BAQAA transformed our vision into a masterpiece. Every detail was impeccably designed.',
     image: '/images/van_gogh_blog.png',
     frameClass: 'arch-frame-tall'
   },
   {
-    title: 'BLUSH PERU ESCAPADE',
-    description: 'Colorful celebrations blooming beautifully within the majestic Andes.',
+    title: 'BEYOND OUR EXPECTATIONS',
+    description: 'The creativity and elegance brought to our celebration left our guests in absolute awe.',
     image: '/images/pink_peru_blog.png',
     frameClass: 'arch-frame-round'
   },
   {
-    title: 'LILIES OF MONET REVERIE',
-    description: 'Artistic floral fantasies beside the enchanting lily waters.',
+    title: 'TRULY UNFORGETTABLE',
+    description: 'A magical journey from start to finish. The floral arrangements were simply out of this world.',
     image: '/images/garden_giverny_blog.png',
     frameClass: 'arch-frame-round'
   }
@@ -34,7 +34,7 @@ const Journal = () => {
           viewport={{ once: true }}
           className="journal-title"
         >
-          READ OUR BLOG
+          CLIENT TESTIMONIALS
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -43,12 +43,12 @@ const Journal = () => {
           transition={{ delay: 0.2 }}
           className="journal-subtitle"
         >
-          Explore further into the stories and creative vision behind our most unforgettable luxury celebrations.
+          Read what our clients have to say about their unforgettable luxury celebrations designed by BAQAA.
         </motion.p>
       </div>
 
       <div className="journal-collage-grid">
-        {blogPosts.map((post, index) => (
+        {testimonials.map((post, index) => (
           <motion.div 
             key={index}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -109,7 +109,7 @@ const Journal = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          SHOW ALL BLOGS
+          MORE TESTIMONIALS
         </motion.button>
       </div>
     </section>
