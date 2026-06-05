@@ -1,27 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
 import './Journal.css';
 
 const testimonials = [
   {
     title: 'A BREATHTAKING EXPERIENCE',
-    description: 'BAQAA transformed our vision into a masterpiece. Every detail was impeccably designed.',
-    image: '/images/van_gogh_blog.png',
-    frameClass: 'arch-frame-tall'
+    description: 'BAQAA transformed our vision into a masterpiece. Every detail was impeccably designed with absolute grace and luxury.',
+    author: 'Sofia & Arjun',
+    wedding: 'Rajasthan Heritage Wedding'
   },
   {
     title: 'BEYOND OUR EXPECTATIONS',
-    description: 'The creativity and elegance brought to our celebration left our guests in absolute awe.',
-    image: '/images/pink_peru_blog.png',
-    frameClass: 'arch-frame-round'
+    description: 'The creativity and elegance brought to our celebration left our guests in absolute awe. An extraordinary team of dreamers.',
+    author: 'Maya & Kabir',
+    wedding: 'Scenic Bosphorus Celebration'
   },
   {
     title: 'TRULY UNFORGETTABLE',
-    description: 'A magical journey from start to finish. The floral arrangements were simply out of this world.',
-    image: '/images/garden_giverny_blog.png',
-    frameClass: 'arch-frame-round'
+    description: 'A magical journey from start to finish. The floral arrangements and bespoke artistry were simply out of this world.',
+    author: 'Leila & Omar',
+    wedding: 'Fujairah Coastal Romance'
+  },
+  {
+    title: 'BESPOKE ARTISTRY & LOVE',
+    description: 'We had the absolute best experience planning our wedding. They understood our style and elevated it beyond belief.',
+    author: 'Nina & Dev',
+    wedding: 'Dubai Ritz-Carlton Gala'
   }
 ];
+
+// Double the array to ensure the infinite scroll has no gaps
+const duplicatedTestimonials = [...testimonials, ...testimonials];
 
 const Journal = () => {
   return (
@@ -43,74 +53,37 @@ const Journal = () => {
           transition={{ delay: 0.2 }}
           className="journal-subtitle"
         >
-          Read what our clients have to say about their unforgettable luxury celebrations designed by BAQAA.
+          Read what our couples have to say about their bespoke luxury celebrations designed by BAQAA.
         </motion.p>
       </div>
 
-      <div className="journal-collage-grid">
-        {testimonials.map((post, index) => (
-          <motion.div 
-            key={index}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="blog-collage-card"
-          >
-            <div className={`artistic-frame ${post.frameClass}`}>
-              <div className="card-texture"></div>
-              <img src={post.image} alt={post.title} className="collage-base-img" />
-              
-              {/* Decorative Elements */}
-              {index === 0 && (
-                <>
-                  <div className="paint-swatches left">
-                    <div className="swatch" style={{ background: '#F4D03F' }}></div>
-                    <div className="swatch" style={{ background: '#2E86C1' }}></div>
-                    <div className="swatch" style={{ background: '#873600' }}></div>
-                  </div>
-                  <div className="floral-overlay-item sunflower">🌻</div>
-                </>
-              )}
-              {index === 1 && (
-                <>
-                  <div className="color-palette-circles right">
-                    <div className="palette-circle" style={{ background: '#FF1493' }}></div>
-                    <div className="palette-circle" style={{ background: '#FFB6C1' }}></div>
-                    <div className="palette-circle" style={{ background: '#FF69B4' }}></div>
-                  </div>
-                  <div className="floral-overlay-item pink-flower">🌸</div>
-                </>
-              )}
-              {index === 2 && (
-                <>
-                  <div className="paint-palette-strips right">
-                    <div className="palette-strip" style={{ background: '#229954' }}></div>
-                    <div className="palette-strip" style={{ background: '#D4AC0D' }}></div>
-                    <div className="palette-strip" style={{ background: '#7D3C98' }}></div>
-                  </div>
-                  <div className="shutter-detail"></div>
-                </>
-              )}
-            </div>
+      <div className="marquee-container">
+        <div className="marquee-track">
+          {duplicatedTestimonials.map((post, index) => (
+            <div key={index} className="testimonial-card">
+              <div className="card-top">
+                <div className="stars-row">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="star-icon" fill="var(--champagne-gold, #D4AF37)" stroke="none" />
+                  ))}
+                </div>
+                <div className="quote-mark">“</div>
+              </div>
 
-            <div className="blog-content-area">
-              <h3 className="blog-title">{post.title}</h3>
-              <p className="blog-desc">{post.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+              <div className="card-body">
+                <h3 className="testimonial-card-title">{post.title}</h3>
+                <p className="testimonial-card-desc">{post.description}</p>
+              </div>
 
-      <div className="journal-footer-refined">
-        <motion.button 
-          className="btn-show-all"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          MORE TESTIMONIALS
-        </motion.button>
+              <div className="card-footer">
+                <div className="author-info">
+                  <h4 className="author-name">{post.author}</h4>
+                  <p className="wedding-detail">{post.wedding}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

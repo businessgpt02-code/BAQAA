@@ -6,7 +6,7 @@ const stories = [
   {
     names: "Ata x Aman",
     location: "RAJASTHAN",
-    image: "/love stories/1.png",
+    image: "/love stories/1.jpg",
     rotation: -4
   },
   {
@@ -24,7 +24,7 @@ const stories = [
   {
     names: "Anissa x Anis",
     location: "Dubai",
-    image: "/love stories/4.png",
+    image: "/love stories/4.jpg",
     rotation: 4
   }
 ];

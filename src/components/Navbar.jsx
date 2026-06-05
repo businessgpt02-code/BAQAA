@@ -41,13 +41,23 @@ const Navbar = () => {
             if (item === 'BAQAA BAZAR') href = '#';
             if (item === 'Home') href = '/';
             if (item === 'About') href = '/about';
+            if (item === 'Contact') href = '/contact';
+
+            const isActive =
+              (item === 'Home' && location.pathname === '/' && !location.hash) ||
+              (item === 'About' && location.pathname === '/about') ||
+              (item === 'Contact' && location.pathname === '/contact') ||
+              (!['Home', 'About', 'Contact', 'BAQAA BAZAR'].includes(item) &&
+                location.pathname === '/' &&
+                location.hash === `#${sectionId}`);
 
             return (
               <li key={item}>
-                {item === 'Home' || item === 'About' ? (
+                {item === 'Home' || item === 'About' || item === 'Contact' ? (
                   <Link 
                     to={href}
-                    className="nav-link text-editorial"
+                    className={`nav-link text-editorial ${isActive ? 'active' : ''}`}
+                    aria-current={isActive ? 'page' : undefined}
                   >
                     {item}
                     <span className="underline" />
@@ -55,7 +65,8 @@ const Navbar = () => {
                 ) : (
                   <a 
                     href={href}
-                    className="nav-link text-editorial"
+                    className={`nav-link text-editorial ${isActive ? 'active' : ''}`}
+                    aria-current={isActive ? 'location' : undefined}
                     onClick={item === 'BAQAA BAZAR' ? (e) => e.preventDefault() : undefined}
                     style={item === 'BAQAA BAZAR' ? { cursor: 'default' } : {}}
                   >

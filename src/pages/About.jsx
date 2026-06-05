@@ -12,6 +12,13 @@ const fadeIn = {
 
 const About = () => {
   useEffect(() => {
+    if (window.location.hash) {
+      window.requestAnimationFrame(() => {
+        document.querySelector(window.location.hash)?.scrollIntoView({ behavior: 'smooth' });
+      });
+      return;
+    }
+
     window.scrollTo(0, 0);
   }, []);
 
@@ -23,11 +30,11 @@ const About = () => {
       <section className="about-hero">
         <div className="about-hero-bg">
           <iframe 
-            src="https://player.vimeo.com/video/191335609?background=1&badge=0&autopause=0&player_id=0&app_id=58479" 
+            src="https://www.youtube.com/embed/fkojYqgkgfk?autoplay=1&mute=1&controls=0&loop=1&playlist=fkojYqgkgfk&playsinline=1&modestbranding=1&rel=0"
             frameBorder="0" 
-            allow="autoplay; fullscreen; picture-in-picture" 
+            allow="autoplay; encrypted-media; picture-in-picture" 
             className="hero-video-iframe"
-            title="INDIAN WEDDING IN DUBAI | PARK HYATT"
+            title="BAQAA About Hero Video"
           ></iframe>
           <div className="about-hero-overlay"></div>
         </div>
@@ -57,8 +64,8 @@ const About = () => {
             transition={{ duration: 1, delay: 1.1 }}
             className="hero-btns"
           >
-            <a href="#story" className="btn-hero">Discover Our Story</a>
-            <a href="/#weddings" className="btn-hero">Explore Our Celebrations</a>
+            <a href="https://wa.me/971554968810" target="_blank" rel="noopener noreferrer" className="btn-hero">Discover Our Story</a>
+            <a href="/#work" className="btn-hero">Explore Our Work</a>
           </motion.div>
         </div>
       </section>
@@ -70,7 +77,7 @@ const About = () => {
           <motion.div className="editorial-left" {...fadeIn}>
             <div className="arched-frame">
               <div className="frame-outline"></div>
-              <img src="/hero section/herosection3.png" alt="Luxury Wedding Celebration" />
+              <img src="/contact/4.jpg" alt="Luxury wedding celebration by BAQAA" />
             </div>
           </motion.div>
           
@@ -121,7 +128,7 @@ const About = () => {
       </section>
 
       {/* SECTION 3 — FOUNDER (EDITORIAL COLLAGE) */}
-      <section className="section founder-editorial">
+      <section className="section founder-editorial" id="founder">
         <div className="founder-container">
           <div className="founder-visual-col">
             <div className="editorial-collage">
@@ -129,14 +136,6 @@ const About = () => {
               <div className="collage-paper paper-1"></div>
               <div className="collage-paper paper-2"></div>
               
-              {/* 2. Gold Pin and Connecting Lines */}
-              <div className="gold-pin-ornament">
-                <div className="pin-circle"></div>
-                <div className="pin-line-diag"></div>
-              </div>
-              
-
-
               {/* 4. Arch Portrait */}
               <div className="portrait-arch-wrapper">
                 <img src="/images/founder.png" alt="Rachna Chadha" />

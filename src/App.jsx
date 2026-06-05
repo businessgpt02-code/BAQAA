@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Featured from './components/Featured';
@@ -15,6 +15,7 @@ import MediaPress from './components/MediaPress';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 const Home = () => (
   <main>
@@ -33,14 +34,30 @@ const Home = () => (
   </main>
 );
 
+const ScrollToHash = () => {
+  const { pathname, hash } = useLocation();
+
+  React.useEffect(() => {
+    if (!hash) return;
+
+    window.requestAnimationFrame(() => {
+      document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }, [pathname, hash]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
+      <ScrollToHash />
       <div className="app-container">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

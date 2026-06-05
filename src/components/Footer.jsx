@@ -25,7 +25,7 @@ const Footer = () => {
             <li><a href="#tribe">MEET THE TRIBE</a></li>
             <li><a href="#destinations">DESTINATIONS</a></li>
             <li><a href="#blog">BLOG</a></li>
-            <li><a href="#contact">CONTACT US</a></li>
+            <li><a href="/contact">CONTACT US</a></li>
           </ul>
         </div>
 

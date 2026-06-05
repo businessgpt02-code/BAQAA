@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './CinematicMemories.css';
 
+const films = [
+  {
+    id: 'WWbAFXhBp3w',
+    title: 'Timeless Memories Crafted Forever - Film 1',
+  },
+  {
+    id: 'dVYN4ZgzN-E',
+    title: 'Timeless Memories Crafted Forever - Film 2',
+  },
+  {
+    id: 'FSk_x9hwagE',
+    title: 'Timeless Memories Crafted Forever - Film 3',
+  },
+];
+
 const CinematicMemories = () => {
+  const [activeFilmIndex, setActiveFilmIndex] = useState(0);
+  const activeFilm = films[activeFilmIndex];
+  const showPreviousFilm = () => {
+    setActiveFilmIndex((currentIndex) => (
+      currentIndex === 0 ? films.length - 1 : currentIndex - 1
+    ));
+  };
+  const showNextFilm = () => {
+    setActiveFilmIndex((currentIndex) => (
+      currentIndex === films.length - 1 ? 0 : currentIndex + 1
+    ));
+  };
+
   return (
     <section className="cinematic-section" id="films">
       <div className="heading-container text-center">
@@ -25,41 +54,44 @@ const CinematicMemories = () => {
           className="main-video-area"
         >
           <div className="video-placeholder-box">
-            <img 
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2000&auto=format&fit=crop" 
-              alt="Wedding Film" 
-              className="video-poster-img"
-            />
-            
-            {/* Play Button Overlay */}
-            <div className="video-play-overlay">
-              <div className="play-circle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                  <path d="M5 3l14 9-14 9V3z" />
-                </svg>
-              </div>
-            </div>
+            <iframe
+              key={activeFilm.id}
+              className="cinematic-video-embed"
+              src={`https://www.youtube.com/embed/${activeFilm.id}`}
+              title={activeFilm.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
 
-            {/* Video structure for future implementation */}
-            <video className="actual-video hidden">
-              {/* <source src="..." type="video/mp4" /> */}
-            </video>
+            <button
+              type="button"
+              className="video-arrow video-arrow-left"
+              aria-label="Play previous film"
+              onClick={showPreviousFilm}
+            >
+              <ChevronLeft size={30} strokeWidth={1.5} aria-hidden="true" />
+            </button>
 
-            {/* TikTok/Music icon bottom right */}
-            <div className="video-badge-bottom">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18V5l12-2v13"></path>
-                <circle cx="6" cy="18" r="3"></circle>
-                <circle cx="18" cy="16" r="3"></circle>
-              </svg>
-            </div>
+            <button
+              type="button"
+              className="video-arrow video-arrow-right"
+              aria-label="Play next film"
+              onClick={showNextFilm}
+            >
+              <ChevronRight size={30} strokeWidth={1.5} aria-hidden="true" />
+            </button>
 
-            {/* Carousel dots */}
             <div className="video-carousel-dots">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
+              {films.map((film, index) => (
+                <button
+                  key={film.id}
+                  type="button"
+                  className={`dot${index === activeFilmIndex ? ' active' : ''}`}
+                  aria-label={`Play film ${index + 1}`}
+                  aria-pressed={index === activeFilmIndex}
+                  onClick={() => setActiveFilmIndex(index)}
+                />
+              ))}
             </div>
           </div>
         </motion.div>

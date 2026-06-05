@@ -53,11 +53,12 @@ const Founder = () => {
                   and designed to become a lifelong memory.
                 </p>
               </div>
+
             </div>
           </div>
 
-          <div className="card-footer">
-            <button className="btn-read-more">READ MORE</button>
+          <div className="founder-card-footer">
+            <a href="/about#founder" className="btn-read-more">READ MORE</a>
           </div>
         </motion.div>
 

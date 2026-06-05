@@ -80,7 +80,15 @@
   color: var(--champagne-gold);
 }
 
+.nav-link.active {
+  color: var(--champagne-gold);
+}
+
 .navbar.scrolled .nav-link:hover {
+  color: var(--maroon);
+}
+
+.navbar.scrolled .nav-link.active {
   color: var(--maroon);
 }
 
@@ -98,7 +106,8 @@
   background-color: var(--maroon);
 }
 
-.nav-link:hover .underline {
+.nav-link:hover .underline,
+.nav-link.active .underline {
   width: 100%;
 }
 

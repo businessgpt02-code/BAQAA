@@ -83,8 +83,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <button className="btn-hero">Plan Your Wedding</button>
-            <button className="btn-hero">Explore Our Celebrations</button>
+            <a href="/contact" className="btn-hero">Plan Your Wedding</a>
+            <a href="#weddings" className="btn-hero">Explore Our Celebrations</a>
           </motion.div>
         </motion.div>
       </div>
