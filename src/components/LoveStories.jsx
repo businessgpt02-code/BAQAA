@@ -5,25 +5,25 @@ import './LoveStories.css';
 const stories = [
   {
     names: "Ata x Aman",
-    location: "RAJASTHAN",
+    location: "Dubai",
     image: "/love stories/1.jpg",
     rotation: -4
   },
   {
-    names: "Priya x Rohan",
-    location: "Turkey",
+    names: "Rhea x Raj",
+    location: "Portugal",
     image: "/love stories/2.png",
     rotation: 3
   },
   {
-    names: "Minhul x Michael",
-    location: "Fujairah",
-    image: "/love stories/3.png",
+    names: "Sameer x Nikhil",
+    location: "Turkey",
+    image: "/image004%20.jpg",
     rotation: -2
   },
   {
-    names: "Anissa x Anis",
-    location: "Dubai",
+    names: "Jehana x Kanishk",
+    location: "India",
     image: "/love stories/4.jpg",
     rotation: 4
   }
