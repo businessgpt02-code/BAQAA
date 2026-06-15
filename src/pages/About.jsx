@@ -30,9 +30,9 @@ const About = () => {
       <section className="about-hero">
         <div className="about-hero-bg">
           <iframe 
-            src="https://www.youtube.com/embed/fkojYqgkgfk?autoplay=1&mute=1&controls=0&loop=1&playlist=fkojYqgkgfk&playsinline=1&modestbranding=1&rel=0"
+            src="https://player.vimeo.com/video/191335609?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1&playsinline=1&controls=0&background=1"
             frameBorder="0" 
-            allow="autoplay; encrypted-media; picture-in-picture" 
+            allow="autoplay; fullscreen; picture-in-picture" 
             className="hero-video-iframe"
             title="BAQAA About Hero Video"
           ></iframe>
@@ -77,7 +77,7 @@ const About = () => {
           <motion.div className="editorial-left" {...fadeIn}>
             <div className="arched-frame">
               <div className="frame-outline"></div>
-              <img src="/contact/4.jpg" alt="Luxury wedding celebration by BAQAA" />
+              <img src="/ata and aman 2.jpg" alt="Luxury wedding celebration by BAQAA" />
             </div>
           </motion.div>
           
@@ -197,6 +197,36 @@ const About = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+
+        {/* BEHIND THE SCENES VIDEO */}
+        <div className="founder-bts-section">
+          <motion.div className="bts-header text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="founder-vertical-line center-line"></div>
+            <h3 className="bts-title">BEHIND THE SCENES</h3>
+            <p className="bts-subtitle">The artistry and precision in motion</p>
+            <div className="ornamental-divider-header bts-divider">
+              <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                <line x1="0" y1="5" x2="45" y2="5" stroke="var(--champagne-gold)" strokeWidth="0.5" />
+                <path d="M48 5 L50 3 L52 5 L50 7 Z" fill="var(--champagne-gold)" />
+                <line x1="55" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="0.5" />
+              </svg>
+            </div>
+          </motion.div>
+          
+          <motion.div className="bts-video-container" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.8 }}>
+            <div className="bts-video-wrapper">
+              <div className="bts-video-frame"></div>
+              {/* Replace the src below with your actual BTS video link */}
+              <iframe 
+                src="https://www.youtube.com/embed/CPO15woVWkE?autoplay=1&mute=1&loop=1&playlist=CPO15woVWkE&controls=1&playsinline=1" 
+                frameBorder="0" 
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                className="bts-iframe"
+                title="Behind The Scenes"
+              ></iframe>
+            </div>
+          </motion.div>
         </div>
 
       </section>
