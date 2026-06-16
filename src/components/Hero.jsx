@@ -85,7 +85,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.1 }}
           >
             <Link to="/contact" className="btn-hero">Plan Your Wedding</Link>
-            <a href="#weddings" className="btn-hero">Explore Our Celebrations</a>
+            {/* <a href="#weddings" className="btn-hero">Explore Our Celebrations</a> */}
           </motion.div>
         </motion.div>
       </div>
