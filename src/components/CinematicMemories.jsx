@@ -7,14 +7,17 @@ const films = [
   {
     id: 'fkojYqgkgfk',
     title: 'Timeless Memories Crafted Forever - Film 1',
+    isPortrait: false,
   },
   {
-    id: 'dVYN4ZgzN-E',
+    id: 'zKsGurzqk2Q',
     title: 'Timeless Memories Crafted Forever - Film 2',
+    isPortrait: true,
   },
   {
-    id: 'FSk_x9hwagE',
+    id: 'ptx0vkAwWdw',
     title: 'Timeless Memories Crafted Forever - Film 3',
+    isPortrait: true,
   },
 ];
 
@@ -51,7 +54,7 @@ const CinematicMemories = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2 }}
-          className="main-video-area"
+          className={`main-video-area ${activeFilm.isPortrait ? 'portrait-video' : ''}`}
         >
           <div className="video-placeholder-box">
             <iframe
