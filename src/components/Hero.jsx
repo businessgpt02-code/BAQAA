@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import './Hero.css';
@@ -83,7 +84,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <a href="/contact" className="btn-hero">Plan Your Wedding</a>
+            <Link to="/contact" className="btn-hero">Plan Your Wedding</Link>
             <a href="#weddings" className="btn-hero">Explore Our Celebrations</a>
           </motion.div>
         </motion.div>

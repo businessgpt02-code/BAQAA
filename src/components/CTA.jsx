@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './CTA.css';
 
@@ -9,6 +10,9 @@ const CTA = ({
   buttonText = "CONTACT US",
   buttonHref = "/contact"
 }) => {
+  const isExternalOrAnchor = buttonHref.startsWith('#') || buttonHref.startsWith('http');
+  const MotionLink = motion(Link);
+
   return (
     <section className="cta-section" id="contact">
       <div className="cta-bg-container">
@@ -39,16 +43,29 @@ const CTA = ({
           </p>
         </motion.div>
 
-        <motion.a
-          href={buttonHref}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="btn-cta-contact"
-        >
-          {buttonText}
-        </motion.a>
+        {isExternalOrAnchor ? (
+          <motion.a
+            href={buttonHref}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="btn-cta-contact"
+          >
+            {buttonText}
+          </motion.a>
+        ) : (
+          <MotionLink
+            to={buttonHref}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="btn-cta-contact"
+          >
+            {buttonText}
+          </MotionLink>
+        )}
       </div>
     </section>
   );
