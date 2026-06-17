@@ -145,7 +145,7 @@
 }
 
 .row-2 .universe-logo-wrapper {
-  max-width: 220px; /* Slightly increased BAQAA3.png size */
+  max-width: 170px; /* Reduced BAQAA3.png size */
   transform: translateY(-40px);
 }
 
