@@ -8,7 +8,7 @@ const destinations = [
     location: 'OMAN',
     image: '/destination/destination1.png',
     markerPos: { top: '50%', left: '63%' },
-    objectPosition: '15% center'
+    objectPosition: '60% center'
   },
   {
     name: 'ANTALYA',
@@ -20,7 +20,8 @@ const destinations = [
     name: 'FUJAIRAH',
     location: 'UAE',
     image: '/destination/destination3.png',
-    markerPos: { top: '48%', left: '60%' }
+    markerPos: { top: '48%', left: '60%' },
+    objectPosition: '15% center'
   }
 ];
 

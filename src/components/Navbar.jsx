@@ -47,7 +47,7 @@ const Navbar = () => {
               (item === 'Home' && location.pathname === '/' && !location.hash) ||
               (item === 'About' && location.pathname === '/about') ||
               (item === 'Contact' && location.pathname === '/contact') ||
-              (!['Home', 'About', 'Contact', 'BAQAA BAZAR'].includes(item) &&
+              (!['Home', 'About', 'Contact', 'BAQAA BAZAR', 'Weddings'].includes(item) &&
                 location.pathname === '/' &&
                 location.hash === `#${sectionId}`);
 

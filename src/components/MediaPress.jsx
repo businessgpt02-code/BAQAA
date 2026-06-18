@@ -6,7 +6,7 @@ const mediaData = [
   {
     image: '/media/8.jpg',
     quote: 'A captivating editorial feature celebrating the inspiring journey of Rachna Chadha, the visionary behind BAQAA. The feature highlights her decades of expertise in luxury weddings, destination celebrations, creative storytelling, and timeless event experiences that have redefined elegance and glamour across the industry.',
-    publication: 'CHIT CHAT FEATURE',
+    publication: 'VOGUE ARABIA WEDDINGS',
     link: 'Visionary Leadership & Luxury Wedding Editorial'
   },
   {
