@@ -4,10 +4,11 @@ import './Destinations.css';
 
 const destinations = [
   {
-    name: 'RAJASTHAN',
-    location: 'INDIA',
+    name: 'MUSCAT',
+    location: 'OMAN',
     image: '/destination/destination1.png',
-    markerPos: { top: '52%', left: '72%' }
+    markerPos: { top: '50%', left: '63%' },
+    objectPosition: '15% center'
   },
   {
     name: 'ANTALYA',
@@ -105,19 +106,15 @@ const Destinations = () => {
             className="dest-card-refined"
           >
             <div className="dest-img-box">
-              <img src={dest.image} alt={dest.name} />
+              <img 
+                src={dest.image} 
+                alt={dest.name} 
+                style={dest.objectPosition ? { objectPosition: dest.objectPosition } : {}}
+              />
               <div className="dest-img-overlay"></div>
             </div>
 
             <div className="dest-content-area">
-              <div className="dest-map-viz">
-                <img src="/images/map_outline.png" alt="Map" className="map-base" />
-                <div className="marker-pulsate" style={{ top: dest.markerPos.top, left: dest.markerPos.left }}>
-                  <div className="marker-dot"></div>
-                  <div className="marker-ripple"></div>
-                </div>
-              </div>
-
               <div className="dest-text-box">
                 <span className="dest-location-tag">{dest.location}</span>
                 <h3 className="dest-name-label">{dest.name}</h3>

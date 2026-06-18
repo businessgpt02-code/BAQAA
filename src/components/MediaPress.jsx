@@ -4,6 +4,18 @@ import './MediaPress.css';
 
 const mediaData = [
   {
+    image: '/media/8.jpg',
+    quote: 'A captivating editorial feature celebrating the inspiring journey of Rachna Chadha, the visionary behind BAQAA. The feature highlights her decades of expertise in luxury weddings, destination celebrations, creative storytelling, and timeless event experiences that have redefined elegance and glamour across the industry.',
+    publication: 'CHIT CHAT FEATURE',
+    link: 'Visionary Leadership & Luxury Wedding Editorial'
+  },
+  {
+    image: '/media/9.jpg',
+    quote: 'A timeless wedding editorial capturing the quiet elegance and heartfelt romance of Sameera & Nikhil. The feature celebrates intimate moments, refined aesthetics, and a love story defined by grace, emotion, and everlasting commitment, creating an atmosphere of luxury, warmth, and modern romance.',
+    publication: 'ELLE FEATURE',
+    link: 'Love, Elegance & Timeless Romance Editorial'
+  },
+  {
     image: '/media/1.jpg',
     quote: 'A vibrant social nightlife feature capturing stylish attendees at Spice Club. The magazine highlights glamorous fashion, celebrity-inspired style, and lively party culture. Salma Khan and Rachna Chadha are showcased for their elegant outfits and accessories, while the sidebar promotes entertainment, dining experiences, and a trendy birthday celebration atmosphere.',
     publication: 'SPICE CLUB FEATURE',
@@ -91,7 +103,7 @@ const MediaPress = () => {
               className="media-content-inner"
             >
               {/* Magazine Cover */}
-              <div className={`magazine-cover-box ${(currentIndex === 4 || currentIndex === 5 || currentIndex === 6) ? 'landscape-mode' : ''}`}>
+              <div className={`magazine-cover-box ${(currentIndex === 6 || currentIndex === 7 || currentIndex === 8) ? 'landscape-mode' : ''}`}>
                 <img src={mediaData[currentIndex].image} alt="Media Snippet" className="magazine-img" />
               </div>
 

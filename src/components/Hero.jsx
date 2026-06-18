@@ -85,14 +85,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.1 }}
           >
             <Link to="/contact" className="btn-hero">Plan Your Wedding</Link>
-            <a 
-              href="#" 
-              className="btn-hero" 
-              onClick={(e) => e.preventDefault()}
-              style={{ cursor: 'default' }}
-            >
+            <Link to="/#weddings" className="btn-hero">
               Explore Our Celebrations
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
