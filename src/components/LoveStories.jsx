@@ -16,15 +16,15 @@ const stories = [
     rotation: 3
   },
   {
-    names: "Sameer x Nikhil",
-    location: "Turkey",
-    image: "/image004%20.jpg",
+    names: "Ruhi x Kartik",
+    location: "Abu Dhabi",
+    image: "/love stories/3.png",
     rotation: -2
   },
   {
-    names: "Jehana x Kanishk",
-    location: "India",
-    image: "/love stories/4.jpg",
+    names: "Shriya x Vadhiraj",
+    location: "Fujairah",
+    image: "/love stories/4.png",
     rotation: 4
   }
 ];

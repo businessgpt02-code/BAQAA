@@ -5,19 +5,19 @@ import './CinematicMemories.css';
 
 const films = [
   {
-    id: 'fkojYqgkgfk',
-    title: 'Timeless Memories Crafted Forever - Film 1',
-    isPortrait: false,
-  },
-  {
     id: 'zKsGurzqk2Q',
-    title: 'Timeless Memories Crafted Forever - Film 2',
+    title: 'Timeless Memories Crafted Forever - Film 1',
     isPortrait: true,
   },
   {
     id: 'ptx0vkAwWdw',
-    title: 'Timeless Memories Crafted Forever - Film 3',
+    title: 'Timeless Memories Crafted Forever - Film 2',
     isPortrait: true,
+  },
+  {
+    id: '8AWnyu3AjrY',
+    title: 'Timeless Memories Crafted Forever - Film 3',
+    isPortrait: false,
   },
 ];
 
