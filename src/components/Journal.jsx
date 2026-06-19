@@ -5,28 +5,58 @@ import './Journal.css';
 
 const testimonials = [
   {
-    title: 'A BREATHTAKING EXPERIENCE',
-    description: 'BAQAA transformed our vision into a masterpiece. Every detail was impeccably designed with absolute grace and luxury.',
-    author: 'Sofia & Arjun',
-    wedding: 'Rajasthan Heritage Wedding'
+    title: 'THE DREAM MAKER',
+    description: 'Rachna was the dream maker behind our magical wedding! She was patient and professional, incorporating all the elements we asked for and delivering beautifully. The Baqaa team made sure everything ran smoothly.',
+    author: 'Faryal Kohari',
+    wedding: '4 reviews'
   },
   {
-    title: 'BEYOND OUR EXPECTATIONS',
-    description: 'The creativity and elegance brought to our celebration left our guests in absolute awe. An extraordinary team of dreamers.',
-    author: 'Maya & Kabir',
-    wedding: 'Scenic Bosphorus Celebration'
+    title: 'COOL DUBAI VIBE',
+    description: 'Cool vibe to watch local Dubai musicians share their talents. Awesome show! Highly recommend Baqaa events for creating such wonderful memories and hosting spectacular talent.',
+    author: 'Luke',
+    wedding: '3 reviews'
   },
   {
-    title: 'TRULY UNFORGETTABLE',
-    description: 'A magical journey from start to finish. The floral arrangements and bespoke artistry were simply out of this world.',
-    author: 'Leila & Omar',
-    wedding: 'Fujairah Coastal Romance'
+    title: 'AMAZING PARTIES',
+    description: 'Wanna get married? This is the company you need. Amazing parties & musicians on the roster. Attentive staff and incredible attention to detail throughout the entire event planning process.',
+    author: 'Jacopo Mangiapane',
+    wedding: 'Local Guide · 42 reviews · 10 photos'
   },
   {
-    title: 'BESPOKE ARTISTRY & LOVE',
-    description: 'We had the absolute best experience planning our wedding. They understood our style and elevated it beyond belief.',
-    author: 'Nina & Dev',
-    wedding: 'Dubai Ritz-Carlton Gala'
+    title: 'MADE WEDDING A DREAM',
+    description: 'Rachna and her team did an EXCELLENT job in making our wedding look like a dream! She is so fun to work with and her team works well to ensure you have a special event. She is my go-to for all my future events.',
+    author: 'Siya Rajan',
+    wedding: '12 reviews · 1 photo'
+  },
+  {
+    title: 'HIGHLY RECOMMEND',
+    description: 'Baqaa events really help create memories. Highly recommend. From start to finish, the entire event coordination was flawless and the execution was absolutely spectacular.',
+    author: 'Akhil SR',
+    wedding: '9 reviews'
+  },
+  {
+    title: 'BEYOND GREATEST DREAMS',
+    description: 'Words cannot do justice to the wedding that Rachna and her team pulled off. The final product was beyond our greatest dreams. I would not hesitate to recommend Baqaa to anyone searching for the best wedding designer.',
+    author: 'Sagar',
+    wedding: 'Local Guide · 20 reviews'
+  },
+  {
+    title: 'EVENT WAS PERFECT',
+    description: 'What a great experience with them. Everything in the event was perfect. The coordination, execution, and overall management were top-notch and left a lasting impression.',
+    author: 'Pilot & car transport Service',
+    wedding: '4 reviews · 3 photos'
+  },
+  {
+    title: 'UNMATCHABLE GENEROSITY',
+    description: "Great service and very attentive staff! The team's generosity and attention to detail is unmatchable. I definitely recommend them to anyone planning a luxury celebration.",
+    author: 'A I (Alexandra IV)',
+    wedding: '4 reviews'
+  },
+  {
+    title: 'MANAGED AMAZINGLY',
+    description: 'I highly recommend the Baqaa team for making my daughter’s wedding even more beautiful than I had expected. They delivered on time, took away all my stress, and managed everything amazingly.',
+    author: 'Eliza Khan',
+    wedding: '7 reviews · 1 photo'
   }
 ];
 
@@ -53,7 +83,7 @@ const Journal = () => {
           transition={{ delay: 0.2 }}
           className="journal-subtitle"
         >
-          Read what our couples have to say about their bespoke luxury celebrations designed by BAQAA.
+          Read what our clients have to say about their bespoke luxury celebrations designed by BAQAA.
         </motion.p>
       </div>
 
@@ -84,6 +114,19 @@ const Journal = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="testimonials-footer text-center">
+        <motion.a 
+          href="https://www.google.com/search?sca_esv=c46b224a6a68ee93&sxsrf=ANbL-n49a2kbKdI8qTDrRjv2zfbfcEXMRw:1781860693654&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVL93iv_XjqzZtPICLsDm8U60UF-M-LERr4XAAmDjit4zhkuMuopUjN2fzqe-qS8o9g1FJEVLUclw9Rl9zWqaJVTTBUmjXaKM599nKY_A1tywwIIGA%3D%3D&q=BAQAA+Glamour+Weddings+%26+Events+Reviews&sa=X&ved=2ahUKEwjZtbyt_JKVAxX348kDHdqQJ7sQ0bkNegQIFhAH&biw=1272&bih=668&dpr=1.5" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="btn-more-reviews"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          VIEW MORE ON GOOGLE
+        </motion.a>
       </div>
     </section>
   );

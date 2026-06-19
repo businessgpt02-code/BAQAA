@@ -76,13 +76,13 @@
 /* Testimonial Cards styling */
 .testimonial-card {
   width: 380px;
+  height: 310px;
   background: #fafaf9;
   border: 1px solid rgba(212, 175, 55, 0.15);
   border-radius: 4px;
-  padding: 35px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
@@ -150,6 +150,7 @@
   text-align: left;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 16px;
+  margin-top: auto;
 }
 
 .author-info {
@@ -183,6 +184,7 @@
   }
   .testimonial-card {
     width: 320px;
+    height: 340px;
     padding: 25px;
   }
   .marquee-track {
@@ -196,4 +198,29 @@
       transform: translateX(calc(-50% - 10px));
     }
   }
+}
+
+.testimonials-footer {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-more-reviews {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--champagne-gold, #D4AF37);
+  padding: 14px 36px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--dark-charcoal, #1a1a1a);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.btn-more-reviews:hover {
+  background-color: var(--champagne-gold, #D4AF37);
+  color: #ffffff;
 }
