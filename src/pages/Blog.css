@@ -920,6 +920,15 @@
     margin-top: 30px;
   }
 
+  .page-left .spread-page-footer {
+    border-top: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding-top: 0;
+    padding-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
   .footer-links-row {
     flex-direction: column;
     gap: 15px;
