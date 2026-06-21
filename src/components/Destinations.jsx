@@ -25,7 +25,8 @@ const destinations = [
     name: 'FUJAIRAH & ABU DHABI',
     location: 'UAE',
     couple: 'Shriya & Vadhiraj',
-    image: '/destination/destination4.png'
+    image: '/destination/destination4.png',
+    objectPosition: '15% center'
   },
   {
     name: 'PALM DUBAI',
@@ -37,7 +38,8 @@ const destinations = [
     name: 'SAADIYAT ISLAND',
     location: 'ABU DHABI, UAE',
     couple: 'Ruhi & Kartik',
-    image: '/destination/destination6.png'
+    image: '/destination/destination6.png',
+    objectPosition: '20% center'
   },
   {
     name: 'ANTALYA',
@@ -61,13 +63,15 @@ const destinations = [
     name: 'MUSCAT',
     location: 'OMAN',
     couple: 'Sarah & Ahmed',
-    image: '/destination/destination11.png'
+    image: '/destination/destination11.png',
+    objectPosition: '70% center'
   },
   {
     name: 'RAS AL KHAIMAH',
     location: 'UAE',
     couple: 'Maryam & Shanveer',
-    image: '/destination/destination12.png'
+    image: '/destination/destination12.png',
+    objectPosition: '40% center'
   }
 ];
 
