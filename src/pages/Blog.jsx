@@ -223,36 +223,27 @@ const Blog = () => {
           {/* Right Page: Learnings & Pillars */}
           <div className="spread-page page-right">
             <div className="checklist-spread-container">
-              <h4 className="spread-section-title">PILARS OF AN EXTRAORDINARY EXPERIENCE</h4>
+              <h4 className="spread-section-title">VETERAN LEARNINGS & STRENGTHS</h4>
               <p className="spread-section-subtitle">
                 I have always strived to raise the bar, set milestones and leave memorable imprints. I feel extremely grateful that I can continue to do so. As a senior veteran, I am sharing some important aspects which have become my strengths and learnings over the years:
               </p>
               
-              <ul className="spread-checklist simple-grid">
-                <li>
-                  <strong className="gold-text">VENUE SCOUTING</strong>
-                  <p>Securing the ideal canvas that reflects luxury and exclusivity.</p>
-                </li>
-                <li>
-                  <strong className="gold-text">LOGISTICS</strong>
-                  <p>Flawless coordination behind the scenes so the event unfolds seamlessly.</p>
-                </li>
-                <li>
-                  <strong className="gold-text">TRAVEL & ACCOMMODATION</strong>
-                  <p>Making every guest feel hosted with top-tier hospitality.</p>
-                </li>
-                <li>
-                  <strong className="gold-text">DECOR</strong>
-                  <p>Designing immersive visual worlds with deep impressions of style.</p>
-                </li>
-                <li>
-                  <strong className="gold-text">CATERING</strong>
-                  <p>Curating exceptional gastronomy that elevates the celebration.</p>
-                </li>
-                <li>
-                  <strong className="gold-text">VIDEOGRAPHY</strong>
-                  <p>Capturing the cinematic magic of the once-in-a-lifetime moments.</p>
-                </li>
+              <ul className="scrollable-bullet-list">
+                <li>Listen attentively to the client – couple/ parents / families</li>
+                <li>Understand the style and personality of the couple</li>
+                <li>Understand the emotions and expectations of the parents</li>
+                <li>Create a harmonious balance between the families giving valuable inputs and advice at every step</li>
+                <li>Stay mindful of the religious sanctity, sentiments and traditions</li>
+                <li>Keep the cultural elements centric to the design and planning for some of the events</li>
+                <li>Patience, availability, honest guidance and hard work with no shortcuts</li>
+                <li>Give creative and unique ideas to add to the regular format of the weddings</li>
+                <li>Ensure each wedding has its signature decor and design</li>
+                <li>Try my best to ensure each wedding or celebration is noted for its decor and the experience</li>
+                <li>Ensure my presence at every event</li>
+                <li>Ensure my designs and details are followed by the execution team</li>
+                <li>Ensure all the teams working on the project - hotel management, hotel staff, suppliers, artists, vendors, various teams are abreast with the requirements and details of all the events</li>
+                <li>Guide the clients to hire very good, talented photography and videography company, as these are once in a lifetime captures</li>
+                <li>Guide the clients on curated F&B experiences with every event</li>
               </ul>
             </div>
 
@@ -287,30 +278,18 @@ const Blog = () => {
           <div className="folio-corner bottom-right"></div>
           <div className="spread-gutter"></div>
 
-          {/* Left Page: Cover */}
-          <div className="spread-page page-left centered-cover">
+          {/* Left Page: Cover & Introduction */}
+          <div className="spread-page page-left">
             <div className="page-header-stamp">
               <span>VOL. I • NO. 03</span>
               <span>DESTINATION DOSSIER</span>
             </div>
             
-            <div className="cover-content-center">
-              <span className="page-story-num">III</span>
-              <h1 className="spread-story-title large-headline">DUBAI — A PREMIUM DESTINATION FOR WEDDINGS</h1>
-              <p className="blog-author-signature">By Rachna Chadha</p>
-              <div className="emblem-accent-overlay"></div>
-            </div>
-            
-            <div className="spread-page-footer">
-              <div className="footer-links-row">
-                <span className="page-number-footer">PAGE 05</span>
-              </div>
-            </div>
-          </div>
+            <span className="page-story-num">III</span>
+            <h1 className="spread-story-title">DUBAI — A PREMIUM DESTINATION FOR WEDDINGS</h1>
+            <p className="blog-author-signature">By Rachna Chadha</p>
 
-          {/* Right Page: Essay */}
-          <div className="spread-page page-right flex-column-justify">
-            <div className="page-intro-text spacing-expanded">
+            <div className="page-intro-text">
               <p className="blog-paragraph font-serif-paragraph">
                 <span className="blog-dropcap">L</span>ocated on the Arabian Peninsula, the UAE is made up of seven Sheikhdoms (Emirates), with Dubai being the flagship and leading the way in hosting a large number of destination weddings in this glamourous city.
               </p>
@@ -326,6 +305,43 @@ const Blog = () => {
               <p className="blog-paragraph">
                 Every hotel and location has its own charm. BAQAA's destination weddings in Dubai are part of the marketing brochure of many hotel brands. BAQAA has maintained new designs, new ideas and flawless execution for all the destination weddings in Dubai.
               </p>
+            </div>
+            
+            <div className="spread-page-footer">
+              <div className="footer-links-row">
+                <span className="page-number-footer">PAGE 05</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Page: Advantages Checklist */}
+          <div className="spread-page page-right">
+            <div className="checklist-spread-container">
+              <h4 className="spread-section-title">
+                DESTINATION WEDDINGS IN DUBAI HAVE THE FOLLOWING ADVANTAGES:
+              </h4>
+              
+              <ul className="spread-checklist">
+                <li>Unique, luxury weddings are created here</li>
+                <li>Sunny and comfortable weather between November to March</li>
+                <li>Excellent service standards</li>
+                <li>Melting pot of many cultures and nationalities</li>
+                <li>Cuisines of the world easily available</li>
+                <li>Easy access to everything required for a destination Wedding in Dubai of any cultural or religious background</li>
+                <li>Great infrastructure</li>
+                <li>High safety standards</li>
+                <li>High hygiene standards</li>
+                <li>World class entertainment options</li>
+                <li>Regional cuisines are easily available</li>
+                <li>Dubai allows weddings of any religion</li>
+                <li>Best globally recognized hotel brands</li>
+              </ul>
+            </div>
+
+            <div className="spread-philosophical-block">
+              <blockquote className="spread-pull-quote">
+                "We transform emotions, heritage, and personal stories into timeless celebrations."
+              </blockquote>
             </div>
 
             <div className="spread-page-footer">
