@@ -235,6 +235,16 @@
   font-weight: 300;
 }
 
+.dest-couple-name {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #8d8a86;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
 .dest-accent-line {
   width: 30px;
   height: 1px;

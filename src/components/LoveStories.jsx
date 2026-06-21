@@ -10,8 +10,8 @@ const stories = [
     rotation: -4
   },
   {
-    names: "Rhea x Raj",
-    location: "Portugal",
+    names: "Sameera x Nikhil",
+    location: "Turkey",
     image: "/love stories/2.png",
     rotation: 3
   },

@@ -42,18 +42,20 @@ const Navbar = () => {
             if (item === 'Home') href = '/';
             if (item === 'About') href = '/about';
             if (item === 'Contact') href = '/contact';
+            if (item === 'Blogs') href = '/blog';
 
             const isActive =
               (item === 'Home' && location.pathname === '/' && !location.hash) ||
               (item === 'About' && location.pathname === '/about') ||
               (item === 'Contact' && location.pathname === '/contact') ||
-              (!['Home', 'About', 'Contact', 'BAQAA BAZAR', 'Weddings'].includes(item) &&
+              (item === 'Blogs' && location.pathname === '/blog') ||
+              (!['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR', 'Weddings'].includes(item) &&
                 location.pathname === '/' &&
                 location.hash === `#${sectionId}`);
 
             return (
               <li key={item}>
-                {item === 'Home' || item === 'About' || item === 'Contact' ? (
+                {['Home', 'About', 'Contact', 'Blogs'].includes(item) ? (
                   <Link 
                     to={href}
                     className={`nav-link text-editorial ${isActive ? 'active' : ''}`}

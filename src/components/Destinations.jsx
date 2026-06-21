@@ -4,24 +4,70 @@ import './Destinations.css';
 
 const destinations = [
   {
-    name: 'MUSCAT',
-    location: 'OMAN',
-    image: '/destination/destination1.png',
-    markerPos: { top: '50%', left: '63%' },
-    objectPosition: '60% center'
+    name: 'BODRUM',
+    location: 'TURKEY',
+    couple: 'Sameera & Nikhil',
+    image: '/destination/destination1.png'
+  },
+  {
+    name: 'CASCAIS',
+    location: 'PORTUGAL',
+    couple: 'Rhea & Raj',
+    image: '/destination/destination2.png'
+  },
+  {
+    name: 'BAB AL BAHAR',
+    location: 'ABU DHABI, UAE',
+    couple: 'Priya & Rohan',
+    image: '/destination/destination3.png'
+  },
+  {
+    name: 'FUJAIRAH & ABU DHABI',
+    location: 'UAE',
+    couple: 'Shriya & Vadhiraj',
+    image: '/destination/destination4.png'
+  },
+  {
+    name: 'PALM DUBAI',
+    location: 'UAE',
+    couple: 'Tanya & Sagar',
+    image: '/destination/destination5.png'
+  },
+  {
+    name: 'SAADIYAT ISLAND',
+    location: 'ABU DHABI, UAE',
+    couple: 'Ruhi & Kartik',
+    image: '/destination/destination6.png'
   },
   {
     name: 'ANTALYA',
     location: 'TURKEY',
-    image: '/destination/destination2.png',
-    markerPos: { top: '38%', left: '48%' }
+    couple: 'Sumeet & Sonali',
+    image: '/destination/destination7.png'
   },
   {
-    name: 'FUJAIRAH',
+    name: 'BALI',
+    location: 'INDONESIA',
+    couple: 'Salimah & Riaz',
+    image: '/destination/destination8.png'
+  },
+  {
+    name: 'NEW DELHI',
+    location: 'INDIA',
+    couple: 'Jehana & Kanishk',
+    image: '/destination/destination9.png'
+  },
+  {
+    name: 'MUSCAT',
+    location: 'OMAN',
+    couple: 'Sarah & Ahmed',
+    image: '/destination/destination11.png'
+  },
+  {
+    name: 'RAS AL KHAIMAH',
     location: 'UAE',
-    image: '/destination/destination3.png',
-    markerPos: { top: '48%', left: '60%' },
-    objectPosition: '15% center'
+    couple: 'Maryam & Shanveer',
+    image: '/destination/destination12.png'
   }
 ];
 
@@ -119,6 +165,7 @@ const Destinations = () => {
               <div className="dest-text-box">
                 <span className="dest-location-tag">{dest.location}</span>
                 <h3 className="dest-name-label">{dest.name}</h3>
+                {dest.couple && <p className="dest-couple-name">{dest.couple}</p>}
                 <div className="dest-accent-line"></div>
               </div>
 
