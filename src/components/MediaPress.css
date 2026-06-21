@@ -189,10 +189,21 @@
 
 @media (max-width: 768px) {
   .media-slider-wrapper {
-    padding: 0 10px;
+    padding: 0 50px;
   }
   .slider-arrow {
-    display: none;
+    display: flex;
+    position: absolute;
+    top: 160px;
+    transform: translateY(-50%);
+    z-index: 20;
+    padding: 10px;
+  }
+  .left-arrow {
+    left: 10px;
+  }
+  .right-arrow {
+    right: 10px;
   }
   .media-content-panel {
     padding: 30px 20px;

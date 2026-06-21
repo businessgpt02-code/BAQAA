@@ -46,8 +46,6 @@ const BaqaaUniverse = () => {
     <section className="baqaa-universe-section">
       {/* Subtle Background Elements */}
       <div className="universe-bg-elements">
-        <div className="universe-floral-watermark top-left"></div>
-        <div className="universe-floral-watermark bottom-right"></div>
         <div className="universe-sparkle s1"></div>
         <div className="universe-sparkle s2"></div>
         <div className="universe-sparkle s3"></div>

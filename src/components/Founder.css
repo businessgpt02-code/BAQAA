@@ -209,3 +209,59 @@
     font-size: 2.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .founder-section {
+    padding: 50px 15px;
+  }
+  
+  .founder-image-box {
+    margin-bottom: -30px;
+  }
+
+  .founder-info-card {
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-top-line {
+    height: 40px;
+    margin-bottom: 15px;
+  }
+
+  .founder-name-editorial {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .meet-label, .name-first, .name-last {
+    font-size: 1.35rem !important;
+    letter-spacing: 0.1em;
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .meet-label {
+    color: #8C8C8C;
+  }
+
+  .founder-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .founder-biography p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    text-align: center;
+    color: #333;
+  }
+}

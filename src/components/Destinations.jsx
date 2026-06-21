@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './Destinations.css';
 
@@ -71,7 +71,7 @@ const destinations = [
     location: 'UAE',
     couple: 'Maryam & Shanveer',
     image: '/destination/destination12.png',
-    objectPosition: '40% center'
+    objectPosition: '40% -10px'
   }
 ];
 
@@ -121,21 +121,31 @@ const AnimatedTravelPath = () => {
 };
 
 const Destinations = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    setIsMobile(media.matches);
+    const listener = (e) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, []);
+
   return (
     <section className="destinations-section" id="destinations">
       <div className="destinations-header text-center">
         <div className="vertical-line-header"></div>
         <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={isMobile ? false : { opacity: 0 }}
+          whileInView={isMobile ? false : { opacity: 1 }}
           viewport={{ once: true }}
           className="dest-pre-title"
         >
           GLOBAL CELEBRATIONS
         </motion.span>
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? false : { opacity: 0, y: 20 }}
+          whileInView={isMobile ? false : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
           className="dest-title"
@@ -150,8 +160,8 @@ const Destinations = () => {
         {destinations.map((dest, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={isMobile ? false : { opacity: 0, y: 50 }}
+            whileInView={isMobile ? false : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="dest-card-refined"
@@ -160,7 +170,10 @@ const Destinations = () => {
               <img 
                 src={dest.image} 
                 alt={dest.name} 
-                style={dest.objectPosition ? { objectPosition: dest.objectPosition } : {}}
+                style={{
+                  ...(dest.objectPosition ? { objectPosition: dest.objectPosition } : {}),
+                  ...(dest.imageStyle || {})
+                }}
               />
               <div className="dest-img-overlay"></div>
             </div>
@@ -185,10 +198,10 @@ const Destinations = () => {
       <div className="destinations-footer-refined">
         <motion.button
           className="btn-more-dest"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          whileHover={isMobile ? {} : { scale: 1.05 }}
+          whileTap={isMobile ? {} : { scale: 0.95 }}
+          initial={isMobile ? false : { opacity: 0 }}
+          whileInView={isMobile ? false : { opacity: 1 }}
           viewport={{ once: true }}
         >
           ALL DESTINATIONS

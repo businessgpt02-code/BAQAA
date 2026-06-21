@@ -60,7 +60,7 @@ const CinematicMemories = () => {
             <iframe
               key={activeFilm.id}
               className="cinematic-video-embed"
-              src={`https://www.youtube.com/embed/${activeFilm.id}`}
+              src={`https://www.youtube.com/embed/${activeFilm.id}?playsinline=1`}
               title={activeFilm.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

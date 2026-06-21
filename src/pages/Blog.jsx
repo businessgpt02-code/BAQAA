@@ -28,33 +28,33 @@ const Blog = () => {
 
   return (
     <div className="blog-page">
-      
+
       {/* HERO SECTION */}
       <section className="blog-hero">
         <div className="blog-hero-bg" style={{ backgroundImage: "url('/blogs/1.jpg')" }}>
           <div className="blog-hero-overlay"></div>
         </div>
-        
+
         <div className="blog-hero-content">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.7 }}
             className="hero-title"
           >
-            Dubai Luxury Wedding Planner & Destination Wedding Journal | BAQAA
+            Dreamweaver & Storyteller | Rachna Chadha — From the Founder’s Heart & Desk
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.9 }}
             className="hero-description"
           >
-            Read inspiring blogs on destination weddings, luxury wedding planning, wedding décor, beach weddings in Dubai, and exclusive behind-the-scenes stories curated by BAQAA.
+            Read inspiring blogs on destination weddings, luxury wedding planning, wedding décor, beach weddings in Dubai, and exclusive behind-the-scenes blogs by our Dreamweaver and Storyteller Rachna Chadha.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 1.1 }}
@@ -68,7 +68,7 @@ const Blog = () => {
 
       {/* Journal Folio (Book Spreads Layout) */}
       <section id="journal-folio" className="journal-folio-container">
-        
+
         <div className="folio-header">
           <span className="folio-subtitle">BAQAA PUBLISHING</span>
           <h2 className="folio-main-title">THE WEDDING JOURNAL</h2>
@@ -76,7 +76,7 @@ const Blog = () => {
         </div>
 
         {/* SPREAD 1: Blog 1 */}
-        <motion.article 
+        <motion.article
           className="book-spread"
           initial="hidden"
           whileInView="visible"
@@ -98,18 +98,18 @@ const Blog = () => {
               <span>VOL. I • NO. 01</span>
               <span>BAQAA ARCHIVES</span>
             </div>
-            
+
             <span className="page-story-num">I</span>
-            
+
             <h1 className="spread-story-title">RACHNA CHADHA — A WEDDING DOCTOR ON CALL 24/7</h1>
-            
+
             <p className="blog-author-signature">By Rachna Chadha</p>
 
             <div className="page-intro-text">
               <p className="blog-paragraph">
                 <span className="blog-dropcap">As</span> the founder and designer of BAQAA with a journey of 35 years plus, my career began in the wonderful city of Dubai and kept growing with the exponential growth of this emirate. I am grateful to have stood tall and sturdy through all the challenging times of recessions and the pandemic. I tirelessly worked with dedication and passion to build my vast portfolio as seen on the website and our social media pages.
               </p>
-              
+
               <p className="blog-paragraph">
                 I work on a host of details for each project to deliver an exclusive and all immersive, memorable celebration / wedding for each client irrespective of budgets.
               </p>
@@ -121,12 +121,12 @@ const Blog = () => {
               <p className="blog-paragraph">
                 I bring trust, expertise and years of strong portfolio to the table as a pioneer of the events and destination weddings industry in UAE with ground infrastructure at all the popular destinations of the world - India, Thailand, Europe, Turkey, Bali, Muscat, Doha & Baku.
               </p>
-              
+
               <p className="blog-paragraph">
                 I named my company BAQAA because its literal Sufi meaning is so apt for the company ethos I follow. BAQAA (Arabic: بقاء baqāʾ), with literal meaning of subsistence or permanency.
               </p>
             </div>
-            
+
             <div className="spread-page-footer">
               <div className="footer-links-row">
                 <span className="page-number-footer">PAGE 01</span>
@@ -139,7 +139,7 @@ const Blog = () => {
             <div className="checklist-spread-container">
               <h4 className="spread-section-title">THE EXECUTION MATRIX</h4>
               <p className="spread-section-subtitle">A glimpse of the details looked into while executing a signature wedding:</p>
-              
+
               <ul className="spread-checklist">
                 <li>Preparation of the budget</li>
                 <li>Design and style of the event</li>
@@ -177,7 +177,7 @@ const Blog = () => {
         <LeafEmblem />
 
         {/* SPREAD 2: Blog 2 */}
-        <motion.article 
+        <motion.article
           className="book-spread"
           initial="hidden"
           whileInView="visible"
@@ -212,7 +212,7 @@ const Blog = () => {
                 The goal of a memorable wedding is to provide an experience that makes guests feel special and celebrated with deep impressions of glamour, elegance and style!
               </p>
             </div>
-            
+
             <div className="spread-page-footer">
               <div className="footer-links-row">
                 <span className="page-number-footer">PAGE 03</span>
@@ -227,7 +227,7 @@ const Blog = () => {
               <p className="spread-section-subtitle">
                 I have always strived to raise the bar, set milestones and leave memorable imprints. I feel extremely grateful that I can continue to do so. As a senior veteran, I am sharing some important aspects which have become my strengths and learnings over the years:
               </p>
-              
+
               <ul className="scrollable-bullet-list">
                 <li>Listen attentively to the client – couple/ parents / families</li>
                 <li>Understand the style and personality of the couple</li>
@@ -265,7 +265,7 @@ const Blog = () => {
         <LeafEmblem />
 
         {/* SPREAD 3: Blog 3 */}
-        <motion.article 
+        <motion.article
           className="book-spread"
           initial="hidden"
           whileInView="visible"
@@ -284,7 +284,7 @@ const Blog = () => {
               <span>VOL. I • NO. 03</span>
               <span>DESTINATION DOSSIER</span>
             </div>
-            
+
             <span className="page-story-num">III</span>
             <h1 className="spread-story-title">DUBAI — A PREMIUM DESTINATION FOR WEDDINGS</h1>
             <p className="blog-author-signature">By Rachna Chadha</p>
@@ -293,20 +293,20 @@ const Blog = () => {
               <p className="blog-paragraph font-serif-paragraph">
                 <span className="blog-dropcap">L</span>ocated on the Arabian Peninsula, the UAE is made up of seven Sheikhdoms (Emirates), with Dubai being the flagship and leading the way in hosting a large number of destination weddings in this glamourous city.
               </p>
-              
+
               <p className="blog-paragraph">
                 Beside the number of world known attractions, exciting range of shopping and luxurious hotels, Dubai is conveniently located between Europe, Africa and Asia, making it easily accessible from around the world. This vibrant city offers perfect weather from November to March.
               </p>
-              
+
               <p className="blog-paragraph">
                 If you've fallen in love with Dubai and have decided to get married under the charming Arabian sky, your options for having a wedding in this emirate are limitless. The different landscapes which are offered by various hotels make the destination wedding in Dubai an unforgettable experience.
               </p>
-              
+
               <p className="blog-paragraph">
                 Every hotel and location has its own charm. BAQAA's destination weddings in Dubai are part of the marketing brochure of many hotel brands. BAQAA has maintained new designs, new ideas and flawless execution for all the destination weddings in Dubai.
               </p>
             </div>
-            
+
             <div className="spread-page-footer">
               <div className="footer-links-row">
                 <span className="page-number-footer">PAGE 05</span>
@@ -320,7 +320,7 @@ const Blog = () => {
               <h4 className="spread-section-title">
                 DESTINATION WEDDINGS IN DUBAI HAVE THE FOLLOWING ADVANTAGES:
               </h4>
-              
+
               <ul className="spread-checklist">
                 <li>Unique, luxury weddings are created here</li>
                 <li>Sunny and comfortable weather between November to March</li>
@@ -356,7 +356,7 @@ const Blog = () => {
         <LeafEmblem />
 
         {/* SPREAD 4: Blog 4 */}
-        <motion.article 
+        <motion.article
           className="book-spread"
           initial="hidden"
           whileInView="visible"
@@ -384,7 +384,7 @@ const Blog = () => {
               <p className="blog-paragraph">
                 <span className="blog-dropcap">A</span> Beach wedding in Dubai has its own charm and magic! Dubai has now, more than ever, become a top destination for weddings and honeymoons as many couples fly from around the world to celebrate their wedding in Dubai.
               </p>
-              
+
               <p className="blog-paragraph">
                 For those living in the city and planning a wedding in this spectacular emirate, beach wedding is an available option for good 6 months of the year. They are some of the most beautiful wedding venues in the Middle East and in the entire world.
               </p>
@@ -414,7 +414,7 @@ const Blog = () => {
             <div className="checklist-spread-container">
               <h4 className="spread-section-title">BEACH WEDDING BLUEPRINTS</h4>
               <p className="spread-section-subtitle">Crucial elements to consider for absolute success:</p>
-              
+
               <ul className="numbered-checklist">
                 <li>
                   <span className="number-index">I</span>

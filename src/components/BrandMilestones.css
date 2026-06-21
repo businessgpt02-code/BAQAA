@@ -196,15 +196,19 @@
 }
 
 @media (max-width: 768px) {
-  .brand-milestones-v2 { padding: 80px 20px; }
-  .milestones-frame { padding: 60px 20px; }
+  .brand-milestones-v2 { padding: 40px 15px; }
+  .milestones-frame { padding: 30px 15px; }
+  .milestones-top-info { margin-bottom: 35px; }
+  .vertical-divider-milestones {
+    height: 40px;
+    margin-bottom: 15px;
+  }
   .stats-showcase {
     flex-direction: column;
-    gap: 80px;
+    gap: 35px;
   }
   .stats-vertical-separator {
-    transform: rotate(90deg);
-    margin: -20px 0;
+    display: none;
   }
   .legacy-number { font-size: 4.5rem; }
   .milestone-main-title { font-size: 1.5rem; }
