@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import CTA from '../components/CTA';
 import './About.css';
@@ -11,15 +11,23 @@ const fadeIn = {
 };
 
 const About = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    setIsMobile(media.matches);
+    const listener = (e) => setIsMobile(e.matches);
+    media.addEventListener('change', listener);
+
     if (window.location.hash) {
       window.requestAnimationFrame(() => {
         document.querySelector(window.location.hash)?.scrollIntoView({ behavior: 'smooth' });
       });
-      return;
+    } else {
+      window.scrollTo(0, 0);
     }
 
-    window.scrollTo(0, 0);
+    return () => media.removeEventListener('change', listener);
   }, []);
 
   return (
@@ -99,6 +107,12 @@ const About = () => {
                   <path d="M48 5 L50 3 L52 5 L50 7 Z" fill="var(--champagne-gold)" />
                   <line x1="55" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="0.5" />
                 </svg>
+              </div>
+
+              {/* Mobile-only image representation below title */}
+              <div className="arched-frame mobile-only-image">
+                <div className="frame-outline"></div>
+                <img src="/ata and aman 2.jpg" alt="Luxury wedding celebration by BAQAA" />
               </div>
               
               <div className="editorial-body">
@@ -483,7 +497,13 @@ const About = () => {
 
         <div className="section-container-luxury">
           {/* TOP HEADER */}
-          <motion.div className="strengths-header-lux" {...fadeIn}>
+          <motion.div 
+            className="strengths-header-lux" 
+            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            whileInView={isMobile ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          >
              <div className="vertical-divider-work"></div>
              <h2 className="work-heading">OUR STRENGTHS</h2>
              <div className="header-bottom-ornament">
@@ -500,8 +520,8 @@ const About = () => {
             {/* LEFT: TALL LUXURY ARCHED PANEL */}
             <motion.div 
               className="arch-panel-container"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              whileInView={isMobile ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2 }}
             >
@@ -557,8 +577,8 @@ const About = () => {
             {/* RIGHT: ELEGANT STAGGERED STRENGTHS GRID */}
             <motion.div 
               className="strengths-elegant-grid"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+              whileInView={isMobile ? { opacity: 1 } : { opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
@@ -573,8 +593,8 @@ const About = () => {
                 <motion.div 
                   key={index} 
                   className={`strength-card-lux ${index % 2 !== 0 ? 'offset-card' : ''}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  whileInView={isMobile ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 * index, duration: 0.8 }}
                 >

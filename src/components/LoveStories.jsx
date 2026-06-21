@@ -148,6 +148,7 @@ const LoveStories = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          onClick={() => window.showComingSoon && window.showComingSoon()}
         >
           VIEW MORE
         </motion.button>

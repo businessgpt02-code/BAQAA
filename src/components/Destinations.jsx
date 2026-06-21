@@ -135,35 +135,20 @@ const Destinations = () => {
     <section className="destinations-section" id="destinations">
       <div className="destinations-header text-center">
         <div className="vertical-line-header"></div>
-        <motion.span
-          initial={isMobile ? false : { opacity: 0 }}
-          whileInView={isMobile ? false : { opacity: 1 }}
-          viewport={{ once: true }}
-          className="dest-pre-title"
-        >
+        <span className="dest-pre-title">
           GLOBAL CELEBRATIONS
-        </motion.span>
-        <motion.h2
-          initial={isMobile ? false : { opacity: 0, y: 20 }}
-          whileInView={isMobile ? false : { opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="dest-title"
-        >
+        </span>
+        <h2 className="dest-title">
           TOP WEDDING DESTINATIONS
-        </motion.h2>
-
+        </h2>
+ 
         <AnimatedTravelPath />
       </div>
-
+ 
       <div className="destinations-grid-refined">
         {destinations.map((dest, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={isMobile ? false : { opacity: 0, y: 50 }}
-            whileInView={isMobile ? false : { opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="dest-card-refined"
           >
             <div className="dest-img-box">
@@ -177,7 +162,7 @@ const Destinations = () => {
               />
               <div className="dest-img-overlay"></div>
             </div>
-
+ 
             <div className="dest-content-area">
               <div className="dest-text-box">
                 <span className="dest-location-tag">{dest.location}</span>
@@ -185,27 +170,20 @@ const Destinations = () => {
                 {dest.couple && <p className="dest-couple-name">{dest.couple}</p>}
                 <div className="dest-accent-line"></div>
               </div>
-
+ 
               <button className="dest-explore-btn">
                 VIEW EXPERIENCE
                 <span className="btn-arrow">→</span>
               </button>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
-
+ 
       <div className="destinations-footer-refined">
-        <motion.button
-          className="btn-more-dest"
-          whileHover={isMobile ? {} : { scale: 1.05 }}
-          whileTap={isMobile ? {} : { scale: 0.95 }}
-          initial={isMobile ? false : { opacity: 0 }}
-          whileInView={isMobile ? false : { opacity: 1 }}
-          viewport={{ once: true }}
-        >
+        <button className="btn-more-dest">
           ALL DESTINATIONS
-        </motion.button>
+        </button>
       </div>
     </section>
   );

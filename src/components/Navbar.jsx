@@ -60,6 +60,8 @@ const Navbar = () => {
             if (item === 'Contact') href = '/contact';
             if (item === 'Blogs') href = '/blog';
 
+            const isComingSoon = ['Weddings', 'Events', 'Portfolio', 'BAQAA BAZAR'].includes(item);
+
             const isActive =
               (item === 'Home' && location.pathname === '/' && !location.hash) ||
               (item === 'About' && location.pathname === '/about') ||
@@ -85,8 +87,15 @@ const Navbar = () => {
                     href={href}
                     className={`nav-link text-editorial ${isActive ? 'active' : ''}`}
                     aria-current={isActive ? 'location' : undefined}
-                    onClick={item === 'BAQAA BAZAR' ? (e) => e.preventDefault() : undefined}
-                    style={item === 'BAQAA BAZAR' ? { cursor: 'default' } : {}}
+                    onClick={(e) => {
+                      if (isComingSoon) {
+                        e.preventDefault();
+                        if (window.showComingSoon) {
+                          window.showComingSoon();
+                        }
+                      }
+                    }}
+                    style={isComingSoon ? { cursor: 'pointer' } : {}}
                   >
                     {item}
                     <span className="underline" />

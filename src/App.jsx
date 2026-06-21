@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import ComingSoonModal from './components/ComingSoonModal';
 
 const Home = () => (
   <main>
@@ -55,6 +56,7 @@ function App() {
       <ScrollToHash />
       <div className="app-container">
         <Navbar />
+        <ComingSoonModal />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

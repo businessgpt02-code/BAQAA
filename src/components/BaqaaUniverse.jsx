@@ -32,7 +32,10 @@ const UniverseRow = ({ logo, label, title, description, ctaText, reverse, index 
           </div>
           <h3 className="universe-row-title">{title}</h3>
           <p className="universe-row-desc">{description}</p>
-          <button className="universe-cta-btn">
+          <button 
+            className="universe-cta-btn"
+            onClick={() => window.showComingSoon && window.showComingSoon()}
+          >
             {ctaText}
           </button>
         </motion.div>
