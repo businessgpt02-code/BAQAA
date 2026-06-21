@@ -22,7 +22,7 @@ const destinations = [
     image: '/destination/destination3.png'
   },
   {
-    name: 'FUJAIRAH & ABU DHABI',
+    name: 'FUJAIRAH',
     location: 'UAE',
     couple: 'Shriya & Vadhiraj',
     image: '/destination/destination4.png',
