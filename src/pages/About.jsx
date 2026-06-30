@@ -12,6 +12,7 @@ const fadeIn = {
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isHeroVideoLoaded, setIsHeroVideoLoaded] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia('(max-width: 768px)');
@@ -41,7 +42,9 @@ const About = () => {
             src="https://player.vimeo.com/video/191335609?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1&playsinline=1&controls=0&background=1"
             frameBorder="0" 
             allow="autoplay; fullscreen; picture-in-picture" 
-            className="hero-video-iframe"
+            loading="eager"
+            className={`hero-video-iframe ${isHeroVideoLoaded ? 'is-loaded' : ''}`}
+            onLoad={() => setIsHeroVideoLoaded(true)}
             title="BAQAA About Hero Video"
           ></iframe>
           <div className="about-hero-overlay"></div>
@@ -146,41 +149,14 @@ const About = () => {
         <div className="founder-container">
           <div className="founder-visual-col">
             <div className="editorial-collage">
-              {/* 1. Background Paper Layers */}
-              <div className="collage-paper paper-1"></div>
-              <div className="collage-paper paper-2"></div>
-              
+
               {/* 4. Arch Portrait */}
               <div className="portrait-arch-wrapper">
                 <img src="/images/founder.png" alt="Rachna Chadha" />
                 <div className="portrait-gold-outline"></div>
               </div>
               
-              {/* 7. Quote Card (Stationery Style) */}
-              <motion.div 
-                className="quote-card-collage"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 1 }}
-              >
-                <div className="quote-card-content">
-                  <span className="quote-serif">“</span>
-                  <p>
-                    Every wedding is not an event — <br/>
-                    it is a journey, a story waiting to be told, <br/>
-                    and a memory designed to last a lifetime.
-                  </p>
-                  <span className="quote-serif flipped">”</span>
-                  <div className="card-mini-ornament">
-                    <svg viewBox="0 0 60 10" preserveAspectRatio="none">
-                      <line x1="0" y1="5" x2="25" y2="5" stroke="var(--champagne-gold)" strokeWidth="0.5" />
-                      <path d="M28 5 L30 3 L32 5 L30 7 Z" fill="var(--champagne-gold)" />
-                      <line x1="35" y1="5" x2="60" y2="5" stroke="var(--champagne-gold)" strokeWidth="0.5" />
-                    </svg>
-                  </div>
-                </div>
-              </motion.div>
+
             </div>
           </div>
           
@@ -421,7 +397,7 @@ const About = () => {
                       <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
                     </svg>
                   </div>
-                  <p className="legacy-desc font-bold gold-text">Strategic <br/> Hotel Partnerships</p>
+                  <p className="legacy-desc font-bold">Strategic <br/> Hotel Partnerships</p>
                   <div className="card-bottom-deco">✦</div>
                 </div>
               </div>
@@ -518,13 +494,7 @@ const About = () => {
 
           <div className="strengths-main-grid">
             {/* LEFT: TALL LUXURY ARCHED PANEL */}
-            <motion.div 
-              className="arch-panel-container"
-              initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              whileInView={isMobile ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2 }}
-            >
+            <div className="arch-panel-container">
               <div className="luxury-arch-card">
                 <div className="arch-card-inner">
                   {/* Top Monogram Area */}
@@ -536,7 +506,7 @@ const About = () => {
                         </svg>
                       </div>
                       <div className="monogram-box">
-                        <img src="/logo/BAQAA2.png" alt="BAQAA Logo" className="monogram-logo-img" />
+                        <img src="/logo/BAQAA3.png" alt="BAQAA Logo" className="monogram-logo-img" />
                       </div>
                       <div className="monogram-lotus">
                         <svg viewBox="0 0 24 24" fill="var(--champagne-gold)">
@@ -572,7 +542,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* RIGHT: ELEGANT STAGGERED STRENGTHS GRID */}
             <motion.div 

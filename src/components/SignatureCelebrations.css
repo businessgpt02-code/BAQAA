@@ -1,5 +1,5 @@
 .signature-section {
-  background-color: #ffffff; /* White to match CinematicMemories */
+  background-color: #FDFCF8; /* Soft ivory (matching Founder section) */
   padding: 0 0 40px 0;
   width: 100%;
   display: flex;
@@ -156,5 +156,41 @@
   }
   .feature-image-panel {
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-header-area {
+    margin-bottom: 42px;
+  }
+
+  .signature-section .work-heading {
+    font-size: 1.55rem !important;
+    letter-spacing: 0.28em;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .signature-section .work-subtitle {
+    width: calc(100% - 56px);
+    max-width: 310px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 0.98rem !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .signature-section .work-heading {
+    font-size: 1.42rem !important;
+    letter-spacing: 0.24em;
+  }
+
+  .signature-section .work-subtitle {
+    max-width: 285px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
   }
 }

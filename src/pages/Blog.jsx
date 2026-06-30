@@ -40,9 +40,11 @@ const Blog = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.7 }}
-            className="hero-title"
+            className="hero-title blog-hero-title"
           >
-            Dreamweaver & Storyteller | Rachna Chadha — From the Founder’s Heart & Desk
+            <span>Dreamweaver & Storyteller</span>
+            <span>Rachna Chadha</span>
+            <span>From the Founder&apos;s Heart & Desk</span>
           </motion.h1>
 
           <motion.p
@@ -101,13 +103,13 @@ const Blog = () => {
 
             <span className="page-story-num">I</span>
 
-            <h1 className="spread-story-title">RACHNA CHADHA — A WEDDING DOCTOR ON CALL 24/7</h1>
+            <h1 className="spread-story-title">A WEDDING DOCTOR ON CALL 24/7</h1>
 
             <p className="blog-author-signature">By Rachna Chadha</p>
 
             <div className="page-intro-text">
               <p className="blog-paragraph">
-                <span className="blog-dropcap">As</span> the founder and designer of BAQAA with a journey of 35 years plus, my career began in the wonderful city of Dubai and kept growing with the exponential growth of this emirate. I am grateful to have stood tall and sturdy through all the challenging times of recessions and the pandemic. I tirelessly worked with dedication and passion to build my vast portfolio as seen on the website and our social media pages.
+                As the founder and designer of BAQAA with a journey of 35 years plus, my career began in the wonderful city of Dubai and kept growing with the exponential growth of this emirate. I am grateful to have stood tall and sturdy through all the challenging times of recessions and the pandemic. I tirelessly worked with dedication and passion to build my vast portfolio as seen on the website and our social media pages.
               </p>
 
               <p className="blog-paragraph">
@@ -203,7 +205,7 @@ const Blog = () => {
 
             <div className="page-intro-text">
               <p className="blog-paragraph">
-                <span className="blog-dropcap">I</span> am a veteran wedding planner & designer in the region. I personally don't believe in participating in the new age award events, as I believe the biggest stamp of appreciation is the testimonials of my clients.
+                I am a veteran wedding planner & designer in the region. I personally don't believe in participating in the new age award events, as I believe the biggest stamp of appreciation is the testimonials of my clients.
               </p>
               <p className="blog-paragraph">
                 I have worked with a creative vision to launch many firsts in most of the high-end prestigious world class hotels and wedding destinations. I have personally established the business of big fat destination weddings at these properties or destinations - in UAE since 2010, Turkey since 2012 & Portugal since 2017.
@@ -286,12 +288,12 @@ const Blog = () => {
             </div>
 
             <span className="page-story-num">III</span>
-            <h1 className="spread-story-title">DUBAI — A PREMIUM DESTINATION FOR WEDDINGS</h1>
+            <h1 className="spread-story-title">DUBAI<br />A PREMIUM DESTINATION FOR WEDDINGS</h1>
             <p className="blog-author-signature">By Rachna Chadha</p>
 
             <div className="page-intro-text">
               <p className="blog-paragraph font-serif-paragraph">
-                <span className="blog-dropcap">L</span>ocated on the Arabian Peninsula, the UAE is made up of seven Sheikhdoms (Emirates), with Dubai being the flagship and leading the way in hosting a large number of destination weddings in this glamourous city.
+                Located on the Arabian Peninsula, the UAE is made up of seven Sheikhdoms (Emirates), with Dubai being the flagship and leading the way in hosting a large number of destination weddings in this glamourous city.
               </p>
 
               <p className="blog-paragraph">
@@ -382,7 +384,7 @@ const Blog = () => {
 
             <div className="page-intro-text">
               <p className="blog-paragraph">
-                <span className="blog-dropcap">A</span> Beach wedding in Dubai has its own charm and magic! Dubai has now, more than ever, become a top destination for weddings and honeymoons as many couples fly from around the world to celebrate their wedding in Dubai.
+                A Beach wedding in Dubai has its own charm and magic! Dubai has now, more than ever, become a top destination for weddings and honeymoons as many couples fly from around the world to celebrate their wedding in Dubai.
               </p>
 
               <p className="blog-paragraph">
@@ -474,7 +476,173 @@ const Blog = () => {
             <div className="spread-page-footer">
               <div className="footer-links-row single-link">
                 <a href="https://www.baqaawdc.com" target="_blank" rel="noopener noreferrer" className="spread-action-link">WWW.BAQAAWDC.COM</a>
+                <a href="https://pin.it/5MWJJ34WG" target="_blank" rel="noopener noreferrer" className="spread-action-link">PINTEREST</a>
                 <span className="page-number-footer">PAGE 08</span>
+              </div>
+            </div>
+          </div>
+        </motion.article>
+
+        <LeafEmblem />
+
+        {/* SPREAD 5: Blog 5 */}
+        <motion.article
+          className="book-spread"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+        >
+          <div className="folio-corner top-left"></div>
+          <div className="folio-corner top-right"></div>
+          <div className="folio-corner bottom-left"></div>
+          <div className="folio-corner bottom-right"></div>
+          <div className="spread-gutter"></div>
+
+          <div className="spread-page page-left">
+            <div className="page-header-stamp">
+              <span>VOL. I • NO. 05</span>
+              <span>INTIMATE CELEBRATIONS</span>
+            </div>
+
+            <span className="page-story-num">V</span>
+            <h1 className="spread-story-title">Fuschia Flow</h1>
+            <p className="blog-author-signature">By Rachna Chadha</p>
+
+            <div className="page-intro-text">
+              <p className="blog-paragraph">
+                During the times of social distancing, celebrations are still a part of human interaction. Engagements with 15 people can turn into an event beyond the expectations of the family right in their homes!
+              </p>
+
+              <p className="blog-paragraph">
+                Occasions can still be celebrated as exciting life experiences with skillful planning and smart thinking to create magic with budgets. From the right color scheme for the flowers to enhance the Bride's attire to figuring out which way the curtains are going to fall to enhance the lighting while creating a warm, intimate space for dining right in the grand lobby of the house, each detail has to be thought through meticulously.
+              </p>
+
+            </div>
+
+            <div className="spread-page-footer">
+              <div className="footer-links-row">
+                <span className="page-number-footer">PAGE 09</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="spread-page page-right">
+            <div className="page-intro-text">
+              <p className="blog-paragraph">
+                500 flowers were used where each had its own purpose, whether as a part of the floral wave around the Bridal sofa or on the candelabras, the coffee tables with hundreds of candlelights! The Fuschia Flow theme of flowers for this event was further accentuated against the ivory decorative furniture and a carpet which was all designed by our Founder and Designer, Rachna Chadha, in one day & executed in two days!
+              </p>
+
+              <p className="blog-paragraph">
+                To view more of such unforgettable moments created by BAQAA please visit our website www.baqaawdc.com
+              </p>
+            </div>
+
+            <div className="spread-philosophical-block">
+              <blockquote className="spread-pull-quote">
+                "Occasions can still be celebrated as exciting life experiences with skillful planning and smart thinking to create magic with budgets."
+              </blockquote>
+            </div>
+
+            <div className="spread-page-footer">
+              <div className="footer-links-row single-link">
+                <a href="https://www.baqaawdc.com" target="_blank" rel="noopener noreferrer" className="spread-action-link">WWW.BAQAAWDC.COM</a>
+                <span className="page-number-footer">PAGE 10</span>
+              </div>
+            </div>
+          </div>
+        </motion.article>
+
+        <LeafEmblem />
+
+        {/* SPREAD 6: Blog 6 */}
+        <motion.article
+          className="book-spread"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+        >
+          <div className="folio-corner top-left"></div>
+          <div className="folio-corner top-right"></div>
+          <div className="folio-corner bottom-left"></div>
+          <div className="folio-corner bottom-right"></div>
+          <div className="spread-gutter"></div>
+
+          <div className="spread-page page-left">
+            <div className="page-header-stamp">
+              <span>VOL. I • NO. 06</span>
+              <span>COVID WEDDINGS</span>
+            </div>
+
+            <span className="page-story-num">VI</span>
+            <h1 className="spread-story-title covid-wedding-title">
+              A Covid Wedding
+              <span>Aug <span className="covid-year">2021</span></span>
+            </h1>
+            <p className="blog-author-signature">By Rachna Chadha</p>
+
+            <div className="page-intro-text">
+              <p className="blog-paragraph">
+                Mehek and Mueen’s wedding was successfully celebrated with a morning Nikah at their beautiful family home and an evening Mehndi/Sangeet on 7th August at the Palace Downtown.
+              </p>
+
+              <p className="blog-paragraph">
+                This was followed by the wedding reception on 8th August 2021 at the Waldorf Astoria, Palm.
+              </p>
+
+              <p className="blog-paragraph">
+                BAQAA has a heartwarming story to share about this wedding. Mehak Wani, an accomplished, capable, independent young cybercrime engineer for Deloitte, is a Kashmiri working and residing in Belgium. Mueen Haka, a senior finance engineer for Nokia, resides and works in Canada. Mehak approached the founder and designer of BAQAA, Rachna Chadha in April through Google, having checked the portfolio of the company. Their large traditional wedding with a large community of friends and family was scheduled for May in Kashmir. However, Covid changed it all!
+              </p>
+
+              <p className="blog-paragraph">
+                With constant guidance and positive support from Rachna Chadha, Mehak started planning the wedding in Dubai.
+              </p>
+
+              <p className="blog-paragraph">
+                Dubai was the best option with safe covid guidelines for weddings. Dubai was a convenient destination for all to congregate from India, Europe, and Canada. Even with this decision taken, every few days the problems of travel restrictions kept hindering all the plans.
+              </p>
+
+            </div>
+
+            <div className="spread-page-footer">
+              <div className="footer-links-row">
+                <span className="page-number-footer">PAGE 11</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="spread-page page-right">
+            <div className="page-intro-text">
+              <p className="blog-paragraph">
+                The main concern was about the travel plans of Mehak's parents from Kashmir to Dubai. Finally, they were sent to Doha to quarantine in a hotel for two weeks. With no friends or family there, Mehak took two trips up and down to ensure they were comfortable and cheerful. However, the day they had to take their flight to Dubai they were not allowed to board! They were asked to quarantine for another day making it a chaotic 48 hours of finding solutions once again. The Covid mayhem continued!
+              </p>
+
+              <p className="blog-paragraph">
+                In the meantime, other wedding designs and planning companies were recommended to the couple closer to the final dates, who were pushing hard for the business. In Mueen's words "Mehak's heart was set on Mrs. Chadha and BAQAA. She had deep faith in her and the company in spite of meeting other companies upon the insistence of some family members who reside in Dubai.
+              </p>
+
+              <p className="blog-paragraph">
+                After all was clear about the arrival of the parents, literally 3 days before the celebrations, the contract was signed and sealed with BAQAA. BAQAA ensured that the décor, styling, technical production of sound, décor/ambience lighting, and the complete overall experience was like a dream for the couple. BAQAA added a lot of beautiful surprises for the couple at all the events, not limiting the creativity to any budgets! Mrs. Rachna Chadha has always ensured every event/wedding delivered leaves a deep imprint of her passion!
+              </p>
+
+              <p className="blog-paragraph">
+                The human spirit and love can conquer all. Covid has taught us that we must be grateful for each moment of happiness in hand and pray for the best in the future.
+              </p>
+
+              <p className="blog-paragraph">
+                BAQAA has created some great lifetime memories for many clients during Covid, budgets being no criteria to deliver the best at all times!
+              </p>
+
+              <p className="blog-paragraph">
+                To view more of such unforgettable moments created by BAQAA please visit our website www.baqaawdc.com
+              </p>
+            </div>
+
+            <div className="spread-page-footer">
+              <div className="footer-links-row single-link">
+                <a href="https://www.baqaawdc.com" target="_blank" rel="noopener noreferrer" className="spread-action-link">WWW.BAQAAWDC.COM</a>
+                <span className="page-number-footer">PAGE 12</span>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 .baqaa-universe-section {
-  background-color: #ffffff; /* Pure white to match Love Stories */
+  background-color: #FDFCF8; /* Soft ivory (matching Founder section) */
   padding: 20px 5% 0 5%;
   position: relative;
   overflow: hidden;
@@ -54,7 +54,7 @@
 .universe-vertical-line {
   width: 1px;
   height: 80px;
-  background: linear-gradient(to bottom, transparent, #D4AF37, transparent);
+  background: linear-gradient(to bottom, transparent, #C0C0C0, transparent);
   margin-bottom: 20px;
   opacity: 0.5;
 }
@@ -72,7 +72,7 @@
 .universe-header-divider {
   width: 180px;
   height: 1px;
-  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  background: linear-gradient(to right, transparent, #C0C0C0, transparent);
   opacity: 0.5;
 }
 

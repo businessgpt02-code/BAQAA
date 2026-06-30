@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -17,6 +18,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import BazarTabel from './pages/BazarTabel';
 import ComingSoonModal from './components/ComingSoonModal';
 
 const Home = () => (
@@ -39,8 +41,11 @@ const Home = () => (
 const ScrollToHash = () => {
   const { pathname, hash } = useLocation();
 
-  React.useEffect(() => {
-    if (!hash) return;
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      return;
+    }
 
     window.requestAnimationFrame(() => {
       document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
@@ -62,6 +67,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/baqaa-bazar" element={<BazarTabel />} />
         </Routes>
         <Footer />
       </div>

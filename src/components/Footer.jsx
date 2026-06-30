@@ -12,10 +12,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-heading">GET AROUND</h4>
           <ul className="footer-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT THE COMPANY</a></li>
-            <li><a href="#founder">MEET THE FOUNDER</a></li>
-            <li><a href="#work">OUR WORK</a></li>
+            <li><Link to="/#home">HOME</Link></li>
+            <li><Link to="/about#story">ABOUT THE COMPANY</Link></li>
+            <li><Link to="/about#founder">MEET THE FOUNDER</Link></li>
+            <li><Link to="/#work">OUR WORK</Link></li>
           </ul>
         </div>
 
@@ -23,9 +23,9 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-heading">LINKS</h4>
           <ul className="footer-links">
-            <li><a href="#tribe">MEET THE TRIBE</a></li>
-            <li><a href="#destinations">DESTINATIONS</a></li>
-            <li><a href="#blog">BLOG</a></li>
+            <li><Link to="/about#founder">MEET THE TRIBE</Link></li>
+            <li><Link to="/#destinations">DESTINATIONS</Link></li>
+            <li><Link to="/blog">BLOG</Link></li>
             <li><Link to="/contact">CONTACT US</Link></li>
           </ul>
         </div>
@@ -33,7 +33,7 @@ const Footer = () => {
         {/* Column 3: Logo (Center) */}
         <div className="footer-col logo-col">
           <div className="footer-logo-box">
-            <img src="/logo/BAQAA1.png" alt="BAQAA Logo" className="footer-logo-img" />
+            <img src="/logo.png" alt="BAQAA Logo" className="footer-logo-img" />
           </div>
         </div>
 

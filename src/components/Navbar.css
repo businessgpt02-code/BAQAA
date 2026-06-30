@@ -53,7 +53,7 @@
 }
 
 .navbar.scrolled .nav-logo a {
-  height: 45px;
+  height: 54px;
 }
 
 .logo-img:hover {
@@ -115,6 +115,8 @@
   display: none;
   cursor: pointer;
   padding: 10px;
+  border: 0;
+  background: transparent;
   z-index: 100;
   color: var(--dark-charcoal);
   transition: color 0.3s ease;

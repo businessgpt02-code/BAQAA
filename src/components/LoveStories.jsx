@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './LoveStories.css';
 
@@ -83,6 +83,17 @@ const AnimatedLoop = () => {
 };
 
 const LoveStories = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    const updateIsMobile = () => setIsMobile(media.matches);
+
+    updateIsMobile();
+    media.addEventListener('change', updateIsMobile);
+    return () => media.removeEventListener('change', updateIsMobile);
+  }, []);
+
   return (
     <section className="love-stories-section" id="weddings">
       <div className="texture-overlay"></div>
@@ -113,11 +124,6 @@ const LoveStories = () => {
       </div>
 
       <div className="polaroid-wrapper">
-        {/* Baby's breath accents */}
-        <div className="floral-decoration fl-1"><img src="/images/babys_breath.png" alt="" /></div>
-        <div className="floral-decoration fl-2"><img src="/images/babys_breath.png" alt="" /></div>
-        <div className="floral-decoration fl-3"><img src="/images/babys_breath.png" alt="" /></div>
-
         <div className="stories-grid-refined">
           {stories.map((story, index) => (
             <motion.div
@@ -127,7 +133,7 @@ const LoveStories = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
               className="polaroid-card-refined"
-              style={{ rotate: `${story.rotation}deg` }}
+              style={{ rotate: isMobile ? '0deg' : `${story.rotation}deg` }}
             >
               <div className="masking-tape"></div>
               <div className="polaroid-img-box">

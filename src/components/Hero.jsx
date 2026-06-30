@@ -14,26 +14,85 @@ const images = [
   '/hero%20section/herosection7.jpeg',
   '/hero%20section/herosection8.jpeg',
   '/hero%20section/herosection9.jpeg',
-  '/hero%20section/herosection10.jpeg'
+  '/hero%20section/herosection11.jpeg'
 ];
+
+const mobileImages = {
+  0: '/hero%20section/herosection1_mobile.png',
+  1: '/destination/destination2_mobile.png',
+  3: '/hero%20section/herosection4_mobile.png',
+  4: '/hero%20section/herosection5_mobile.png',
+  5: '/hero%20section/herosection6_mobile.png',
+  6: '/hero%20section/herosection7_mobile.png',
+  7: '/hero%20section/herosection8_mobile.png'
+};
+
+const laptopImages = {
+  0: '/hero%20section/herosection1_laptop.png'
+};
+
+const mobileImagePositions = {
+  0: '39% center',
+  4: '-42vw center',
+  5: '-34vw center'
+};
+
+const mobileImageSizes = {
+  0: '100% auto',
+  4: '145% auto',
+  5: '145% auto'
+};
+
+const laptopImageShifts = {
+  4: '18vw',
+  5: '18vw'
+};
+
+const laptopImageSizes = {
+  5: '105% auto',
+  6: '121% auto'
+};
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 6000);
+    }, 3000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px)');
+    setIsMobile(media.matches);
+    const listener = (event) => setIsMobile(event.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 769px) and (max-width: 2200px)');
+    setIsLaptop(media.matches);
+    const listener = (event) => setIsLaptop(event.matches);
+    media.addEventListener('change', listener);
+    return () => media.removeEventListener('change', listener);
   }, []);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % images.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  const heroImage = isMobile && mobileImages[currentSlide]
+    ? mobileImages[currentSlide]
+    : isLaptop && laptopImages[currentSlide]
+      ? laptopImages[currentSlide]
+      : images[currentSlide];
 
   return (
     <section className="hero-section" id="home">
       <div className="hero-slider">
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.div
             key={currentSlide}
             className="hero-slide"
@@ -44,7 +103,14 @@ const Hero = () => {
           >
             <div
               className="hero-bg"
-              style={{ backgroundImage: `url(${images[currentSlide]})` }}
+              style={{ 
+                backgroundImage: `url(${heroImage})`,
+                '--hero-position': currentSlide === 0 ? 'right center' : 'center 15%',
+                '--hero-laptop-size': laptopImageSizes[currentSlide] || '115% auto',
+                '--hero-laptop-shift-left': laptopImageShifts[currentSlide] || '0px',
+                '--hero-mobile-position': mobileImagePositions[currentSlide] || 'center center',
+                '--hero-mobile-size': mobileImageSizes[currentSlide] || 'cover'
+              }}
             />
             <div className="hero-overlay"></div>
           </motion.div>

@@ -312,7 +312,7 @@ const Contact = () => {
         description: 'BAQAA is a Dubai luxury wedding and event planning company specializing in destination weddings, bespoke celebrations, floral design, decor, hospitality, and turnkey event execution.',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Al manana warehouse, Street #6A, Warehouse 5, Al Quoz Industrial Area 3',
+          streetAddress: '30, 6A Street, Warehouse 5, Al Quoz',
           addressLocality: 'Dubai',
           addressCountry: 'AE'
         },
@@ -578,7 +578,7 @@ const Contact = () => {
           <div className="contact-detail-list">
             <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="contact-detail-item">
               <MapPin size={18} strokeWidth={1.4} aria-hidden="true" />
-              <span>Al Manana Warehouse, Al Quoz, Dubai, UAE</span>
+              <span>30, 6A Street, Warehouse 5, Al Quoz, Dubai</span>
             </a>
             <a href="mailto:info@baqaawdc.com" className="contact-detail-item">
               <Mail size={18} strokeWidth={1.4} aria-hidden="true" />

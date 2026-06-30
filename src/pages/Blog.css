@@ -77,6 +77,12 @@
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.blog-hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18em;
+}
+
 .hero-description {
   font-family: var(--font-sans);
   font-size: clamp(1.1rem, 1.4vw, 1.35rem);
@@ -375,6 +381,19 @@
   font-weight: 300;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+.covid-wedding-title span {
+  display: block;
+  font-size: 1.25em;
+  margin-top: 0.12em;
+}
+
+.covid-wedding-title .covid-year {
+  display: inline;
+  font-size: 1em;
+  margin-top: 0;
+  font-variant-numeric: lining-nums;
 }
 
 .spread-story-title.large-headline {

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './Destinations.css';
 
@@ -120,18 +120,7 @@ const AnimatedTravelPath = () => {
   );
 };
 
-const Destinations = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia('(max-width: 768px)');
-    setIsMobile(media.matches);
-    const listener = (e) => setIsMobile(e.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, []);
-
-  return (
+const Destinations = () => (
     <section className="destinations-section" id="destinations">
       <div className="destinations-header text-center">
         <div className="vertical-line-header"></div>
@@ -186,7 +175,6 @@ const Destinations = () => {
         </button>
       </div>
     </section>
-  );
-};
+);
 
 export default Destinations;

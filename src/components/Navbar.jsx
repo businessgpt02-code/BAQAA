@@ -30,7 +30,7 @@ const Navbar = () => {
               className={`logo-img logo-default ${!scrolled ? 'visible' : ''}`} 
             />
             <img 
-              src="/logo/BAQAA1.png" 
+              src="/logo.png" 
               alt="BAQAA" 
               className={`logo-img logo-scrolled ${scrolled ? 'visible' : ''}`} 
             />
@@ -38,15 +38,16 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger Icon */}
-        <div 
+        <button 
+          type="button"
           className={`nav-hamburger ${menuOpen ? 'open' : ''}`} 
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
-          role="button"
           aria-expanded={menuOpen}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </div>
+        </button>
+        
         
         <ul className={`nav-links ${menuOpen ? 'mobile-open' : ''}`}>
           {['Home', 'About', 'Weddings', 'Events', 'Portfolio', 'Blogs', 'BAQAA BAZAR', 'Contact'].map((item) => {
@@ -54,30 +55,32 @@ const Navbar = () => {
             let sectionId = item === 'Blogs' ? 'journal' : item.toLowerCase();
             let href = isHome ? `#${sectionId}` : `/#${sectionId}`;
             
-            if (item === 'BAQAA BAZAR') href = '#';
+            if (item === 'BAQAA BAZAR') href = '/baqaa-bazar';
             if (item === 'Home') href = '/';
             if (item === 'About') href = '/about';
             if (item === 'Contact') href = '/contact';
             if (item === 'Blogs') href = '/blog';
 
-            const isComingSoon = ['Weddings', 'Events', 'Portfolio', 'BAQAA BAZAR'].includes(item);
+            const isComingSoon = ['Weddings', 'Events', 'Portfolio'].includes(item);
 
             const isActive =
               (item === 'Home' && location.pathname === '/' && !location.hash) ||
               (item === 'About' && location.pathname === '/about') ||
               (item === 'Contact' && location.pathname === '/contact') ||
               (item === 'Blogs' && location.pathname === '/blog') ||
+              (item === 'BAQAA BAZAR' && location.pathname === '/baqaa-bazar') ||
               (!['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR', 'Weddings'].includes(item) &&
                 location.pathname === '/' &&
                 location.hash === `#${sectionId}`);
 
             return (
-              <li key={item} onClick={closeMenu}>
-                {['Home', 'About', 'Contact', 'Blogs'].includes(item) ? (
+              <li key={item}>
+                {['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR'].includes(item) ? (
                   <Link 
                     to={href}
                     className={`nav-link text-editorial ${isActive ? 'active' : ''}`}
                     aria-current={isActive ? 'page' : undefined}
+                    onClick={closeMenu}
                   >
                     {item}
                     <span className="underline" />
@@ -94,6 +97,7 @@ const Navbar = () => {
                           window.showComingSoon();
                         }
                       }
+                      closeMenu();
                     }}
                     style={isComingSoon ? { cursor: 'pointer' } : {}}
                   >

@@ -6,7 +6,7 @@ const mediaData = [
   {
     image: '/media/8.jpg',
     quote: 'A captivating editorial feature celebrating the inspiring journey of Rachna Chadha, the visionary behind BAQAA. The feature highlights her decades of expertise in luxury weddings, destination celebrations, creative storytelling, and timeless event experiences that have redefined elegance and glamour across the industry.',
-    publication: 'VOGUE ARABIA WEDDINGS',
+    publication: 'ARABIA WEDDINGS',
     link: 'Visionary Leadership & Luxury Wedding Editorial'
   },
   {
@@ -116,7 +116,7 @@ const MediaPress = () => {
                 <div className="quote-mark close">”</div>
                 
                 <div className="publication-info">
-                  <h4 className="pub-name">- {mediaData[currentIndex].publication}</h4>
+                  <h4 className="pub-name">&mdash; {mediaData[currentIndex].publication}</h4>
                   <p className="pub-link">{mediaData[currentIndex].link}</p>
                 </div>
               </div>

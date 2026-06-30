@@ -50,15 +50,25 @@ const Featured = () => {
         >
           <h2 className="brand-heading">THE MEANING OF BAQAA</h2>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="brand-description"
+            className="brand-description-container"
           >
-            BAQAA is inspired by the Sufi philosophy of eternal presence — a state where beauty, emotion, and meaningful moments continue to live far beyond time. Rooted in timeless artistry and soulful storytelling, every BAQAA celebration is designed to leave an enduring impression that becomes part of your legacy.
-          </motion.p>
+            <p className="brand-description-primary">
+              In Sufi philosophy, BAQAA signifies eternal presence — that which remains long after the moment has passed. This belief is at the heart of everything we create.
+            </p>
+            <div className="brand-quotes">
+              <p className="brand-quote-item">
+                “Rooted in Sufi thought, BAQAA represents timelessness and enduring essence — celebrations designed to live on as legacy.”
+              </p>
+              <p className="brand-quote-item">
+                “BAQAA is the state of permanence — where love, intention and beauty do not fade, but endure.”
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
 
       </div>

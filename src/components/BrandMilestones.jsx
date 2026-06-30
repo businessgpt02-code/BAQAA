@@ -37,9 +37,9 @@ const StatItem = ({ label, number, index }) => {
       <div className="legacy-label-wrapper">
         <div className="year-ornament">
           <svg viewBox="0 0 100 10" preserveAspectRatio="none">
-            <line x1="0" y1="5" x2="40" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
-            <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="var(--champagne-gold)" />
-            <line x1="60" y1="5" x2="100" y2="5" stroke="var(--champagne-gold)" strokeWidth="1" />
+            <line x1="0" y1="5" x2="40" y2="5" stroke="#C0C0C0" strokeWidth="1" />
+            <path d="M45 5 L50 0 L55 5 L50 10 Z" fill="#C0C0C0" />
+            <line x1="60" y1="5" x2="100" y2="5" stroke="#C0C0C0" strokeWidth="1" />
           </svg>
         </div>
         <span className="legacy-label">
@@ -96,7 +96,7 @@ const BrandMilestones = () => {
             <StatItem
               index={1}
               label="YEARS LEADING LUXURY DESTINATION WEDDINGS"
-              number="15"
+              number="16"
             />
           </div>
         </div>

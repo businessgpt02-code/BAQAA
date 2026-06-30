@@ -42,7 +42,7 @@ const ComingSoonModal = () => {
         <div className="coming-soon-inner">
           <div className="coming-soon-monogram">
             <div className="monogram-glow"></div>
-            <img src="/logo/BAQAA2.png" alt="BAQAA" className="coming-soon-logo" />
+            <img src="/logo/BAQAA3.png" alt="BAQAA" className="coming-soon-logo" />
           </div>
 
           <div className="coming-soon-ornament">
