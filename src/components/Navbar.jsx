@@ -30,7 +30,7 @@ const Navbar = () => {
               className={`logo-img logo-default ${!scrolled ? 'visible' : ''}`} 
             />
             <img 
-              src="/logo.png" 
+              src="/logo.png"
               alt="BAQAA" 
               className={`logo-img logo-scrolled ${scrolled ? 'visible' : ''}`} 
             />

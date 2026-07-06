@@ -1,26 +1,27 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './BazarTabel.css';
-import {
-  CalendarDays,
-  Leaf,
-  MapPin,
-  Truck
-} from 'lucide-react';
 
-const WhatsAppIcon = () => (
-  <svg className="catalogue-brand-icon" viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.04 3.2c-7.03 0-12.76 5.72-12.76 12.76 0 2.25.59 4.45 1.72 6.39L3.16 29l6.82-1.79a12.72 12.72 0 0 0 6.06 1.54h.01c7.03 0 12.76-5.72 12.76-12.76S23.08 3.2 16.04 3.2Zm0 23.39h-.01c-1.94 0-3.84-.52-5.5-1.51l-.39-.23-4.05 1.06 1.08-3.95-.25-.41a10.56 10.56 0 0 1-1.62-5.59c0-5.87 4.78-10.64 10.65-10.64 2.84 0 5.52 1.11 7.53 3.12a10.58 10.58 0 0 1 3.12 7.53c0 5.86-4.78 10.62-10.66 10.62Zm5.84-7.96c-.32-.16-1.9-.94-2.19-1.05-.29-.11-.5-.16-.72.16-.21.32-.82 1.05-1.01 1.27-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z" />
+const ConnectInstagramIcon = () => (
+  <svg className="bazar-connect-instagram-icon" viewBox="0 0 32 32" aria-hidden="true">
+    <rect x="7" y="7" width="18" height="18" rx="5.2" />
+    <circle cx="16" cy="16" r="4.7" />
+    <circle cx="21.2" cy="10.9" r="1.1" />
   </svg>
 );
 
-const InstagramIcon = () => (
-  <svg className="catalogue-brand-icon" viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16 5.4c3.45 0 3.86.01 5.22.08 1.26.06 1.94.27 2.39.44.6.23 1.03.51 1.48.96.45.45.73.88.96 1.48.17.45.38 1.13.44 2.39.06 1.36.08 1.77.08 5.22s-.01 3.86-.08 5.22c-.06 1.26-.27 1.94-.44 2.39-.23.6-.51 1.03-.96 1.48-.45.45-.88.73-1.48.96-.45.17-1.13.38-2.39.44-1.36.06-1.77.08-5.22.08s-3.86-.01-5.22-.08c-1.26-.06-1.94-.27-2.39-.44-.6-.23-1.03-.51-1.48-.96-.45-.45-.73-.88-.96-1.48-.17-.45-.38-1.13-.44-2.39-.06-1.36-.08-1.77-.08-5.22s.01-3.86.08-5.22c.06-1.26.27-1.94.44-2.39.23-.6.51-1.03.96-1.48.45-.45.88-.73 1.48-.96.45-.17 1.13-.38 2.39-.44 1.36-.06 1.77-.08 5.22-.08Zm0-2.33c-3.51 0-3.95.02-5.33.08-1.38.06-2.32.28-3.14.6-.85.33-1.57.77-2.29 1.49-.72.72-1.16 1.44-1.49 2.29-.32.82-.54 1.76-.6 3.14-.06 1.38-.08 1.82-.08 5.33s.02 3.95.08 5.33c.06 1.38.28 2.32.6 3.14.33.85.77 1.57 1.49 2.29.72.72 1.44 1.16 2.29 1.49.82.32 1.76.54 3.14.6 1.38.06 1.82.08 5.33.08s3.95-.02 5.33-.08c1.38-.06 2.32-.28 3.14-.6.85-.33 1.57-.77 2.29-1.49.72-.72 1.16-1.44 1.49-2.29.32-.82.54-1.76.6-3.14.06-1.38.08-1.82.08-5.33s-.02-3.95-.08-5.33c-.06-1.38-.28-2.32-.6-3.14-.33-.85-.77-1.57-1.49-2.29-.72-.72-1.44-1.16-2.29-1.49-.82-.32-1.76-.54-3.14-.6-1.38-.06-1.82-.08-5.33-.08Z" />
-    <path d="M16 9.36A6.64 6.64 0 1 0 16 22.64 6.64 6.64 0 0 0 16 9.36Zm0 10.95A4.31 4.31 0 1 1 16 11.69a4.31 4.31 0 0 1 0 8.62Z" />
-    <circle cx="22.9" cy="9.1" r="1.55" />
+const ConnectWhatsAppIcon = () => (
+  <svg className="bazar-connect-whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16.04 3.2c-7.03 0-12.76 5.72-12.76 12.76 0 2.25.59 4.45 1.72 6.39L3.16 29l6.82-1.79a12.72 12.72 0 0 0 6.06 1.54h.01c7.03 0 12.76-5.72 12.76-12.76S23.08 3.2 16.04 3.2Z" />
+    <path d="M21.88 18.63c-.32-.16-1.9-.94-2.19-1.05-.29-.11-.5-.16-.72.16-.21.32-.82 1.05-1.01 1.27-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.5.14-.66.15-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z" />
   </svg>
 );
+
+const bazarShowcaseImages = [
+  { src: '/BAZAR/1.png', alt: 'BAQAA Bazar floral arrangement detail' },
+  { src: '/BAZAR/2.png', alt: 'BAQAA Bazar tablescape styling detail' },
+  { src: '/BAZAR/3.png', alt: 'BAQAA Bazar curated celebration detail' }
+];
 
 const themes = [
   {
@@ -94,14 +95,6 @@ const themes = [
     desc: 'Warm textures, dried elements, and earthy tones for a free-spirited feel.',
     img: '/BAQAA BAZAR/9.png',
     catalogueDesc: 'Inspired from the change which autumn brings as the year unfolds. These special floral arrangements and tablescapes bring forth the earth’s ability to change. Gift it or celebrate intimate occasions with your family in your beautiful home.'
-  },
-  {
-    id: 'rustic-winter',
-    name: 'Rustic Winter',
-    mood: 'Festive . Warm . Rustic',
-    desc: 'Cozy and inviting, incorporating seasonal greens, deep reds, and woodland charm.',
-    img: '/BAQAA BAZAR/11.png',
-    catalogueDesc: 'Inspired from the warm fireplaces, wholesome food, and family love. These special floral arrangements and tablescapes beckon the New Year with hope. Gift it or celebrate intimate occasions with your family in your beautiful home.'
   }
 ];
 
@@ -112,14 +105,6 @@ const BazarTabel = () => {
 
   const whatsappNumber = "+971554968810";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  const formattedWhatsappNumber = "+971 55 496 8810";
-  const catalogueInfo = [
-    { icon: CalendarDays, text: 'Minimum 5 Days Pre-Order' },
-    { icon: Leaf, text: 'Bespoke Floral Styling' },
-    { icon: MapPin, text: 'Dubai Orders Only' },
-    { icon: Truck, text: 'Other Emirates By Arrangement' }
-  ];
-  const bouquetOptions = ['PRETTY', 'GLORIOUS', 'DAZZLE'];
 
   return (
     <div className="bazar-page">
@@ -160,7 +145,24 @@ const BazarTabel = () => {
         </div>
       </section>
 
-      {/* 2. BRAND STORY SECTION */}
+      {/* 2. BROCHURE INTRO SECTION */}
+      <motion.section
+        className="bazar-brochure-intro"
+        initial={{ opacity: 0, y: 36 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
+      >
+        <div className="brochure-shell">
+          <img className="brochure-logo" src="/universe/BAQAA3.png" alt="BAQAA bāzār & tābel" />
+          <p className="brochure-label">BROCHURE</p>
+          <p className="brochure-tagline">
+            A passionate &amp; community driven vertical of BAQAA Glamour Weddings &amp; Events
+          </p>
+        </div>
+      </motion.section>
+
+      {/* 3. BRAND STORY SECTION */}
       <section className="bazar-story section">
         <div className="story-ambient-line story-ambient-line-top"></div>
         <div className="story-ambient-line story-ambient-line-bottom"></div>
@@ -173,12 +175,10 @@ const BazarTabel = () => {
             transition={{ duration: 0.9, delay: 0.12, ease: [0.19, 1, 0.22, 1] }}
           >
             <div className="story-content-frame">
-              <div className="story-kicker-mark" aria-hidden="true">
-                <span></span>
-                <Leaf size={18} strokeWidth={1.2} />
-                <span></span>
-              </div>
-              <h2 className="heading-md mb-6">A Story of Resilience & Artistry</h2>
+              <div className="story-vertical-line" aria-hidden="true"></div>
+              <h2 className="heading-md mb-6 bazar-story-title">
+                <span>OUR STORY</span>
+              </h2>
               <div className="story-text">
                 <p>
                   Born in a moment when the world stood still in 2020, within the warmth of our founder’s home, this is a story of resilience, creativity and heart. A thoughtful vertical created to support florists and skilled artisans, it was built with a purpose, to sustain livelihoods and uplift daily wage workers through challenging times.
@@ -195,7 +195,45 @@ const BazarTabel = () => {
         </div>
       </section>
 
-      {/* 3. CATALOGUE SECTION */}
+      {/* 4. THEMES INDEX SECTION */}
+      <motion.section
+        className="bazar-themes-index"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+      >
+        <div className="themes-index-inner">
+          <img className="themes-index-crest themes-index-logo" src="/universe/BAQAA3.png?v=themes-logo" alt="BAQAA bāzār & tābel" />
+          <h2>THEMES</h2>
+          <nav className="themes-index-list" aria-label="BAQAA Bazar and Tabel themes">
+            {themes.map((theme) => (
+              <a key={theme.id} href={`#${theme.id}`}>
+                {theme.name}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </motion.section>
+
+      <section className="bazar-editorial-stack" aria-label="BAQAA Bazar showcase">
+        <div className="bazar-editorial-inner">
+          {bazarShowcaseImages.map((image, index) => (
+            <motion.figure
+              className="bazar-editorial-frame"
+              key={image.src}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-90px" }}
+              transition={{ duration: 0.7, delay: index * 0.08, ease: [0.19, 1, 0.22, 1] }}
+            >
+              <img src={image.src} alt={image.alt} loading="lazy" />
+            </motion.figure>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. CATALOGUE SECTION */}
       <section id="themes" className="bazar-catalogue">
         <div className="catalogue-inner">
           <header className="catalogue-header">
@@ -209,19 +247,11 @@ const BazarTabel = () => {
             </div>
           </header>
 
-          <div className="catalogue-info-strip">
-            {catalogueInfo.map(({ icon: Icon, text }) => (
-              <div className="catalogue-info-item" key={text}>
-                <Icon size={17} strokeWidth={1.35} />
-                <span>{text}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="catalogue-grid">
+          <div className="catalogue-grid catalogue-grid-images-only">
             {themes.map((theme, index) => (
               <motion.article
-                className="catalogue-card"
+                id={theme.id}
+                className="catalogue-card catalogue-card-image-only"
                 key={theme.id}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -232,94 +262,62 @@ const BazarTabel = () => {
                   <div className="catalogue-image-wrap">
                     <img src={theme.img} alt={theme.name} loading="lazy" />
                   </div>
-                  <div className="catalogue-copy">
-                    <h3 className={`catalogue-product-title title-tone-${index % 5}`}>{theme.name}</h3>
-                    <p className="catalogue-mood">{theme.mood}</p>
-                    <p className="catalogue-description">{theme.catalogueDesc}</p>
-                  </div>
                 </div>
-
-                <div className="catalogue-rule-title">
-                  <span></span>
-                  <strong>FLOWER BOUQUET</strong>
-                  <span></span>
-                </div>
-                <div className="catalogue-price-columns">
-                  {bouquetOptions.map((label) => (
-                    <div className="catalogue-price-cell" key={label}>
-                      <span>{label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="catalogue-rule-title">
-                  <span></span>
-                  <strong>ADD A VASE</strong>
-                  <span></span>
-                </div>
-                <div className="catalogue-vase-row">
-                  <span>Vase pairing available on request</span>
-                </div>
-
-                <div className="catalogue-rule-title">
-                  <span></span>
-                  <strong>TABLESCAPE (FOR 6 PEOPLE)</strong>
-                  <span></span>
-                </div>
-                <div className="catalogue-table-details">
-                  <p>On rental basis. Flowers & colors can be tweaked as per client's choice.</p>
-                  <p>Furniture and flowers may vary depending on availability.</p>
-                  <ul>
-                    <li>6 Tiffany chairs</li>
-                    <li>1 rectangular table</li>
-                    <li>6 placemats</li>
-                    <li>6 dining plates</li>
-                    <li>6 spoons, forks & knives</li>
-                    <li>Table decor</li>
-                    <li>Transport, labor, set up & removal</li>
-                  </ul>
-                </div>
-
-                <a
-                  href={`${whatsappLink}?text=I'm interested in the ${theme.name} catalogue options`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="catalogue-options-btn"
-                >
-                  View Options
-                </a>
               </motion.article>
             ))}
           </div>
         </div>
-
-        <footer className="catalogue-footer-bar">
-          <div className="catalogue-footer-cell catalogue-whatsapp-cell">
-            <WhatsAppIcon />
-            <div>
-              <span>TO ORDER WHATSAPP</span>
-              <a href={whatsappLink} target="_blank" rel="noreferrer">{formattedWhatsappNumber}</a>
-            </div>
-          </div>
-
-          <div className="catalogue-footer-cell catalogue-instagram-cell">
-            <InstagramIcon />
-            <div>
-              <span>Follow Us</span>
-              <p>
-                <a href="https://instagram.com/baqaabazar" target="_blank" rel="noreferrer">@baqaabazar</a>
-                <i>|</i>
-                <a href="https://instagram.com/baqaa_wedding_events" target="_blank" rel="noreferrer">@baqaa_wedding_events</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="catalogue-footer-cell catalogue-legal-cell">
-            <img src="/logo/BAQAA3.png" alt="BAQAA emblem" />
-            <p>Designs, ideas and concepts are the legal intellectual property of Rachna Chadha & BAQAA.</p>
-          </div>
-        </footer>
       </section>
+
+      <motion.section
+        className="bazar-connect-section"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.75, ease: [0.19, 1, 0.22, 1] }}
+      >
+        <div className="bazar-connect-card">
+          <header className="bazar-connect-header">
+            <span></span>
+            <h2>CONNECT WITH US</h2>
+            <span></span>
+          </header>
+
+          <div className="bazar-connect-whatsapp">
+            <ConnectWhatsAppIcon />
+            <a href={whatsappLink} target="_blank" rel="noreferrer">+971 554968810</a>
+          </div>
+
+          <div className="bazar-connect-divider"></div>
+
+          <div className="bazar-connect-social">
+            <ConnectInstagramIcon />
+            <p>Discover our universe of curated artistry and celebration</p>
+            <a href="https://instagram.com/baqaabazar" target="_blank" rel="noreferrer">@baqaabazar</a>
+            <a href="https://instagram.com/baqaabazar" target="_blank" rel="noreferrer">https://instagram.com/baqaabazar</a>
+            <a href="https://instagram.com/baqaa_wedding_events" target="_blank" rel="noreferrer">@baqaa_wedding_events</a>
+            <a href="https://instagram.com/baqaa_wedding_events" target="_blank" rel="noreferrer">https://instagram.com/baqaa_wedding_events</a>
+          </div>
+
+          <div className="bazar-connect-divider"></div>
+
+          <div className="bazar-connect-hours">
+            <p>10AM - 7PM</p>
+            <p>ORDER via WHATSAPP</p>
+            <p>* MINIMUM 5 DAYS PRE-ORDER *</p>
+            <p>* 5% VAT APPLICABLE ON ALL ORDERS *</p>
+          </div>
+
+          <div className="bazar-connect-notes">
+            <strong>ABOVE PRICES ARE FOR DUBAI ONLY</strong>
+            <strong>ADDITIONAL LABOUR AND TRANSPORT CHARGES ARE APPLICABLE FOR ANY OTHER EMIRATE WITHIN UAE</strong>
+          </div>
+
+          <p className="bazar-connect-legal">
+            * ALL DESIGNS, IDEAS &amp; CONCEPTS ARE LEGAL INTELLECTUAL PROPERTY OF RACHNA CHADHA &amp; BAQAA. ANY COPYRIGHT INFRINGEMENT WILL BE SUBJECT TO LEGAL ACTION.
+          </p>
+        </div>
+      </motion.section>
     </div>
   );
 };
