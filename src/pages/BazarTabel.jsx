@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './BazarTabel.css';
 
 const ConnectInstagramIcon = () => (
@@ -20,7 +21,24 @@ const ConnectWhatsAppIcon = () => (
 const bazarShowcaseImages = [
   { src: '/BAZAR/1.png', alt: 'BAQAA Bazar floral arrangement detail' },
   { src: '/BAZAR/2.png', alt: 'BAQAA Bazar tablescape styling detail' },
-  { src: '/BAZAR/3.png', alt: 'BAQAA Bazar curated celebration detail' }
+  { src: '/BAZAR/3.png', alt: 'BAQAA Bazar curated celebration detail' },
+  { src: '/BAZAR/4.png', alt: 'BAQAA Bazar floral and tablescape showcase' },
+  { src: '/BAZAR/5.png', alt: 'BAQAA Bazar intimate celebration styling' },
+  { src: '/BAZAR/6.png', alt: 'BAQAA Bazar luxury table arrangement' },
+  { src: '/BAZAR/7.png', alt: 'BAQAA Bazar curated floral design' },
+  { src: '/BAZAR/8.png', alt: 'BAQAA Bazar elegant tablescape detail' }
+];
+
+const bazarHeroImages = [
+  '/BAZAR%20HERO/1.JPG',
+  '/BAZAR%20HERO/2.JPG',
+  '/BAZAR%20HERO/3.JPG',
+  '/BAZAR%20HERO/4.JPG',
+  '/BAZAR%20HERO/5.JPG',
+  '/BAZAR%20HERO/6.JPG',
+  '/BAZAR%20HERO/7.jpg',
+  '/BAZAR%20HERO/8.jpg',
+  '/BAZAR%20HERO/9.jpg'
 ];
 
 const themes = [
@@ -95,23 +113,64 @@ const themes = [
     desc: 'Warm textures, dried elements, and earthy tones for a free-spirited feel.',
     img: '/BAQAA BAZAR/9.png',
     catalogueDesc: 'Inspired from the change which autumn brings as the year unfolds. These special floral arrangements and tablescapes bring forth the earth’s ability to change. Gift it or celebrate intimate occasions with your family in your beautiful home.'
+  },
+  {
+    id: 'rustic-winter',
+    name: 'Rustic Winter',
+    mood: 'Rustic . Warm . Winter',
+    desc: 'Textured winter warmth with rustic elegance and soulful seasonal details.',
+    img: '/BAQAA BAZAR/11.png',
+    catalogueDesc: 'Inspired from the quiet beauty of winter gatherings. These special floral arrangements and tablescapes bring warmth, texture, and rustic elegance to intimate celebrations at home.'
   }
 ];
 
 const BazarTabel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bazarHeroImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   const whatsappNumber = "+971554968810";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % bazarHeroImages.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? bazarHeroImages.length - 1 : prev - 1));
 
   return (
     <div className="bazar-page">
       {/* 1. HERO SECTION */}
       <section className="bazar-hero">
-        <div className="bazar-hero-bg" style={{ backgroundImage: "url('/BAQAA BAZAR/hero.png')" }}>
-          <div className="bazar-hero-overlay"></div>
+        <div className="bazar-hero-slider">
+          <AnimatePresence>
+            <motion.div
+              key={currentSlide}
+              className="bazar-hero-slide"
+              initial={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
+              transition={{ duration: 1.5, ease: 'easeInOut' }}
+            >
+              <div
+                className="bazar-hero-bg"
+                style={{
+                  backgroundImage: `url(${bazarHeroImages[currentSlide]})`,
+                  '--bazar-hero-position': 'center 15%',
+                  '--bazar-hero-laptop-size': '115% auto',
+                  '--bazar-hero-laptop-shift-left': '0px',
+                  '--bazar-hero-mobile-position': 'center center',
+                  '--bazar-hero-mobile-size': 'cover'
+                }}
+              />
+              <div className="bazar-hero-overlay"></div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         <div className="bazar-hero-content">
@@ -143,6 +202,15 @@ const BazarTabel = () => {
             <a href={whatsappLink} target="_blank" rel="noreferrer" className="btn-hero">Order via WhatsApp</a>
           </motion.div>
         </div>
+
+        <div className="bazar-hero-controls">
+          <button onClick={prevSlide} className="bazar-control-btn" aria-label="Previous BAQAA Bazar hero image">
+            <ChevronLeft size={24} />
+          </button>
+          <button onClick={nextSlide} className="bazar-control-btn" aria-label="Next BAQAA Bazar hero image">
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </section>
 
       {/* 2. BROCHURE INTRO SECTION */}
@@ -155,7 +223,7 @@ const BazarTabel = () => {
       >
         <div className="brochure-shell">
           <img className="brochure-logo" src="/universe/BAQAA3.png" alt="BAQAA bāzār & tābel" />
-          <p className="brochure-label">BROCHURE</p>
+          <p className="brochure-label">Floral Arrangements, Intimate Set Ups &amp; Tablescapes</p>
           <p className="brochure-tagline">
             A passionate &amp; community driven vertical of BAQAA Glamour Weddings &amp; Events
           </p>
@@ -175,19 +243,40 @@ const BazarTabel = () => {
             transition={{ duration: 0.9, delay: 0.12, ease: [0.19, 1, 0.22, 1] }}
           >
             <div className="story-content-frame">
-              <div className="story-vertical-line" aria-hidden="true"></div>
-              <h2 className="heading-md mb-6 bazar-story-title">
-                <span>OUR STORY</span>
-              </h2>
+              <img className="story-heading-image" src="/story.png" alt="Our Story" />
               <div className="story-text">
                 <p>
-                  Born in a moment when the world stood still in 2020, within the warmth of our founder’s home, this is a story of resilience, creativity and heart. A thoughtful vertical created to support florists and skilled artisans, it was built with a purpose, to sustain livelihoods and uplift daily wage workers through challenging times.
+                  Born in a moment when the world stood still in 2020, within the warmth of our founder’s home,
+                  <br />
+                  this is a story of resilience, creativity, and heart.
+                  <br />
+                  <span className="story-spaced-line">
+                    A thoughtful vertical created to support florists and skilled artisans, it was built with a purpose,
+                    <br />
+                    to sustain livelihoods and uplift daily wage workers through challenging times.
+                  </span>
                 </p>
                 <p>
-                  Today, as the world once again navigates uncertainty, that purpose feels just as powerful, just as necessary. Each creation reflects artistry and emotion - curated, original themes brought to life through exquisite floral arrangements and soulful tablescapes, envisioned and handcrafted by Rachna Chadha, Founder, Designer & Dreamweaver of BAQAA Glamour Weddings & Events, with over 35 years of pioneering legacy and an iconic portfolio.
+                  Today, as the world once again navigates uncertainty, that purpose feels just as powerful, just as necessary.
+                  <br />
+                  <span className="story-spaced-line">
+                    Each creation reflects artistry and emotion - curated, original themes brought to life through exquisite
+                    <br />
+                    floral arrangements and soulful tablescapes, envisioned and handcrafted by Rachna Chadha,
+                    <br />
+                    Founder, Designer & Dreamweaver of BAQAA Glamour Weddings & Events,
+                    <br />
+                    with over 35 years of pioneering legacy and an iconic portfolio.
+                  </span>
                 </p>
                 <p>
-                  A beautiful gift. A thoughtful token. From intimate celebrations to elegant gatherings, BAQAA Bazar & Tabel transforms small moments into unforgettable experiences - where every detail whispers luxury, warmth, and meaning.
+                  A beautiful gift.
+                  <br />
+                  A thoughtful token.
+                  <br />
+                  <span className="story-spaced-line">
+                    From intimate celebrations to elegant gatherings, BAQAA Bazar & Tabel transforms small moments into unforgettable experiences - where every detail whispers luxury, warmth, and meaning.
+                  </span>
                 </p>
               </div>
             </div>
@@ -279,7 +368,7 @@ const BazarTabel = () => {
         <div className="bazar-connect-card">
           <header className="bazar-connect-header">
             <span></span>
-            <h2>CONNECT WITH US</h2>
+            <h2>CONNECT WITH US TO GET A DETAILED CATALOGUE AND RATE CARD</h2>
             <span></span>
           </header>
 
