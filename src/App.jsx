@@ -1,6 +1,5 @@
-import React from 'react';
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Featured from './components/Featured';
@@ -68,6 +67,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/baqaa-bazar" element={<BazarTabel />} />
+          <Route path="/portfolio" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </div>

@@ -953,6 +953,130 @@
   border-top: 1px solid rgba(212, 175, 55, 0.24);
 }
 
+.bazar-video-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(64px, 8vw, 104px) 5%;
+  background: #FDFCF8;
+  border-top: 1px solid rgba(212, 175, 55, 0.34);
+}
+
+.bazar-bts-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 7vw, 88px) 5% clamp(72px, 9vw, 112px);
+  background: #F0EAE1;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.bazar-bts-header h2 {
+  letter-spacing: 0.16em;
+}
+
+.bazar-video-frame.bazar-bts-video-frame {
+  width: min(100%, 380px);
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+}
+
+.bazar-video-inner {
+  width: min(100%, 780px);
+  margin: 0 auto;
+}
+
+.bazar-video-header {
+  width: min(100%, 720px);
+  margin: 0 auto clamp(30px, 4vw, 44px);
+  text-align: center;
+}
+
+.bazar-video-header h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: 0.08em;
+  color: #2c2a29;
+}
+
+.bazar-video-header p {
+  max-width: 600px;
+  margin: 18px auto 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.7vw, 1.16rem);
+  font-style: italic;
+  line-height: 1.7;
+  color: #6f665c;
+}
+
+.bazar-video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border: 1px solid rgba(212, 175, 55, 0.58);
+  box-shadow: 0 24px 58px rgba(83, 62, 42, 0.14);
+}
+
+.bazar-video-frame::before {
+  content: "";
+  position: absolute;
+  inset: -13px;
+  z-index: -1;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  pointer-events: none;
+}
+
+.bazar-video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.bazar-video-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  place-items: center;
+  color: #8e6f39;
+  background: rgba(253, 252, 248, 0.96);
+  border: 1px solid rgba(202, 162, 96, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(45, 35, 25, 0.18);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.bazar-video-arrow:hover {
+  color: #fdfcf8;
+  background: #8e6f39;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.bazar-video-arrow:focus-visible {
+  outline: 2px solid #8e6f39;
+  outline-offset: 3px;
+}
+
+.bazar-video-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bazar-video-arrow-left {
+  left: -64px;
+}
+
+.bazar-video-arrow-right {
+  right: -64px;
+}
+
 .bazar-connect-card {
   width: min(100%, 760px);
   margin: 0 auto;
@@ -1063,10 +1187,6 @@
   font-size: clamp(0.92rem, 1.7vw, 1rem);
   line-height: 1.35;
   overflow-wrap: anywhere;
-}
-
-.bazar-connect-social a:nth-of-type(3) {
-  margin-top: 16px;
 }
 
 .bazar-connect-hours {
@@ -1233,7 +1353,7 @@
 }
 
 .catalogue-grid-images-only {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   width: min(100%, 1180px);
   margin: 0 auto;
   gap: 14px;
@@ -1762,7 +1882,7 @@
   }
 
   .catalogue-grid-images-only {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: min(100%, 1040px);
     gap: 12px;
   }
@@ -1841,6 +1961,48 @@
 
   .bazar-connect-card {
     padding: 28px 18px 34px;
+  }
+
+  .bazar-video-section {
+    padding: 54px 18px 62px;
+  }
+
+  .bazar-bts-section {
+    padding: 50px 18px 68px;
+  }
+
+  .bazar-video-header {
+    margin-bottom: 28px;
+  }
+
+  .bazar-video-header h2 {
+    font-size: clamp(1.85rem, 9vw, 2.7rem);
+  }
+
+  .bazar-video-header p {
+    font-size: 0.96rem;
+  }
+
+  .bazar-video-frame {
+    width: 100%;
+  }
+
+  .bazar-video-frame::before {
+    inset: -7px;
+  }
+
+  .bazar-video-arrow {
+    width: 40px;
+    height: 40px;
+    background: rgba(253, 252, 248, 0.92);
+  }
+
+  .bazar-video-arrow-left {
+    left: 10px;
+  }
+
+  .bazar-video-arrow-right {
+    right: 10px;
   }
 
   .bazar-connect-header {
@@ -1934,7 +2096,7 @@
   }
 
   .catalogue-grid-images-only {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
   }
 

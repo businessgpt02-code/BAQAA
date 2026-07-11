@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
@@ -31,6 +31,35 @@ const laptopImages = {
   0: '/hero%20section/herosection1_laptop.png'
 };
 
+const heroImageCache = new Map();
+
+const getHeroImage = (index, isMobile, isLaptop) => {
+  if (isMobile && mobileImages[index]) return mobileImages[index];
+  if (isLaptop && laptopImages[index]) return laptopImages[index];
+  return images[index];
+};
+
+const preloadHeroImage = (src) => {
+  if (heroImageCache.has(src)) return heroImageCache.get(src);
+
+  const imagePromise = new Promise((resolve) => {
+    const image = new Image();
+
+    image.onload = () => {
+      if (typeof image.decode === 'function') {
+        image.decode().then(() => resolve(true), () => resolve(true));
+      } else {
+        resolve(true);
+      }
+    };
+    image.onerror = () => resolve(false);
+    image.src = src;
+  });
+
+  heroImageCache.set(src, imagePromise);
+  return imagePromise;
+};
+
 const mobileImagePositions = {
   0: '39% center',
   4: '-42vw center',
@@ -53,21 +82,28 @@ const laptopImageSizes = {
   6: '121% auto'
 };
 
-const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isLaptop, setIsLaptop] = useState(false);
+const slideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? '100%' : '-100%'
+  }),
+  center: {
+    x: 0
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? '-100%' : '100%'
+  })
+};
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
+const Hero = () => {
+  const [[currentSlide, direction], setSlide] = useState([0, 1]);
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 768px)').matches);
+  const [isLaptop, setIsLaptop] = useState(() => window.matchMedia('(min-width: 769px) and (max-width: 2200px)').matches);
+  const currentSlideRef = useRef(0);
+  const transitionPendingRef = useRef(false);
+  const mountedRef = useRef(true);
 
   useEffect(() => {
     const media = window.matchMedia('(max-width: 768px)');
-    setIsMobile(media.matches);
     const listener = (event) => setIsMobile(event.matches);
     media.addEventListener('change', listener);
     return () => media.removeEventListener('change', listener);
@@ -75,31 +111,75 @@ const Hero = () => {
 
   useEffect(() => {
     const media = window.matchMedia('(min-width: 769px) and (max-width: 2200px)');
-    setIsLaptop(media.matches);
     const listener = (event) => setIsLaptop(event.matches);
     media.addEventListener('change', listener);
     return () => media.removeEventListener('change', listener);
   }, []);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % images.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  const heroImage = isMobile && mobileImages[currentSlide]
-    ? mobileImages[currentSlide]
-    : isLaptop && laptopImages[currentSlide]
-      ? laptopImages[currentSlide]
-      : images[currentSlide];
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    const nextSlide = (currentSlide + 1) % images.length;
+    preloadHeroImage(getHeroImage(currentSlide, isMobile, isLaptop));
+    preloadHeroImage(getHeroImage(nextSlide, isMobile, isLaptop));
+  }, [currentSlide, isMobile, isLaptop]);
+
+  const requestSlide = useCallback(async (nextSlide, nextDirection) => {
+    if (transitionPendingRef.current) return;
+
+    transitionPendingRef.current = true;
+    const targetImage = getHeroImage(nextSlide, isMobile, isLaptop);
+    const isReady = await preloadHeroImage(targetImage);
+
+    if (isReady && mountedRef.current) {
+      currentSlideRef.current = nextSlide;
+      setSlide([nextSlide, nextDirection]);
+    }
+
+    transitionPendingRef.current = false;
+  }, [isMobile, isLaptop]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const nextSlide = (currentSlideRef.current + 1) % images.length;
+      requestSlide(nextSlide, 1);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [requestSlide]);
+
+  const nextSlide = () => {
+    const nextIndex = (currentSlideRef.current + 1) % images.length;
+    requestSlide(nextIndex, 1);
+  };
+
+  const prevSlide = () => {
+    const previousIndex = currentSlideRef.current === 0
+      ? images.length - 1
+      : currentSlideRef.current - 1;
+    requestSlide(previousIndex, -1);
+  };
+
+  const heroImage = getHeroImage(currentSlide, isMobile, isLaptop);
 
   return (
     <section className="hero-section" id="home">
       <div className="hero-slider">
-        <AnimatePresence>
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentSlide}
             className="hero-slide"
-            initial={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
-            transition={{ duration: 1.5, ease: 'easeInOut' }}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.9, ease: [0.65, 0, 0.35, 1] }}
           >
             <div
               className="hero-bg"

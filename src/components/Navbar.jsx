@@ -61,7 +61,7 @@ const Navbar = () => {
             if (item === 'Contact') href = '/contact';
             if (item === 'Blogs') href = '/blog';
 
-            const isComingSoon = ['Weddings', 'Events', 'Portfolio'].includes(item);
+            const isComingSoon = ['Weddings', 'Events'].includes(item);
 
             const isActive =
               (item === 'Home' && location.pathname === '/' && !location.hash) ||
@@ -69,13 +69,20 @@ const Navbar = () => {
               (item === 'Contact' && location.pathname === '/contact') ||
               (item === 'Blogs' && location.pathname === '/blog') ||
               (item === 'BAQAA BAZAR' && location.pathname === '/baqaa-bazar') ||
-              (!['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR', 'Weddings'].includes(item) &&
+              (!['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR', 'Weddings', 'Portfolio'].includes(item) &&
                 location.pathname === '/' &&
                 location.hash === `#${sectionId}`);
 
             return (
               <li key={item}>
-                {['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR'].includes(item) ? (
+                {item === 'Portfolio' ? (
+                  <span
+                    className="nav-link nav-link-disabled text-editorial"
+                    aria-disabled="true"
+                  >
+                    {item}
+                  </span>
+                ) : ['Home', 'About', 'Contact', 'Blogs', 'BAQAA BAZAR'].includes(item) ? (
                   <Link 
                     to={href}
                     className={`nav-link text-editorial ${isActive ? 'active' : ''}`}

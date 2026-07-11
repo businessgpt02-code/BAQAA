@@ -84,6 +84,11 @@
   color: var(--champagne-gold);
 }
 
+.nav-link-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
 .navbar.scrolled .nav-link:hover {
   color: var(--maroon);
 }

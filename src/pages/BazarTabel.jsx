@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './BazarTabel.css';
@@ -40,6 +40,29 @@ const bazarHeroImages = [
   '/BAZAR%20HERO/8.jpg',
   '/BAZAR%20HERO/9.jpg'
 ];
+
+const bazarVideos = [
+  {
+    id: '1aJY8D0TLU4',
+    title: 'BAQAA Bazar and Tabel video'
+  },
+  {
+    id: 'fawP8RiRnCw',
+    title: 'BAQAA Bazar and Tabel behind-the-scenes video'
+  }
+];
+
+const bazarSlideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? '100%' : '-100%'
+  }),
+  center: {
+    x: 0
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? '-100%' : '100%'
+  })
+};
 
 const themes = [
   {
@@ -125,7 +148,8 @@ const themes = [
 ];
 
 const BazarTabel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [[currentSlide, direction], setSlide] = useState([0, 1]);
+  const [currentVideo, setCurrentVideo] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -133,29 +157,44 @@ const BazarTabel = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % bazarHeroImages.length);
+      setSlide(([previousSlide]) => [(previousSlide + 1) % bazarHeroImages.length, 1]);
     }, 3000);
     return () => clearInterval(timer);
   }, []);
 
   const whatsappNumber = "+971554968810";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % bazarHeroImages.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? bazarHeroImages.length - 1 : prev - 1));
+  const nextSlide = () => {
+    setSlide(([previousSlide]) => [(previousSlide + 1) % bazarHeroImages.length, 1]);
+  };
+
+  const prevSlide = () => {
+    setSlide(([previousSlide]) => [previousSlide === 0 ? bazarHeroImages.length - 1 : previousSlide - 1, -1]);
+  };
+
+  const nextVideo = () => {
+    setCurrentVideo((previousVideo) => (previousVideo + 1) % bazarVideos.length);
+  };
+
+  const previousVideo = () => {
+    setCurrentVideo((previousVideo) => (previousVideo === 0 ? bazarVideos.length - 1 : previousVideo - 1));
+  };
 
   return (
     <div className="bazar-page">
       {/* 1. HERO SECTION */}
       <section className="bazar-hero">
         <div className="bazar-hero-slider">
-          <AnimatePresence>
+          <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentSlide}
               className="bazar-hero-slide"
-              initial={{ opacity: 0, scale: 1.05, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
-              transition={{ duration: 1.5, ease: 'easeInOut' }}
+              custom={direction}
+              variants={bazarSlideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.9, ease: [0.65, 0, 0.35, 1] }}
             >
               <div
                 className="bazar-hero-bg"
@@ -383,9 +422,7 @@ const BazarTabel = () => {
             <ConnectInstagramIcon />
             <p>Discover our universe of curated artistry and celebration</p>
             <a href="https://instagram.com/baqaabazar" target="_blank" rel="noreferrer">@baqaabazar</a>
-            <a href="https://instagram.com/baqaabazar" target="_blank" rel="noreferrer">https://instagram.com/baqaabazar</a>
             <a href="https://instagram.com/baqaa_wedding_events" target="_blank" rel="noreferrer">@baqaa_wedding_events</a>
-            <a href="https://instagram.com/baqaa_wedding_events" target="_blank" rel="noreferrer">https://instagram.com/baqaa_wedding_events</a>
           </div>
 
           <div className="bazar-connect-divider"></div>
@@ -405,6 +442,78 @@ const BazarTabel = () => {
           <p className="bazar-connect-legal">
             * ALL DESIGNS, IDEAS &amp; CONCEPTS ARE LEGAL INTELLECTUAL PROPERTY OF RACHNA CHADHA &amp; BAQAA. ANY COPYRIGHT INFRINGEMENT WILL BE SUBJECT TO LEGAL ACTION.
           </p>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="bazar-video-section"
+        aria-labelledby="bazar-video-title"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.75, ease: [0.19, 1, 0.22, 1] }}
+      >
+        <div className="bazar-video-inner">
+          <header className="bazar-video-header">
+            <h2 id="bazar-video-title">OUR STORY IN MOTION</h2>
+            <p>Step into our universe of curated florals, intimate settings and artful tablescapes.</p>
+          </header>
+
+          <div className="bazar-video-frame">
+            <iframe
+              key={bazarVideos[currentVideo].id}
+              src={`https://www.youtube-nocookie.com/embed/${bazarVideos[currentVideo].id}?rel=0`}
+              title={bazarVideos[currentVideo].title}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+
+            <button
+              className="bazar-video-arrow bazar-video-arrow-left"
+              type="button"
+              onClick={previousVideo}
+              aria-label="Show previous video"
+            >
+              <ChevronLeft aria-hidden="true" />
+            </button>
+            <button
+              className="bazar-video-arrow bazar-video-arrow-right"
+              type="button"
+              onClick={nextVideo}
+              aria-label="Show next video"
+            >
+              <ChevronRight aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="bazar-bts-section"
+        aria-labelledby="bazar-bts-title"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.75, ease: [0.19, 1, 0.22, 1] }}
+      >
+        <div className="bazar-video-inner">
+          <header className="bazar-video-header bazar-bts-header">
+            <h2 id="bazar-bts-title">BTS</h2>
+            <p>Behind the scenes of the details, hands and artistry that bring each setting to life.</p>
+          </header>
+
+          <div className="bazar-video-frame bazar-bts-video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/-Oi4XQnvfx4?rel=0"
+              title="BAQAA Bazar and Tabel BTS short video"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </motion.section>
     </div>

@@ -3,7 +3,10 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-color: var(--dark-charcoal);
+  background-color: #5b6256;
+  background-image: url('/hero%20section/hero-placeholder.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-slider {
@@ -20,6 +23,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .hero-bg {
